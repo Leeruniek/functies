@@ -1,14 +1,14 @@
 {
-  "name": "@codemachiner/m",
+  "name": "@leeruniek/functies",
   "version": "0.3.4",
   "description": "Functional library for Javascript",
-  "homepage": "https://github.com/codemachiner/m",
+  "homepage": "https://github.com/Leeruniek/functies",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codemachiner/m.git"
+    "url": "git+https://github.com/Leeruniek/functies.git"
   },
   "bugs": {
-    "url": "https://github.com/codemachiner/m/issues"
+    "url": "https://github.com/Leeruniek/functies/issues"
   },
   "author": {
     "name": "Andrei Dumitrescu",
@@ -29,10 +29,7 @@
     "test": "tape src/**/*.test.js | tap-diff",
     "tdd": "nodemon --watch src --exec \"npm run test\""
   },
-  "dependencies": {
-    "tap-diff": "0.1.1",
-    "tape": "4.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@codemachiner/eslint-config": "2.9.6",
     "benchmark": "2.1.4",
@@ -42,10 +39,12 @@
     "eslint-plugin-no-inferred-method-name": "1.0.2",
     "eslint-plugin-promise": "3.7.0",
     "eslint-plugin-unicorn": "4.0.3",
-    "markdownlint-cli": "0.8.1",
-    "nodemon": "1.17.3",
-    "npm-check": "5.7.0",
-    "nsp": "3.2.1"
+    "markdownlint-cli": "0.8.2",
+    "nodemon": "1.17.4",
+    "npm-check": "5.7.1",
+    "nsp": "3.2.1",
+    "tap-diff": "0.1.1",
+    "tape": "4.9.0"
   },
   "license": "MIT"
 }
