@@ -1,3 +1,3 @@
-# m
+# functies
 
 > Functional library for Javascript
