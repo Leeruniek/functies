@@ -78,7 +78,7 @@ const byType = {
  * Determine a variable's type. Looks only for Array, Object and RegExp.
  * Everything else are "Primitive"
  *
- * Using this and not `../type/type.js` added ~300k ops/sec
+ * Not using `../type/type.js` added ~300k ops/sec
  *
  * @param  {mixed}   source  The source
  *
