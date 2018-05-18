@@ -1,4 +1,5 @@
 module.exports = {
+  distinct : require( "./array__distinct/distinct" ),
   filter   : require( "./array__filter/filter" ),
   filterBy : require( "./array__filter-by/filter-by" ),
   find     : require( "./array__find/find" ),
