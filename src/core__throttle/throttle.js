@@ -9,7 +9,7 @@
  *                                  run the `fn` in `timeWindow` ms
  */
 module.exports = ( fn, { timeWindow = 50, bind = null, hasLastCall = false} = {} ) => {
-  let lastExecution = new Date( ( new Date() ).getTime() - timeWindow + 1 )
+  let lastExecution = new Date( ( new Date() ).getTime() - timeWindow )
   let finalRunTimer
 
   return ( ... args ) => {
