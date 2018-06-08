@@ -8,8 +8,8 @@
  *                                  `timeWindow` or return a timer that will
  *                                  run the `fn` in `timeWindow` ms
  */
-module.exports = ( fn, { timeWindow = 50, bind = null } = {} ) => {
-  let lastExecution = new Date( ( new Date() ).getTime() - timeWindow )
+module.exports = ( fn, { timeWindow = 50, bind = null, hasLastCall = false} = {} ) => {
+  let lastExecution = new Date( ( new Date() ).getTime() - timeWindow + 1 )
   let finalRunTimer
 
   return ( ... args ) => {
@@ -21,12 +21,16 @@ module.exports = ( fn, { timeWindow = 50, bind = null } = {} ) => {
       fn.apply( bind, args )
     }
 
-    // reset timer at every function call
-    clearTimeout( finalRunTimer )
+    if ( hasLastCall ) {
+      // reset timer at every function call
+      clearTimeout( finalRunTimer )
 
-    finalRunTimer = setTimeout( () => {
-      lastExecution = new Date()
-      fn.apply( bind, args )
-    }, timeWindow )
+      finalRunTimer = setTimeout( () => {
+        lastExecution = new Date()
+
+        fn.apply( bind, args )
+      }, timeWindow )
+    }
   }
 }
+
