@@ -10,6 +10,7 @@ module.exports = {
   hasWith  : require( "./array__has-with/has-with" ),
   indexBy  : require( "./array__index-by/index-by" ),
   map      : require( "./array__map/map" ),
+  max      : require( "./array__max/max" ),
   push     : require( "./array__push/push" ),
   reduce   : require( "./array__reduce/reduce" ),
   remove   : require( "./array__remove/remove" ),
