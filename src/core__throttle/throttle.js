@@ -8,7 +8,7 @@
  *                                  `timeWindow` or return a timer that will
  *                                  run the `fn` in `timeWindow` ms
  */
-module.exports = ( fn, { timeWindow = 50, bind = null, hasLastCall = false} = {} ) => {
+module.exports = ( fn, { timeWindow = 50, bind = null, hasLastCall = false } = {} ) => {
   let lastExecution = new Date( ( new Date() ).getTime() - timeWindow )
   let finalRunTimer
 
