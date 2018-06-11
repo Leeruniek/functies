@@ -12,6 +12,7 @@ module.exports = {
   map      : require( "./array__map/map" ),
   max      : require( "./array__max/max" ),
   min      : require( "./array__min/min" ),
+  pluck    : require( "./array__pluck/pluck" ),
   push     : require( "./array__push/push" ),
   reduce   : require( "./array__reduce/reduce" ),
   remove   : require( "./array__remove/remove" ),
