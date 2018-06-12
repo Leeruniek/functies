@@ -33,8 +33,8 @@ const sortFn = fn => source => {
 /**
  * Find the maximum value in a source array
  *
- * @param  {Function}  fn      Transform function
- * @param  {number[]}  source  Array of numbers
+ * @param  {Array|Function} arg1    Custom transform function or source array
+ * @param  {number[]}       source  Array of numbers
  *
  * @return {number}
  *
@@ -46,15 +46,15 @@ const sortFn = fn => source => {
  * max([-1, 1, 10, 3])
  * // => 10
  *
+ * const fn = element => ( new Date( element.time ) ).getTime()
  * const source = [
  *  {time: "2018-06-11T09:01:54.337344Z"},
  *  {time: "2018-06-08T08:26:12.711071Z"}
  * ]
- * max(element => (new Date(element.time)).getTime())(source)
+ * max(fn)(source)
  * // => {time: "2018-06-08T08:26:12.711071Z"}
  */
 module.exports = arg1 =>
   Array.isArray( arg1 )
     ? sortNumeric( arg1 )
     : sortFn( arg1 )
-
