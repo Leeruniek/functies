@@ -16,6 +16,7 @@ module.exports = {
   push     : require( "./array__push/push" ),
   reduce   : require( "./array__reduce/reduce" ),
   remove   : require( "./array__remove/remove" ),
+  sort     : require( "./array__sort/sort" ),
   toggle   : require( "./array__toggle/toggle" ),
   zipToObj : require( "./array__zip-to-obj/zip-to-obj" ),
   deepEqual: require( "./core__deep-equal/deep-equal" ),
