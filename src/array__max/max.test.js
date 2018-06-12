@@ -17,13 +17,14 @@ const max = require( "./max" )
  * max([-1, 1, 10, 3])
  * // => 10
  *
- * const fn = element => ( new Date( element.time ) ).getTime()
+ * const fn = element => ( new Date( element.time ) )
  * const source = [
- *  {time: "2018-06-11T09:01:54.337344Z"},
- *  {time: "2018-06-08T08:26:12.711071Z"}
+ *   { time: "2018-05-15T11:20:07.754110Z" },
+ *   { time: "2018-06-11T09:01:54.337344Z" },
+ *   { time: "2018-06-08T08:26:12.711071Z" },
  * ]
  * max(fn)(source)
- * // => {time: "2018-06-08T08:26:12.711071Z"}
+ * // => {time: "2018-06-11T09:01:54.337344Z"}
  */
 test( "array::max( source: Number[] ): Number", t => {
   t.deepEqual(
@@ -34,8 +35,9 @@ test( "array::max( source: Number[] ): Number", t => {
     max( [] ), 0,
     "max([]) // => 0 (neutral element)" )
 
-  const fn = element => ( new Date( element.time ) ).getTime()
+  const fn = element => new Date( element.time )
   const source = [
+    { time: "2018-05-15T11:20:07.754110Z" },
     { time: "2018-06-11T09:01:54.337344Z" },
     { time: "2018-06-08T08:26:12.711071Z" },
   ]
