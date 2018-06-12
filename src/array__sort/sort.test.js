@@ -25,7 +25,7 @@ test( "array::sort( fn: Function ) => ( source: Array ): Array", t => {
 
   t.notEqual(
     sort( ( a, b ) => a.id - b.id )( source ), source,
-    "Returned array is not the same (immutability)" )
+    "Returned array is different (immutability)" )
 
   t.end()
 } )
