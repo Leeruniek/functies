@@ -12,6 +12,7 @@ module.exports = {
   hasWith     : require( "./array__has-with/has-with" ),
   head        : require( "./array__head/head" ),
   indexBy     : require( "./array__index-by/index-by" ),
+  join        : require( "./array__join/join" ),
   map         : require( "./array__map/map" ),
   max         : require( "./array__max/max" ),
   min         : require( "./array__min/min" ),
@@ -40,4 +41,6 @@ module.exports = {
   set         : require( "./object__set/set" ),
   escapeHTML  : require( "./string__escapeHTML/escapeHTML" ),
   escapeRegExp: require( "./string__escapeRegExp/escapeRegExp" ),
+  split       : require( "./string__split/split" ),
+  toLower     : require( "./string__to-lower/to-lower" ),
 }
