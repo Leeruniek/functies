@@ -1,14 +1,15 @@
+const isMatch = require( "../core__is-match/is-match" )
+
 /**
- * Index an array by a field but instead of returning an array for each
- * distinct value, just count them
+ * Count the number of objects that match a criteria
  *
  * @tag Array
- * @signature ( field: string )( source: Object[] ): Object
+ * @signature (matchObject: Object)(source: Object[]): number
  *
- * @param   {string}  field  Field name by with to count
- * @param   {Object[]}  source  Array of objects
+ * @param   {Object}    matchObject  Match object
+ * @param   {Object[]}  source       Array of objects
  *
- * @return  {Object}
+ * @return  {number}
  *
  * @example
  * const scores = [{
@@ -22,22 +23,20 @@
  * }, {
  *  name   : "Hatter",
  *  score  : 10,
- *  subject: "Math"
+ *  subject: "Nature"
  * }]
  *
- * countBy( "score" )( scores )
- * // => { "1": 1, "10": 2 }
+ * countBy({
+ *  "subject": "Math"
+ * })(scores)
+ * // => 2
  */
-module.exports = field => source => {
-  const result = {}
+module.exports = matchObject => source => {
+  let result = 0
 
   for ( let i = 0, length = source.length; i < length; i++ ) {
-    if ( !!source[ i ][ field ] ) {
-      const groupKey = String( source[ i ][ field ] )
-
-      result[ groupKey ] = result[ groupKey ]
-        ? result[ groupKey ] + 1
-        : 1
+    if ( isMatch( matchObject )( source[ i ] ) ) {
+      result = result + 1
     }
   }
 

@@ -2,16 +2,15 @@ const test = require( "tape" )
 const countBy = require( "./count-by" )
 
 /**
- * Index an array by a field but instead of returning an array for each
- * distinct value, just count them
+ * Count the number of objects that match a criteria
  *
  * @tag Array
- * @signature ( field: string )( source: Object[] ): Object
+ * @signature (matchObject: Object)(source: Object[]): number
  *
- * @param   {string}  field  Field name by with to count
- * @param   {Object[]}  source  Array of objects
+ * @param   {Object}    matchObject  Match object
+ * @param   {Object[]}  source       Array of objects
  *
- * @return  {Object}
+ * @return  {number}
  *
  * @example
  * const scores = [{
@@ -25,13 +24,15 @@ const countBy = require( "./count-by" )
  * }, {
  *  name   : "Hatter",
  *  score  : 10,
- *  subject: "Math"
+ *  subject: "Nature"
  * }]
  *
- * countBy( "score" )( scores )
- * // => { "1": 1, "10": 2 }
+ * countBy({
+ *  "subject": "Math"
+ * })(scores)
+ * // => 2
  */
-test( "array::countBy( field: string )( source: Object[] ): Object", t => {
+test( "array::countBy(matchObject: Object)(source: Object[]): number", t => {
   const scores = [ {
     name : "Bob",
     score: 1,
@@ -45,13 +46,26 @@ test( "array::countBy( field: string )( source: Object[] ): Object", t => {
     subject: "Math",
   } ]
 
-  t.deepEqual(
-    countBy( "score" )( scores ), { 1: 1, 10: 2 },
-    "object with distinct values and their occurrence" )
+  t.equal(
+    countBy( {
+      subject: "Math",
+    } )( scores ),
+    2,
+    "Count items that match fields" )
 
-  t.deepEqual(
-    countBy( "subject" )( scores ), { Math: 2 },
-    "object with occurrences even if field is not defined on some elements" )
+  t.equal(
+    countBy( {
+      subject: "NotExist",
+    } )( scores ),
+    0,
+    "No items in source match criteria (missing value)" )
+
+  t.equal(
+    countBy( {
+      notExist: "StillNotExist",
+    } )( scores ),
+    0,
+    "No items in source match criteria (missing field)" )
 
   t.end()
 } )
