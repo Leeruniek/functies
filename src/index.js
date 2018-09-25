@@ -22,6 +22,7 @@ module.exports = {
   reduce      : require( "./array__reduce/reduce" ),
   remove      : require( "./array__remove/remove" ),
   sort        : require( "./array__sort/sort" ),
+  sortBy      : require( "./array__sort-by/sort-by" ),
   tail        : require( "./array__tail/tail" ),
   toggle      : require( "./array__toggle/toggle" ),
   zipToObj    : require( "./array__zip-to-obj/zip-to-obj" ),
