@@ -5,7 +5,7 @@ const join = require( "./join" )
  * Join all elements of an array into a string
  *
  * @tag Array
- * @signature ( separator: string )( source: Array ): string
+ * @signature (separator: string)(source: Array): string
  *
  * @param   {string}  separator  Separator between each adjacent elements
  * @param   {string}  source     Source string
@@ -22,6 +22,16 @@ test( "array::join( separator: string )( source: Array ): string", t => {
   t.equals(
     join( "," )( source ), "lorem,ipsum",
     "Join array with 2 string into 1" )
+
+  t.equals(
+    join( "," )( [] ),
+    "",
+    "Joining empty array // => empty string" )
+
+  t.equals(
+    join( "," )( null ),
+    "",
+    "Joining non array // => empty string" )
 
   t.end()
 } )
