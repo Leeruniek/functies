@@ -29,6 +29,7 @@ module.exports = {
   deepEqual   : require( "./core__deep-equal/deep-equal" ),
   i           : require( "./core__i/i" ),
   ifThen      : require( "./core__if-then/if-then" ),
+  is          : require( "./core__is/is" ),
   isEmpty     : require( "./core__is-empty/is-empty" ),
   isMatch     : require( "./core__is-match/is-match" ),
   pipe        : require( "./core__pipe/pipe" ),
