@@ -25,6 +25,7 @@ module.exports = {
   sortBy      : require( "./array__sort-by/sort-by" ),
   tail        : require( "./array__tail/tail" ),
   toggle      : require( "./array__toggle/toggle" ),
+  top         : require( "./array__top/top" ),
   zipToObj    : require( "./array__zip-to-obj/zip-to-obj" ),
   deepEqual   : require( "./core__deep-equal/deep-equal" ),
   i           : require( "./core__i/i" ),
