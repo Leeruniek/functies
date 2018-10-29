@@ -1,10 +1,10 @@
 /**
- * Return top elements from array
+ * Extract top elements from array
  *
  * @tag Array
  * @signature (count: number) => (source: Array): Array
  *
- * @param  {number}  count   Number of elements to return
+ * @param  {number}  count   Number of elements to extract
  * @param  {Array}   source  Source array
  *
  * @returns {Array}
@@ -17,9 +17,9 @@ module.exports = ( count = 1 ) => source => {
   const result = []
 
   // dont go under 0, dont go over source length
-  const elmCount = Math.max( 0, Math.min( count, source.length ) )
+  const resultCount = Math.max( 0, Math.min( count, source.length ) )
 
-  for ( let i = 0; i < elmCount; i++ ) {
+  for ( let i = 0; i < resultCount; i++ ) {
     result.push( source[ i ] )
   }
 

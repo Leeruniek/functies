@@ -2,12 +2,12 @@ const test = require( "tape" )
 const top = require( "./top" )
 
 /**
- * Return top elements from array
+ * Extract top elements from array
  *
  * @tag Array
  * @signature (count: number) => (source: Array): Array
  *
- * @param  {number}  count   Number of elements to return
+ * @param  {number}  count   Number of elements to extract
  * @param  {Array}   source  Source array
  *
  * @returns {Array}
@@ -34,12 +34,19 @@ test( "array::top", t => {
     "Return empty array if count is 0" )
 
   t.deepEqual(
-    top( -3 )( [ 1, 2, 3 ] ), [],
+    top( -3 )( [ 1, 2, 3 ] ),
+    [],
     "Return empty array if count is negative" )
 
   t.deepEqual(
-    top( "-3" )( [ 1, 2, 3 ] ), [],
-    "Return empty array if count is negative" )
+    top( 2 )( top( 2 )( [ 1, 2, 3 ] ) ),
+    [ 1, 2 ],
+    "Idempotent"
+  )
+
+  const source = [ 1, 2 ]
+
+  t.notEqual( top( 2 )( source ), source, "Imutable" )
 
   t.end()
 } )
