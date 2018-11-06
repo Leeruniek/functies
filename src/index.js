@@ -47,6 +47,7 @@ module.exports = {
   merge       : require( "./object__merge/merge" ),
   pick        : require( "./object__pick/pick" ),
   set         : require( "./object__set/set" ),
+  replace     : require( "./replace/replace" ),
   contains    : require( "./string__contains/contains" ),
   escapeHTML  : require( "./string__escapeHTML/escapeHTML" ),
   escapeRegExp: require( "./string__escapeRegExp/escapeRegExp" ),
