@@ -2,13 +2,13 @@ const test = require( "tape" )
 const count = require( "./count" )
 
 /**
- * Count the number of elements that satisfy a function (returns true)
+ * Count the number of elements that satisfies a function
  *
  * @tag Array
- * @signature ( fn: Function )( source: Object[] ): number
+ * @signature (fn: Function)(source: Array <Object>): number
  *
- * @param   {Function}  fn      Satisfy function
- * @param   {Object[]}  source  Array of objects
+ * @param   {Function}        fn      Test function
+ * @param   {Array <Object>}  source  Source array
  *
  * @return  {number}
  *
@@ -28,25 +28,33 @@ const count = require( "./count" )
  * }]
  *
  * count( element => element.score === 10 )( scores )
- * // 2
+ * // => 2
  */
-test( "array::count( fn: Function )( source: Object[] ): number", t => {
-  const scores = [ {
-    name : "Bob",
-    score: 1,
-  }, {
-    name   : "Alice",
-    score  : 10,
-    subject: "Math",
-  }, {
-    name   : "Hatter",
-    score  : 10,
-    subject: "Math",
-  } ]
+test( "array::count", t => {
+  const scores = [
+    {
+      name : "Bob",
+      score: 1,
+    },
+    {
+      name   : "Alice",
+      score  : 10,
+      subject: "Math",
+    },
+    {
+      name   : "Hatter",
+      score  : 10,
+      subject: "Math",
+    },
+  ]
 
-  t.deepEqual(
-    count( element => element.score === 10 )( scores ), 2,
-    "count elements that satisfy function" )
+  t.equal(
+    count( element => element.score === 10 )( scores ),
+    2,
+    "Count elements that satisfy function"
+  )
+
+  t.equal( count( scores ), 3, "Count elements of an array" )
 
   t.end()
 } )
