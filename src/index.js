@@ -40,6 +40,8 @@ module.exports = {
   raise       : require( "./core__raise/raise" ),
   throttle    : require( "./core__throttle/throttle" ),
   type        : require( "./core__type/type" ),
+  gt          : require( "./gt/gt" ),
+  lt          : require( "./lt/lt" ),
   coinToss    : require( "./number__coin-toss/coin-toss" ),
   random      : require( "./number__random/random" ),
   sequence    : require( "./number__sequence/sequence" ),
