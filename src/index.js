@@ -28,6 +28,7 @@ module.exports = {
   top         : require( "./array__top/top" ),
   zipToObj    : require( "./array__zip-to-obj/zip-to-obj" ),
   all         : require( "./core__all/all" ),
+  debounce    : require( "./core__debounce/debounce" ),
   deepEqual   : require( "./core__deep-equal/deep-equal" ),
   i           : require( "./core__i/i" ),
   ifThen      : require( "./core__if-then/if-then" ),

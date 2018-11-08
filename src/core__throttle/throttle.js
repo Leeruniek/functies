@@ -8,12 +8,16 @@
  *                                  `timeWindow` or return a timer that will
  *                                  run the `fn` in `timeWindow` ms
  */
-module.exports = ( fn, { timeWindow = 50, bind = null, hasLastCall = false } = {} ) => {
-  let lastExecution = new Date( ( new Date() ).getTime() - timeWindow )
+module.exports = (
+  fn,
+  { timeWindow = 50, bind = null, hasLastCall = false } = {}
+) => {
+  let lastExecution = new Date( new Date().getTime() - timeWindow )
   let finalRunTimer
 
-  return ( ... args ) => {
-    const hasTimeWindowPassed = ( lastExecution.getTime() + timeWindow ) <= ( new Date() ).getTime()
+  return ( ...args ) => {
+    const hasTimeWindowPassed =
+      lastExecution.getTime() + timeWindow <= new Date().getTime()
 
     if ( hasTimeWindowPassed ) {
       lastExecution = new Date()
@@ -33,4 +37,3 @@ module.exports = ( fn, { timeWindow = 50, bind = null, hasLastCall = false } = {
     }
   }
 }
-

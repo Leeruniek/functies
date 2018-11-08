@@ -1,5 +1,5 @@
 const test = require( "tape" )
-const throttle = require( "./throttle" )
+const debounce = require( "./debounce" )
 
 /**
  * Call a function only if it hasn't been called in the last `timeWindow` ms.
@@ -11,50 +11,49 @@ const throttle = require( "./throttle" )
  *                                  `timeWindow` or return a timer that will
  *                                  run the `fn` in `timeWindow` ms
  */
-test( "core::throttle", t => {
+test( "core::debounce", t => {
   /**
-   * Throttle with defaults
+   * Debounce with defaults
    */
   let defaultCounter = 0
-  const defaultInc = throttle( () => {
-    defaultCounter++
+  const defaultSet = debounce( source => {
+    defaultCounter = source
   } )
 
   for ( let i = 0; i < 100; i++ ) {
-    defaultInc()
+    defaultSet( i )
   }
 
   setTimeout( () => {
     t.equal(
       defaultCounter,
-      1,
-      "Calling throttled function 100 times should run it once"
+      99,
+      "Calling debounce function 100 times should run it once, 50ms after last call"
     )
   }, 100 )
 
   /**
-   * Throttle with custom
+   * Debounce with custom
    */
 
   let customCounter = 0
-  const customInc = throttle(
-    () => {
-      customCounter++
-    },
-    { timeWindow: 50, bind: null, hasLastCall: true }
+  const customSet = debounce( source => {
+    customCounter = source
+  },
+  { timeWindow: 100, bind: null }
   )
 
   for ( let i = 0; i < 100; i++ ) {
-    customInc()
+    customSet( i )
   }
 
   setTimeout( () => {
     t.equal(
       customCounter,
-      2,
-      "Calling throttled function 100 times with lastCall enabled should run it twice"
+      99,
+      "Calling debounced function 100 times with custom timer window"
     )
 
     t.end()
-  }, 100 )
+  }, 150 )
 } )
