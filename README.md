@@ -2,6 +2,18 @@
 
 > Functional library for Javascript
 
+---
+
+<!-- MarkdownTOC levels="2,3" autolink="true" autoanchor="false" -->
+
+- [Install](#install)
+- [Use](#use)
+- [Develop](#develop)
+- [Changelog](#changelog)
+    - [0.19.1 - 16 November 2018](#0191---16-november-2018)
+
+<!-- /MarkdownTOC -->
+
 ## Install
 
 ```bash
