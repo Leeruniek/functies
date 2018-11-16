@@ -1,5 +1,5 @@
-const test = require( "tape" )
-const isNot = require( "./is-not" )
+const test = require("tape")
+const isNot = require("./is-not")
 
 /**
  * Test if a variable holds nothing
@@ -21,30 +21,18 @@ const isNot = require( "./is-not" )
  * isNot("")        // => false
  * isNot(false)     // => false
  */
-test( "core::isNot", t => {
-  t.equal(
-    isNot( false ), false,
-    "\"false\" is something // => false" )
+test("core::isNot", t => {
+  t.equal(isNot(false), false, '"false" is something // => false')
 
-  t.equal(
-    isNot( 0 ), false,
-    "\"0\" is something // => false" )
+  t.equal(isNot(0), false, '"0" is something // => false')
 
-  t.equal(
-    isNot( "" ), false,
-    "\"\" is something // => false" )
+  t.equal(isNot(""), false, '"" is something // => false')
 
-  t.equal(
-    isNot( null ), true,
-    "null is not something // => true" )
+  t.equal(isNot(null), true, "null is not something // => true")
 
-  t.equal(
-    isNot( undefined ), true,
-    "undefined is not something // => true" )
+  t.equal(isNot(undefined), true, "undefined is not something // => true")
 
-  t.equal(
-    isNot( NaN ), true,
-    "NaN is not something // => true" )
+  t.equal(isNot(NaN), true, "NaN is not something // => true")
 
   t.end()
-} )
+})

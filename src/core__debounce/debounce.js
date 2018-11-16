@@ -7,15 +7,15 @@
  *
  * @return {Function}
  */
-module.exports = ( fn, { timeWindow = 50, bind = null } = {} ) => {
+module.exports = (fn, { timeWindow = 50, bind = null } = {}) => {
   let finalRunTimer
 
-  return ( ... args ) => {
+  return (...args) => {
     // reset timer at every function call
-    clearTimeout( finalRunTimer )
+    clearTimeout(finalRunTimer)
 
-    finalRunTimer = setTimeout( () => {
-      fn.apply( bind, args )
-    }, timeWindow )
+    finalRunTimer = setTimeout(() => {
+      fn.apply(bind, args)
+    }, timeWindow)
   }
 }

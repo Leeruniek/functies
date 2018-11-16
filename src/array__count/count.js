@@ -3,8 +3,8 @@ const byArray = source => source.length
 const byFunction = fn => source => {
   let count = 0
 
-  for ( let i = 0, length = source.length; i < length; i++ ) {
-    if ( fn.call( null, source[ i ] ) === true ) {
+  for (let i = 0, length = source.length; i < length; i++) {
+    if (fn.call(null, source[i]) === true) {
       count = count + 1
     }
   }
@@ -41,4 +41,4 @@ const byFunction = fn => source => {
  * count( element => element.score === 10 )( scores )
  * // => 2
  */
-module.exports = fn => ( Array.isArray( fn ) ? byArray( fn ) : byFunction( fn ) )
+module.exports = fn => (Array.isArray(fn) ? byArray(fn) : byFunction(fn))

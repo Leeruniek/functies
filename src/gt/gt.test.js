@@ -1,5 +1,5 @@
-const test = require( "tape" )
-const gt = require( "./gt" )
+const test = require("tape")
+const gt = require("./gt")
 
 /**
  * Grater compare
@@ -18,10 +18,10 @@ const gt = require( "./gt" )
  * gt(14)(10)
  * // => true
  */
-test( "core::gt", t => {
-  t.equals( gt( 4 )( 10 ), false, "4 is not grater than 10" )
-  t.equals( gt( 10 )( 10 ), false, "10 is not grater than 10" )
-  t.equals( gt( 14 )( 10 ), true, "14 is grater than 10" )
+test("core::gt", t => {
+  t.equals(gt(4)(10), false, "4 is not grater than 10")
+  t.equals(gt(10)(10), false, "10 is not grater than 10")
+  t.equals(gt(14)(10), true, "14 is grater than 10")
 
   t.end()
-} )
+})

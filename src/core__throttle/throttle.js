@@ -12,28 +12,28 @@ module.exports = (
   fn,
   { timeWindow = 50, bind = null, hasLastCall = false } = {}
 ) => {
-  let lastExecution = new Date( new Date().getTime() - timeWindow )
+  let lastExecution = new Date(new Date().getTime() - timeWindow)
   let finalRunTimer
 
-  return ( ...args ) => {
+  return (...args) => {
     const hasTimeWindowPassed =
       lastExecution.getTime() + timeWindow <= new Date().getTime()
 
-    if ( hasTimeWindowPassed ) {
+    if (hasTimeWindowPassed) {
       lastExecution = new Date()
 
-      fn.apply( bind, args )
+      fn.apply(bind, args)
     }
 
-    if ( hasLastCall ) {
+    if (hasLastCall) {
       // reset timer at every function call
-      clearTimeout( finalRunTimer )
+      clearTimeout(finalRunTimer)
 
-      finalRunTimer = setTimeout( () => {
+      finalRunTimer = setTimeout(() => {
         lastExecution = new Date()
 
-        fn.apply( bind, args )
-      }, timeWindow )
+        fn.apply(bind, args)
+      }, timeWindow)
     }
   }
 }

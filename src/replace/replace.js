@@ -1,4 +1,4 @@
-const type = require( "../core__type/type" )
+const type = require("../core__type/type")
 
 /**
  * Replace substring in string
@@ -8,8 +8,8 @@ const type = require( "../core__type/type" )
  *
  * @return {string}
  */
-const replaceString = ( oldString, newString ) => source =>
-  "".replace.call( source, oldString, newString )
+const replaceString = (oldString, newString) => source =>
+  "".replace.call(source, oldString, newString)
 
 /**
  * Replace element in array (shallow equal)
@@ -19,14 +19,14 @@ const replaceString = ( oldString, newString ) => source =>
  *
  * @return {Array}
  */
-const replaceArray = ( oldElm, newElm ) => source => {
+const replaceArray = (oldElm, newElm) => source => {
   const result = []
 
-  for ( let i = 0, length = source.length - 1; i <= length; i++ ) {
-    if ( oldElm === source[ i ] ) {
-      result.push( newElm )
+  for (let i = 0, length = source.length - 1; i <= length; i++) {
+    if (oldElm === source[i]) {
+      result.push(newElm)
     } else {
-      result.push( source[ i ] )
+      result.push(source[i])
     }
   }
 
@@ -47,12 +47,12 @@ const replaceArray = ( oldElm, newElm ) => source => {
  * @signature (oldElm: string|mixed, newElm: string|mixed) => (source: Array): Array
  *
  */
-module.exports = ( oldElm, newElm ) => source => {
-  const sourceType = type( source )
+module.exports = (oldElm, newElm) => source => {
+  const sourceType = type(source)
   const byType = {
     String: replaceString,
-    Array : replaceArray,
+    Array: replaceArray,
   }
 
-  return byType[ sourceType ]( oldElm, newElm )( source )
+  return byType[sourceType](oldElm, newElm)(source)
 }

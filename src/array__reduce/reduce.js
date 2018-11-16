@@ -4,14 +4,19 @@
  *
  * @param  {Function}  fn          Reduce function
  * @param  {Object}    defaultAcc  The default acc
+ * @param  {Array}     source      Source input
  *
- * @return {Function}  { description_of_the_return_value }
+ * @return {mixed}
+ *
+ * @tag Array
+ * @signature (fn: Function, defaultAcc: mixed) => (source: Array): mixed
  */
-module.exports = ( fn, defaultAcc = {} ) => input => {
+module.exports = (fn, defaultAcc) => source => {
   let acc = defaultAcc
+  const sourceArray = Array.isArray(source) ? source : [source]
 
-  for ( let i = 0, length = input.length; i < length; i++ ) {
-    acc = fn( acc, input[ i ], i, input )
+  for (let i = 0, length = sourceArray.length; i < length; i++) {
+    acc = fn(acc, sourceArray[i], i, sourceArray)
   }
 
   return acc

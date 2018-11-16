@@ -1,5 +1,5 @@
-const test = require( "tape" )
-const join = require( "./join" )
+const test = require("tape")
+const join = require("./join")
 
 /**
  * Join all elements of an array into a string
@@ -16,22 +16,14 @@ const join = require( "./join" )
  * join( "," )( [ "lorem", "ipsum" ] )
  * // => "lorem,ipsum"
  */
-test( "array::join( separator: string )( source: Array ): string", t => {
-  const source = [ "lorem", "ipsum" ]
+test("array::join( separator: string )( source: Array ): string", t => {
+  const source = ["lorem", "ipsum"]
 
-  t.equals(
-    join( "," )( source ), "lorem,ipsum",
-    "Join array with 2 string into 1" )
+  t.equals(join(",")(source), "lorem,ipsum", "Join array with 2 string into 1")
 
-  t.equals(
-    join( "," )( [] ),
-    "",
-    "Joining empty array // => empty string" )
+  t.equals(join(",")([]), "", "Joining empty array // => empty string")
 
-  t.equals(
-    join( "," )( null ),
-    "",
-    "Joining non array // => empty string" )
+  t.equals(join(",")(null), "", "Joining non array // => empty string")
 
   t.end()
-} )
+})

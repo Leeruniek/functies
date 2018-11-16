@@ -16,12 +16,11 @@
  * // => false
  */
 module.exports = fn => source => {
-  for ( let i = 0, length = source.length - 1; i <= length; i++ ) {
-    if ( fn.call( null, source[ i ] ) !== true ) {
+  for (let i = 0, length = source.length - 1; i <= length; i++) {
+    if (fn.call(null, source[i]) !== true) {
       return false
     }
   }
 
   return true
 }
-

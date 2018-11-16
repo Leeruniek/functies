@@ -1,21 +1,16 @@
-const test = require( "tape" )
-const all = require( "./all" )
+const test = require("tape")
+const all = require("./all")
 
-const isNumber = source =>
-  Number.isFinite( source )
+const isNumber = source => Number.isFinite(source)
 
-test( "core::all", t => {
-  t.equal(
-    all( isNumber )( [ 1, 2, 3 ] ),
-    true,
-    "Check all elements are numbers"
-  )
+test("core::all", t => {
+  t.equal(all(isNumber)([1, 2, 3]), true, "Check all elements are numbers")
 
   t.equal(
-    all( isNumber )( [ null, "2", 3 ] ),
+    all(isNumber)([null, "2", 3]),
     false,
     "Check all elements are numbers"
   )
 
   t.end()
-} )
+})

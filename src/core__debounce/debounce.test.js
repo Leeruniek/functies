@@ -1,5 +1,5 @@
-const test = require( "tape" )
-const debounce = require( "./debounce" )
+const test = require("tape")
+const debounce = require("./debounce")
 
 /**
  * Call a function only if it hasn't been called in the last `timeWindow` ms.
@@ -11,43 +11,44 @@ const debounce = require( "./debounce" )
  *                                  `timeWindow` or return a timer that will
  *                                  run the `fn` in `timeWindow` ms
  */
-test( "core::debounce", t => {
+test("core::debounce", t => {
   /**
    * Debounce with defaults
    */
   let defaultCounter = 0
-  const defaultSet = debounce( source => {
+  const defaultSet = debounce(source => {
     defaultCounter = source
-  } )
+  })
 
-  for ( let i = 0; i < 100; i++ ) {
-    defaultSet( i )
+  for (let i = 0; i < 100; i++) {
+    defaultSet(i)
   }
 
-  setTimeout( () => {
+  setTimeout(() => {
     t.equal(
       defaultCounter,
       99,
       "Calling debounce function 100 times should run it once, 50ms after last call"
     )
-  }, 100 )
+  }, 100)
 
   /**
    * Debounce with custom
    */
 
   let customCounter = 0
-  const customSet = debounce( source => {
-    customCounter = source
-  },
-  { timeWindow: 100, bind: null }
+  const customSet = debounce(
+    source => {
+      customCounter = source
+    },
+    { timeWindow: 100, bind: null }
   )
 
-  for ( let i = 0; i < 100; i++ ) {
-    customSet( i )
+  for (let i = 0; i < 100; i++) {
+    customSet(i)
   }
 
-  setTimeout( () => {
+  setTimeout(() => {
     t.equal(
       customCounter,
       99,
@@ -55,5 +56,5 @@ test( "core::debounce", t => {
     )
 
     t.end()
-  }, 150 )
-} )
+  }, 150)
+})

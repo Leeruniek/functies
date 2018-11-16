@@ -18,4 +18,4 @@
  * is(NaN)       // => false
  */
 module.exports = source =>
-  source !== null && source !== undefined && !Number.isNaN( source )
+  source !== null && source !== undefined && !Number.isNaN(source)

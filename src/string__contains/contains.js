@@ -14,9 +14,9 @@
  * // => true
  */
 module.exports = search => source => {
-  if ( search.length > source.length ) {
+  if (search.length > source.length) {
     return false
   }
 
-  return source.indexOf( search ) !== -1
+  return source.indexOf(search) !== -1
 }

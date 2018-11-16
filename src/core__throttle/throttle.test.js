@@ -1,5 +1,5 @@
-const test = require( "tape" )
-const throttle = require( "./throttle" )
+const test = require("tape")
+const throttle = require("./throttle")
 
 /**
  * Call a function only if it hasn't been called in the last `timeWindow` ms.
@@ -11,26 +11,26 @@ const throttle = require( "./throttle" )
  *                                  `timeWindow` or return a timer that will
  *                                  run the `fn` in `timeWindow` ms
  */
-test( "core::throttle", t => {
+test("core::throttle", t => {
   /**
    * Throttle with defaults
    */
   let defaultCounter = 0
-  const defaultInc = throttle( () => {
+  const defaultInc = throttle(() => {
     defaultCounter++
-  } )
+  })
 
-  for ( let i = 0; i < 100; i++ ) {
+  for (let i = 0; i < 100; i++) {
     defaultInc()
   }
 
-  setTimeout( () => {
+  setTimeout(() => {
     t.equal(
       defaultCounter,
       1,
       "Calling throttled function 100 times should run it once"
     )
-  }, 100 )
+  }, 100)
 
   /**
    * Throttle with custom
@@ -44,11 +44,11 @@ test( "core::throttle", t => {
     { timeWindow: 50, bind: null, hasLastCall: true }
   )
 
-  for ( let i = 0; i < 100; i++ ) {
+  for (let i = 0; i < 100; i++) {
     customInc()
   }
 
-  setTimeout( () => {
+  setTimeout(() => {
     t.equal(
       customCounter,
       2,
@@ -56,5 +56,5 @@ test( "core::throttle", t => {
     )
 
     t.end()
-  }, 100 )
-} )
+  }, 100)
+})
