@@ -1,12 +1,13 @@
 {
-  "root"    : true,
-  "extends" : [
-    "@leeruniek/eslint-config/rules/backend",
+  "parser": "babel-eslint",
+  "root": true,
+  "extends": [
+    "@leeruniek/eslint-config/targets/node"
   ],
   "settings": {
     "import/resolver": "node",
   },
   "rules": {
-    "indent": [ "error", 2 ]
+    "prettier/prettier": "error",
   },
 }

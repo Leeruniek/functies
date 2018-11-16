@@ -2,27 +2,56 @@
 
 > Functional library for Javascript
 
-## Install and use
+## Install
 
 ```bash
-npm i @leeruniek/functies
+npm i --save-exact @leeruniek/functies
 ```
 
+## Use
+
 ```js
-const { find, map, reduce } = require( "@leeruniek/functies" )
-// or
-import { find, map, reduce } from "@leeruniek/functies"
+import { pipe, trim, split, dropLast, push, join } from "@leeruniek/functies"
+
+const removeTrailingSlash = source =>
+  source[source.length - 1] === sep ? source.slice(0, -1) : source
+
+const renameFile = newName => pipe(
+  removeTrailingSlash,
+  split(sep),
+  dropLast,
+  push(trim(sep)(newName)),
+  join(sep)
+)
 ```
 
 ## Develop
 
 ```bash
-git clone git@github.com:Leeruniek/functies.git && cd functies && npm i 
+git clone git@github.com:leeruniek/functies.git && \
+  cd m && \
+  npm run setup
+
+# run tests (any `*.test.js`) once
+npm test
+
+# watch `src` folder for changes and run test automatically
+npm run tdd
 ```
 
-- `npm run test` - run all files in `src` that match the `*.test.js` pattern
-- `npm run tdd` - watch for changes in `src` and re-run the `test` script
+## Changelog
 
-More on [`tape`](https://github.com/substack/tape) and tests:
-- [5 Questions Every Unit Test Must Answer](https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d)
-- [Why I use Tape Instead of Mocha & So Should You](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
+History of all changes in [CHANGELOG.md](CHANGELOG.md)
+
+### 0.19.0 - 16 November 2018
+
+#### Add
+
+- Add [`elapsedTime`](/src/elapsed-time/elapsed-time) - Calculate elapsed time between to dates. In days, hours, minutes and seconds
+- Add test for [`protoChain`](/src/core__proto-chain/proto-chain.test.js), [`clone`](/src/core__clone/clone.test.js)
+
+#### Change
+
+- Update readme
+- Change [`map`](/src/map/map.test.js) to allow non-array input
+- Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
