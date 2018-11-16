@@ -1,16 +1,21 @@
 {
-    "presets": [
-        [
-            "env", {
-                "useBuiltIns": "usage",
-                "debug": false,
-                "targets": {
-                   "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-                }
-            }
-        ],
+  "presets": [
+    [ "@babel/preset-env", {
+       "targets": {
+         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"],
+         "node": "8"
+       },
+     } ]
+  ],
 
-        // js features with non-final specs
-        "stage-1"
-    ],
+  "plugins": [
+    // let result = "hello"
+    //   |> doubleSay
+    //   |> capitalize
+    //   |> exclaim;
+    // result //=> "Hello, hello!"
+    [ "@babel/plugin-proposal-pipeline-operator", {
+      "proposal": "minimal"
+    } ]
+  ]
 }
