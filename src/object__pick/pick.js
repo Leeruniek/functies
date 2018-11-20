@@ -1,3 +1,5 @@
+const type = require("../core__type/type")
+
 /**
  * Returns a partial copy of an object containing only the keys specified.
  * If the key does not exist, the property is ignored.
@@ -16,6 +18,14 @@
  */
 module.exports = keys => source => {
   const result = {}
+
+  if (type(source) !== "Object") {
+    throw new TypeError(
+      `Expected input to be "Object". Received "${source}", type "${type(
+        source
+      )}".`
+    )
+  }
 
   for (let i = 0, length = keys.length; i < length; i++) {
     const key = keys[i]

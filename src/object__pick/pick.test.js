@@ -37,5 +37,13 @@ test("object::pick( keys: string[] ) => ( source: Object ): Object", t => {
 
   t.deepEqual(pick(["not-exist"])(source), {}, "All non-existing keys")
 
+  t.throws(
+    () => {
+      pick(["lorem", "ipsum"])(null)
+    },
+    /Expected input to be "Object"\. Received "null", type "Null"/,
+    "Throw error if input not object"
+  )
+
   t.end()
 })
