@@ -15,7 +15,7 @@ module.exports = {
   filterBy: require("./array__filter-by/filter-by"),
   find: require("./array__find/find"),
   findBy: require("./array__find-by/find-by"),
-  findFiles: require("./find-files/find-files"),
+  // findFiles: require("./find-files/find-files"),
   flatten: require("./array__flatten/flatten"),
   forEach: require("./array__for-each/for-each"),
   get: require("./object__get/get"),
