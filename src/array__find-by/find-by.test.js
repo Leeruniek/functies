@@ -31,5 +31,11 @@ test("array::findBy( filter: Object )( input: Array ): mixed", t => {
     "find with id:3 should return undefined (not found)"
   )
 
+  t.deepEqual(
+    findBy({ id: 3 }, {})([]),
+    {},
+    'Find with custom "notFound" param'
+  )
+
   t.end()
 })
