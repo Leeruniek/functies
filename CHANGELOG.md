@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.19.3] - 20 November 2018
+
+### Change
+
+- Remove `findFiles` from main index. Loading the `path` module crashes frontend builds
+
 ## [0.19.2] - 20 November 2018
 
 ### Change
@@ -36,8 +42,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.19.2...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.19.3...HEAD
 
+[0.19.3]: https://github.com/leeruniek/functies/compare/v0.19.2...v0.19.3
 [0.19.2]: https://github.com/leeruniek/functies/compare/v0.19.1...v0.19.2
 [0.19.1]: https://github.com/leeruniek/functies/compare/v0.19.0...v0.19.1
 [0.19.0]: https://github.com/leeruniek/functies/compare/v0.19.0

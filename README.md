@@ -10,7 +10,7 @@
 - [Use](#use)
 - [Develop](#develop)
 - [Changelog](#changelog)
-    - [0.19.2 - 20 November 2018](#0192---20-november-2018)
+    - [0.19.3 - 20 November 2018](#0193---20-november-2018)
 
 <!-- /MarkdownTOC -->
 
@@ -55,9 +55,8 @@ npm run tdd
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.19.2 - 20 November 2018
+### 0.19.3 - 20 November 2018
 
 #### Change
 
-- Change [`findBy`](/src/array__find-by/find-by) to accept a return value if nothing is found
-- Change [`pick`](/src/object__pick/pick.js) to throw error if input not object
+- Remove findFiles from main index. Loading the path module crashes frontend builds
