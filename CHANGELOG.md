@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.19.2] - 20 November 2018
+
+### Change
+
+- Change [`findBy`](/src/array__find-by/find-by) to accept a return value if nothing is found
+- Change [`pick`](/src/object__pick/pick.js) to throw error if input not object
+
 ## [0.19.1] - 16 November 2018
 
 ### Add
@@ -29,7 +36,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/asd14/m/compare/v0.19.0...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.19.2...HEAD
 
-[0.19.1]: https://github.com/asd14/m/compare/v0.19.0...v0.19.1
-[0.19.0]: https://github.com/asd14/m/compare/v0.19.0
+[0.19.2]: https://github.com/leeruniek/functies/compare/v0.19.1...v0.19.2
+[0.19.1]: https://github.com/leeruniek/functies/compare/v0.19.0...v0.19.1
+[0.19.0]: https://github.com/leeruniek/functies/compare/v0.19.0

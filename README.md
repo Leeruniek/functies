@@ -10,7 +10,7 @@
 - [Use](#use)
 - [Develop](#develop)
 - [Changelog](#changelog)
-    - [0.19.1 - 16 November 2018](#0191---16-november-2018)
+    - [0.19.2 - 20 November 2018](#0192---20-november-2018)
 
 <!-- /MarkdownTOC -->
 
@@ -55,9 +55,9 @@ npm run tdd
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.19.1 - 16 November 2018
+### 0.19.2 - 20 November 2018
 
-#### Add
+#### Change
 
-- Add [`findFiles`](/src/find-files/find-files) - Recursive dir walk with regular expression matching on file name
-- Add [`endsWith`](/src/ends-with/ends-with) - Test if string ends with substring
+- Change [`findBy`](/src/array__find-by/find-by) to accept a return value if nothing is found
+- Change [`pick`](/src/object__pick/pick.js) to throw error if input not object
