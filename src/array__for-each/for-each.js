@@ -1,13 +1,18 @@
 /**
- * Iterate over an input array, calling `fn` for each element
+ * Call `fn` over each element of an array
  *
- * @param  {Function}   fn     Function
- * @param  {Array}      array  Input
+ * @param  {Function}   fn      Function
+ * @param  {Array}      source  Source array
  *
- * @return {undefined}  { description_of_the_return_value }
+ * @return {undefined}
+ *
+ * @tag Array
+ * @signature (fn: Function) => (source: Array): undefined
  */
-module.exports = fn => array => {
-  for (let i = 0, length = array.length; i < length; i++) {
-    fn.call(null, array[i], i, array)
+module.exports = fn => source => {
+  for (let i = 0, length = source.length; i < length; i++) {
+    fn.call(null, source[i], i, source)
   }
+
+  return source
 }
