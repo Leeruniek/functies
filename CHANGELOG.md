@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.19.4] - 27 November 2018
+
+### Change
+
+- Update [`forEach`](/src/array__for-each/for-each) to return the original array
+
 ## [0.19.3] - 20 November 2018
 
 ### Change
@@ -42,8 +48,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.19.3...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.19.4...HEAD
 
+[0.19.4]: https://github.com/leeruniek/functies/compare/v0.19.3...v0.19.4
 [0.19.3]: https://github.com/leeruniek/functies/compare/v0.19.2...v0.19.3
 [0.19.2]: https://github.com/leeruniek/functies/compare/v0.19.1...v0.19.2
 [0.19.1]: https://github.com/leeruniek/functies/compare/v0.19.0...v0.19.1

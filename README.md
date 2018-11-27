@@ -10,7 +10,7 @@
 - [Use](#use)
 - [Develop](#develop)
 - [Changelog](#changelog)
-    - [0.19.3 - 20 November 2018](#0193---20-november-2018)
+    - [0.19.4 - 27 November 2018](#0194---27-november-2018)
 
 <!-- /MarkdownTOC -->
 
@@ -55,8 +55,8 @@ npm run tdd
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.19.3 - 20 November 2018
+### 0.19.4 - 27 November 2018
 
 #### Change
 
-- Remove findFiles from main index. Loading the path module crashes frontend builds
+- Update [`forEach`](/src/array__for-each/for-each) to return the original array
