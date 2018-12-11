@@ -1,6 +1,6 @@
-const isMatch = require("../core__is-match/is-match")
-const find = require("../array__find/find")
-const is = require("../core__is/is")
+const isMatch = require("../is-match/is-match")
+const find = require("../find/find")
+const is = require("../is/is")
 
 /**
  * Find the first element that matches the filter criteria

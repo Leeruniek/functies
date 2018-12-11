@@ -1,4 +1,4 @@
-const filter = require("../array__filter/filter")
+const filter = require("../filter/filter")
 
 /**
  * { lambda_description }

@@ -1,5 +1,5 @@
-const type = require("../core__type/type")
-const reduce = require("../array__reduce/reduce")
+const type = require("../type/type")
+const reduce = require("../reduce/reduce")
 
 /**
  * Recursively concat all arrays intro a single array

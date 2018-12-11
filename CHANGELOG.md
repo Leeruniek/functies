@@ -9,11 +9,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.20.0] - 11 December 2018
+
+### Add
+
+- Add babel to `test` script
+- Add `index.test.js` to `test` script
+
+### Change
+
+- Cleanup & rename folders 
+
 ## [0.19.4] - 27 November 2018
 
 ### Change
 
-- Update [`forEach`](/src/array__for-each/for-each) to return the original array
+- Update [`forEach`](/src/for-each/for-each) to return the original array
 
 ## [0.19.3] - 20 November 2018
 
@@ -25,7 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Change
 
-- Change [`findBy`](/src/array__find-by/find-by) to accept a return value if nothing is found
+- Change [`findBy`](/src/find-by/find-by) to accept a return value if nothing is found
 - Change [`pick`](/src/object__pick/pick.js) to throw error if input not object
 
 ## [0.19.1] - 16 November 2018
@@ -48,8 +59,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.19.4...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.20.0...HEAD
 
+[0.20.0]: https://github.com/leeruniek/functies/compare/v0.19.4...v0.20.0
 [0.19.4]: https://github.com/leeruniek/functies/compare/v0.19.3...v0.19.4
 [0.19.3]: https://github.com/leeruniek/functies/compare/v0.19.2...v0.19.3
 [0.19.2]: https://github.com/leeruniek/functies/compare/v0.19.1...v0.19.2

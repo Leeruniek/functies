@@ -1,4 +1,4 @@
-const type = require("../core__type/type")
+const type = require("../type/type")
 
 /**
  * Returns a partial copy of an object containing only the keys specified.

@@ -10,7 +10,7 @@
 - [Use](#use)
 - [Develop](#develop)
 - [Changelog](#changelog)
-    - [0.19.4 - 27 November 2018](#0194---27-november-2018)
+    - [0.20.0 - 11 December 2018](#0200---11-december-2018)
 
 <!-- /MarkdownTOC -->
 
@@ -55,8 +55,13 @@ npm run tdd
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.19.4 - 27 November 2018
+### 0.20.0 - 11 December 2018
+
+#### Add
+
+- Add babel to `test` script
+- Add `index.test.js` to `test` script
 
 #### Change
 
-- Update [`forEach`](/src/array__for-each/for-each) to return the original array
+- Cleanup & rename folders 

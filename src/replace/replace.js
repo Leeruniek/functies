@@ -1,4 +1,4 @@
-const type = require("../core__type/type")
+const type = require("../type/type")
 
 /**
  * Replace substring in string

@@ -1,5 +1,5 @@
-const filter = require("../array__filter/filter")
-const isMatch = require("../core__is-match/is-match")
+const filter = require("../filter/filter")
+const isMatch = require("../is-match/is-match")
 
 /**
  * Filter an array of objects
