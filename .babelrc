@@ -14,8 +14,8 @@
     //   |> capitalize
     //   |> exclaim;
     // result //=> "Hello, hello!"
-    [ "@babel/plugin-proposal-pipeline-operator", {
-      "proposal": "minimal"
-    } ]
+    // [ "@babel/plugin-proposal-pipeline-operator", {
+    //   "proposal": "minimal"
+    // } ]
   ]
 }
