@@ -55,13 +55,8 @@ npm run tdd
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.20.0 - 11 December 2018
+### 0.21.0 - 14 December 2018
 
 #### Add
 
-- Add babel to `test` script
-- Add `index.test.js` to `test` script
-
-#### Change
-
-- Cleanup & rename folders 
+- Add `groupBy` and `partition` functions

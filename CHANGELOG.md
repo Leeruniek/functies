@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.21.0] - 14 December 2018
+
+### Add
+
+- Add `groupBy` and `partition` functions
+
 ## [0.20.0] - 11 December 2018
 
 ### Add
@@ -59,8 +65,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.20.0...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.21.0...HEAD
 
+[0.21.0]: https://github.com/leeruniek/functies/compare/v0.20.0...v0.21.0
 [0.20.0]: https://github.com/leeruniek/functies/compare/v0.19.4...v0.20.0
 [0.19.4]: https://github.com/leeruniek/functies/compare/v0.19.3...v0.19.4
 [0.19.3]: https://github.com/leeruniek/functies/compare/v0.19.2...v0.19.3
