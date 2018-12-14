@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.21.1] - 14 December 2018
+
+### Change
+
+- Export `groupBy` and `partition` functions
+
 ## [0.21.0] - 14 December 2018
 
 ### Add
@@ -67,6 +73,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]: https://github.com/leeruniek/functies/compare/v0.21.0...HEAD
 
+[0.21.1]: https://github.com/leeruniek/functies/compare/v0.21.0...v0.21.1
 [0.21.0]: https://github.com/leeruniek/functies/compare/v0.20.0...v0.21.0
 [0.20.0]: https://github.com/leeruniek/functies/compare/v0.19.4...v0.20.0
 [0.19.4]: https://github.com/leeruniek/functies/compare/v0.19.3...v0.19.4

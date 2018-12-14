@@ -55,8 +55,8 @@ npm run tdd
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.21.0 - 14 December 2018
+### 0.21.1 - 14 December 2018
 
-#### Add
+#### Change
 
-- Add `groupBy` and `partition` functions
+- Export `groupBy` and `partition` functions
