@@ -7,9 +7,9 @@ const groupByFn = f => input => {
 
   const [head, ...tail] = input
 
-  const [sameGroup, otherGroup] = partition(f(head))(tail)
+  const [sameGroup, otherGroups] = partition(f(head))(tail)
 
-  return [[head, ...sameGroup], ...groupByFn(f)(otherGroup)]
+  return [[head, ...sameGroup], ...groupByFn(f)(otherGroups)]
 }
 
 const groupByKey = key => {
