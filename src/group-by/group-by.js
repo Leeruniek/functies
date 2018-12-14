@@ -12,14 +12,14 @@ const groupByFn = f => input => {
   return [[head, ...sameGroup], ...groupByFn(f)(otherGroups)]
 }
 
-const groupByKey = key => {
-  return groupByFn(x => y => x[key] === y[key])
-}
+const groupByKey = key => groupByFn(x => y => x[key] === y[key])
 
 /**
  * groupBy groups values from a list into a list of lists.
  *
- * @param   {Function|Object} grouper   A *curried* function which takes two
+ * @signature (grouper: (a: T): (b: T): boolean | string): (input: Array<T>): Array<Array<T>>
+ *
+ * @param   {Function|string} grouper   A *curried* function which takes two
  *                                      values, returning a boolean (true if
  *                                      they should be grouped, false
  *                                      otherwise.) The default behavior.
@@ -28,9 +28,9 @@ const groupByKey = key => {
  *                                      If the input is a string, groups
  *                                      a list of objects by the value of the
  *                                      corresponding key. See `groupByKey`.
- * @param   {[]}              implicit  List of values to be grouped
+ * @param   {Array}           implicit  List of values to be grouped
  *
- * @return {[[]]}                       List of lists of values in the same
+ * @return  {Array<Array>}              List of lists of values in the same
  *                                      group
  *
  * @example

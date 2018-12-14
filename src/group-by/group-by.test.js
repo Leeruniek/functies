@@ -3,7 +3,6 @@ const groupBy = require("./group-by")
 
 test("array::groupBy", t => {
   const sameParity = x => y => x % 2 === y % 2
-  const key = "test"
 
   t.deepEqual(
     groupBy(sameParity)([1, 2, 3, 4, 5]),
@@ -12,7 +11,7 @@ test("array::groupBy", t => {
   )
 
   t.deepEqual(
-    groupBy(key)([
+    groupBy("test")([
       {
         test: "a",
       },
