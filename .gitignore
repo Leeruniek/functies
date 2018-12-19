@@ -1,4 +1,6 @@
 dist
 node_modules
+.nyc_output
 *.sublime-project
 *.sublime-workspace
+.coveralls.yml

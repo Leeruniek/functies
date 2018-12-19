@@ -2,6 +2,8 @@
 
 > Functional library for Javascript
 
+[![Coverage Status](https://coveralls.io/repos/github/Leeruniek/functies/badge.svg?branch=master)](https://coveralls.io/github/Leeruniek/functies?branch=master)
+
 ---
 
 <!-- MarkdownTOC levels="2,3" autolink="true" autoanchor="false" -->
