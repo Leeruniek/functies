@@ -1,6 +1,8 @@
 /**
  * Create an array of numbers
  *
+ * @name   sequence
+ *
  * @tag Number
  * @signature (step: number) => (start: number, end: number): number[]
  *

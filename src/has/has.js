@@ -1,6 +1,8 @@
 /**
  * Determines if it has by function
  *
+ * @name   has
+ *
  * @param  {Function}  fn      The function
  * @param  {Array}     source  The source
  *

@@ -1,6 +1,8 @@
 /**
  * Get value from obj property
  *
+ * @name   get
+ *
  * @param  {string}  key     Property name
  * @param  {object}  source  Source object
  *

@@ -5,6 +5,8 @@ const is = require("../is/is")
 /**
  * Find the first element that matches the filter criteria
  *
+ * @name   findBy
+ *
  * @param  {Object}  filter    Object containing one or more fields
  * @param  {Any}     notFound  Value to return in case not found
  * @param  {Object}  input     Object containing one or more fields

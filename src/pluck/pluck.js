@@ -2,6 +2,8 @@
  * Returns a new list by extracting the same named property off all objects in
  * the source list
  *
+ * @name   pluck
+ *
  * @param  {string}    field    Field name to extract values from
  * @param  {Object[]}  source   Array of objects
  *

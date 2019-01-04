@@ -1,6 +1,7 @@
 /**
  * Test if all elements of array satisfy function
  *
+ * @name  all
  * @param {Function}  fn      Function that all elements need to satisfy
  * @param {Array}     source  Source array
  *

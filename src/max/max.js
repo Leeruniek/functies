@@ -35,6 +35,8 @@ const sortFn = fn => source => {
 /**
  * Find the maximum value in a source array
  *
+ * @name   max
+ *
  * @param  {Array|Function} arg1    Custom transform function or source array
  * @param  {number[]}       source  Array of numbers
  *

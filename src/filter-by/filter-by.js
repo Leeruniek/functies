@@ -4,6 +4,8 @@ const isMatch = require("../is-match/is-match")
 /**
  * Filter an array of objects
  *
+ * @name    filterBy
+ *
  * @tag Array
  * @signature (matchObject: Object) => (source: Object[]): Object[]
  *

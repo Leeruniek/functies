@@ -3,6 +3,8 @@ const isMatch = require("../is-match/is-match")
 /**
  * Count the number of objects that match a criteria
  *
+ * @name    countBy
+ *
  * @tag Array
  * @signature (matchObject: Object)(source: Object[]): number
  *

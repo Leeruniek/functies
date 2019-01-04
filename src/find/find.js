@@ -1,6 +1,8 @@
 /**
  * Find the first element that satisfies the matchFn
  *
+ * @name   find
+ *
  * @param  {Function}    matchFn Function applied to each element
  * @param  {Array}       source  Source array
  *

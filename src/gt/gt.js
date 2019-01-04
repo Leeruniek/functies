@@ -1,6 +1,8 @@
 /**
  * Grater compare
  *
+ * @name   gt
+ *
  * @param  {number}  first   First number
  * @param  {number}  second  Second number
  *

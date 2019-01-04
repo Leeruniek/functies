@@ -1,6 +1,8 @@
 /**
  * Check if property exists on a given object
  *
+ * @name   hasKey
+ *
  * @param  {string}  key     Property name
  * @param  {object}  source  Source object
  *

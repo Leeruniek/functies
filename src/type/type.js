@@ -5,6 +5,8 @@
  * Does not attempt to distinguish user Object types any further, reporting
  * them all as "Object".
  *
+ * @name  type
+ *
  * @param {mixed}  input  Something to check type on
  *
  * @return {string}

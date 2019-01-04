@@ -6,6 +6,7 @@ const oneSecond = 1000
 /**
  * Calculate elapsed time between to dates. In days, hours, minutes and seconds
  *
+ * @name   elapsedTime
  * @param  {Data}  startDate  Start date
  * @param  {Data}  endDate    End date
  *

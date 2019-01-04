@@ -17,6 +17,7 @@ const groupByKey = key => groupByFn(x => y => x[key] === y[key])
 /**
  * groupBy groups values from a list into a list of lists.
  *
+ * @name      groupBy
  * @signature (grouper: (a: T): (b: T): boolean | string): (input: Array<T>): Array<Array<T>>
  *
  * @param   {Function|string} grouper   A *curried* function which takes two

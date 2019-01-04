@@ -3,6 +3,8 @@ const type = require("../type/type")
 /**
  * Determines something is empty
  *
+ * @name    isEmpty
+ *
  * @param   {Any}      input  Something to check if empty
  *
  * @return  {boolean}  True if empty, False otherwise

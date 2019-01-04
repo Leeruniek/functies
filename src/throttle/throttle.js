@@ -1,6 +1,8 @@
 /**
  * Call a function only if it hasn't been called in the last `timeWindow` ms.
  *
+ * @name   throttle
+ *
  * @param  {function} fn            Function to be ran
  * @param  {integer}  timeWindow    Time between each `fn` call
  *

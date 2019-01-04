@@ -1,6 +1,8 @@
 /**
  * Generate random number between interval
  *
+ * @name   random
+ *
  * @param  {Object}   arg1      Props
  * @param  {number}   arg1.min  The minimum
  * @param  {number}   arg1.max  The maximum

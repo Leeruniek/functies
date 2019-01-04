@@ -6,6 +6,8 @@ const push = require("../push/push")
 /**
  * Add element if not exists, remove otherwise
  *
+ * @name   toggle
+ *
  * @param  {mixed}  element  Toggable value
  *
  * @return {Array}

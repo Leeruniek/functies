@@ -1,6 +1,8 @@
 /**
  * partition splits a list based on a predicate function.
  *
+ * @name    partition
+ *
  * @signature (p: (x: T): boolean): (Array<T>): Array<Array<T>>
  *
  * @param   {Function}  p       The predicate function, which returns a

@@ -1,6 +1,7 @@
 /**
  * Remove elements that dont match based on custom function
  *
+ * @name   filter
  * @param  {Function}  fn  The function
  *
  * @return {Array}

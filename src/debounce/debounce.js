@@ -1,6 +1,7 @@
 /**
  * Call a function only after it wasn't called for `timeWindow` ms.
  *
+ * @name   debounce
  * @param  {Function}  fn            Source function
  * @param  {number}    timeWindow    Time that needs to pass without calling
  *                                   so that the function is actually called
