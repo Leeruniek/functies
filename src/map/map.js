@@ -3,7 +3,7 @@
  * array
  *
  * @param  {Function}  fn    The function
- * @param  {[]}        list  Array
+ * @param  {Array}        list  Array
  *
  * @return {Array}
  */
