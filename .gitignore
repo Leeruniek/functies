@@ -5,3 +5,4 @@ out
 *.sublime-workspace
 .coveralls.yml
 .nyc_output
+.DS_Store

@@ -2,12 +2,14 @@
   "parser": "babel-eslint",
   "root": true,
   "extends": [
-    "@leeruniek/eslint-config/targets/node"
+    "@leeruniek/eslint-config/targets/node",
+    "@leeruniek/eslint-config/rules/flow"
   ],
   "settings": {
     "import/resolver": "node",
   },
   "rules": {
     "prettier/prettier": "error",
+    "flowtype/require-return-type": "off"
   },
 }
