@@ -5,6 +5,7 @@
 
 [libs]
 ./flow-typed
+./src/def.js
 
 [lints]
 

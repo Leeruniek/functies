@@ -1,6 +1,8 @@
 dist
 node_modules
 out
+docs
+flow-coverage
 *.sublime-project
 *.sublime-workspace
 .coveralls.yml

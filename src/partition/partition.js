@@ -3,45 +3,27 @@
 /**
  * partition splits a list based on a predicate function.
  *
- * (a -> Bool) -> a -> ([a], [a])
+ * @sig (fn: (T: boolean)) => (input: T[]): [T[], T[]]
  *
- * @name    partition
- *
- * @param   p       The predicate function, which returns a
- *                              truthy or falsy value for every value given
- *                              an input
- *
- * @param   input   List of values to test
- *
- * @return        2-tuple of arrays. The first array consists
- *                              of values for which the predicate returned
- *                              a truthy value, the second of values for
- *                              which it returned a falsy value.
+ * **`(fn: (T: boolean)) => (input: T[]): [T[], T[]]`**
  */
+module.exports = function partition<T>(
+  fn: (x: T) => boolean
+): (T[]) => [T[], T[]] {
+  return (input: T[]): [T[], T[]] => {
+    const result = input.reduce(
+      (acc, val) => {
+        if (fn(val)) {
+          acc.pass = [...acc.pass, val]
+        }
 
-declare type UnaryPredicateFn<T> = (x: T) => boolean
+        acc.fail = [...acc.fail, val]
 
-const partition = <T>(p: UnaryPredicateFn<T>): ((T[]) => [T[], T[]]) => (
-  input: T[]
-): [T[], T[]] => {
-  const result = input.reduce(
-    (acc, val) => {
-      if (p(val)) {
-        acc.pass = [...acc.pass, val]
-      }
+        return acc
+      },
+      { pass: [], fail: [] }
+    )
 
-      acc.fail = [...acc.fail, val]
-
-      return acc
-    },
-    { pass: [], fail: [] }
-  )
-
-  return [result.pass, result.fail]
+    return [result.pass, result.fail]
+  }
 }
-
-const arr: number[] = [1, 2, 3, 4, 5]
-
-partition<number>(x => x % 2 === 0)(arr)
-
-module.exports = partition
