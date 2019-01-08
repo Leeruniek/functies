@@ -18,14 +18,14 @@ type AccType<T> = {|
  * @param fn
  * A predicate function.
  *
- * @example
- * partition(x => x % 2 === 0)([1,2,3,4,5]) = [[2,4],[1,3,5]]
- *
- * @returns
+ * @return
  * A curried function taking a value of type `T`,
  * returning a two-tuple (list) of `T`s - the first element consists
  * of elements for which the predicate returned `true`, the second
  * of elements for which it returned `false`.
+ *
+ * @example
+ * partition(x => x % 2 === 0)([1,2,3,4,5]) = [[2,4],[1,3,5]]
  */
 export default function partition<V, T: $ReadOnlyArray<V>>(
   fn: (x: V) => boolean

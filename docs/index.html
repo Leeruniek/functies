@@ -266,19 +266,9 @@
               
                 
                 <li><a
-                  href='#group-by'
+                  href='#groupby'
                   class="">
-                  group-by
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#group-by'
-                  class="">
-                  group-by
+                  groupBy
                   
                 </a>
                 
@@ -819,7 +809,7 @@ all(is)([<span class="hljs-number">1</span>, <span class="hljs-string">"asd"</sp
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>coinToss</div>
   
   
   
@@ -1163,7 +1153,7 @@ countBy({
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>debounce</div>
   
   
   
@@ -1315,7 +1305,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>Array(alice: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Array&lt;/a&gt;, bob: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Array&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1394,7 +1384,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>Object(alice: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object&quot;&gt;Object&lt;/a&gt;, bob: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object&quot;&gt;Object&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1473,7 +1463,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>RegExp(alice: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp&quot;&gt;RegExp&lt;/a&gt;, bob: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp&quot;&gt;RegExp&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1552,7 +1542,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>Primitive(alice: mixed, bob: mixed): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1631,7 +1621,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>deepEqual</div>
   
   
   
@@ -2208,7 +2198,7 @@ filterBy( { <span class="hljs-string">"items"</span>: <span class="hljs-number">
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>find</div>
   
   
   
@@ -2293,7 +2283,7 @@ filterBy( { <span class="hljs-string">"items"</span>: <span class="hljs-number">
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>findBy</div>
   
   
   
@@ -2390,7 +2380,7 @@ findBy( { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> 
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>flatten</div>
   
   
   
@@ -2628,17 +2618,12 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
   </div>
   
 
-  <p>A grouper is either a function or a string</p>
+  <p>A grouper is either a binary predicate function or a string.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
   
-  
-    <p>
-      Type:
-      (function (x: T): function (y: T): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)
-    </p>
+    <div class='pre p1 fill-light mt0'>(function (x: T): function (y: T): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
   
   
 
@@ -2673,8 +2658,8 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='group-by'>
-      group-by
+    <h3 class='fl m0' id='groupby'>
+      groupBy
     </h3>
     
     
@@ -2685,7 +2670,7 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>&lt;T&gt;(grouper: GrouperType): (input: T[]) =&gt; T[][]</div>
   
   
   
@@ -2703,8 +2688,22 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>grouper</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    The function
+            <span class='code bold'>grouper</span> <code class='quiet'>(<a href="#groupertype">GrouperType</a>)</code>
+	    Can either be a curried function taking two values of the same type
+and returning a 
+<code>boolean</code>
+, or a 
+<code>string</code>
+. If the parameter is a 
+<code>function</code>
+,
+elements for which the function returns 
+<code>true</code>
+ will be in the same
+group. If the parameter is a 
+<code>string</code>
+, objects in the input list with
+the same value at that key will be placed in the same group.
 
           </div>
           
@@ -2718,7 +2717,15 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>function (source: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>></code>
+      <code>function (input: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>></code>:
+        A curried function taking a list of values of type 
+<code>T</code>
+,
+returning a list of lists of 
+<code>T</code>
+s - each sublist is a single group.
+
+      
     
   
 
@@ -2729,77 +2736,6 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
     
       
       <pre class='p1 overflow-auto round fill-light'>groupBy(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> y =&gt; x % <span class="hljs-number">2</span> === y % <span class="hljs-number">2</span>)([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]) = [[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>]]</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='group-by'>
-      group-by
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Group objects from a list into a list of lists, based on the value
-of the specified key.</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'></div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>grouper</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    The key
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>function (source: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
       <pre class='p1 overflow-auto round fill-light'>groupBy(<span class="hljs-string">'id'</span>)([{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }]) = ([{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }], [{ <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> }]</pre>
@@ -2832,7 +2768,7 @@ of the specified key.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>gt</div>
   
   
   
@@ -2920,7 +2856,7 @@ gt(<span class="hljs-number">14</span>)(<span class="hljs-number">10</span>)
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>has</div>
   
   
   
@@ -3089,7 +3025,7 @@ has( <span class="hljs-function"><span class="hljs-params">elm</span> =&gt;</spa
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>hasByValue</div>
   
   
   
@@ -3254,7 +3190,7 @@ has( <span class="hljs-string">"toString"</span> )( { <span class="hljs-attr">lo
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>hasWith</div>
   
   
   
@@ -3441,7 +3377,7 @@ hist( <span class="hljs-string">"score"</span> )( scores )
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>i</div>
   
   
   
@@ -3511,7 +3447,7 @@ hist( <span class="hljs-string">"score"</span> )( scores )
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>ifThen</div>
   
   
   
@@ -3600,7 +3536,7 @@ input
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>indexBy</div>
   
   
   
@@ -3775,7 +3711,7 @@ is(<span class="hljs-literal">NaN</span>)       <span class="hljs-comment">// =&
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>isEmpty</div>
   
   
   
@@ -4135,7 +4071,7 @@ isNot(<span class="hljs-literal">false</span>)     <span class="hljs-comment">//
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>lt</div>
   
   
   
@@ -4224,7 +4160,7 @@ array</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>map</div>
   
   
   
@@ -4729,7 +4665,7 @@ any arity, the remaining functions must be unary.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>pipe</div>
   
   
   
@@ -4989,7 +4925,7 @@ push( <span class="hljs-number">2</span>, <span class="hljs-number">4</span> )( 
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>random</div>
   
   
   
@@ -5182,7 +5118,7 @@ left to right) to reduce it to a single value.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>remove</div>
   
   
   
@@ -5261,7 +5197,7 @@ left to right) to reduce it to a single value.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>replaceString</div>
   
   
   
@@ -5340,7 +5276,7 @@ left to right) to reduce it to a single value.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>replaceArray</div>
   
   
   
@@ -5982,7 +5918,7 @@ make each split.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>throttle</div>
   
   
   
@@ -6316,7 +6252,7 @@ them all as "Object".</p>
 
 
   
-    <div class='pre p1 fill-light mt0'></div>
+    <div class='pre p1 fill-light mt0'>type</div>
   
   
   
