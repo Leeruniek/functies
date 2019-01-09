@@ -10,6 +10,7 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "flowtype/require-return-type": "off"
+    "flowtype/require-return-type": "off",
+    "valid-jsdoc": "off"
   },
 }
