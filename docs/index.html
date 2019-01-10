@@ -256,16 +256,6 @@
               
                 
                 <li><a
-                  href='#groupertype'
-                  class="">
-                  GrouperType
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#groupby'
                   class="">
                   groupBy
@@ -2610,54 +2600,6 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='groupertype'>
-      GrouperType
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>A grouper is either a binary predicate function or a string.</p>
-
-
-  
-  
-    <div class='pre p1 fill-light mt0'>(function (x: T): function (y: T): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='groupby'>
       groupBy
     </h3>
@@ -2670,7 +2612,7 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
 
 
   
-    <div class='pre p1 fill-light mt0'>&lt;T&gt;(grouper: GrouperType): (input: T[]) =&gt; T[][]</div>
+    <div class='pre p1 fill-light mt0'>&lt;A&gt;(grouper: ((x: A) =&gt; (y: A) =&gt; boolean) | string): (input: A[]) =&gt; A[][]</div>
   
   
   
@@ -2688,22 +2630,12 @@ get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">l
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>grouper</span> <code class='quiet'>(<a href="#groupertype">GrouperType</a>)</code>
-	    Can either be a curried function taking two values of the same type
-and returning a 
-<code>boolean</code>
-, or a 
-<code>string</code>
-. If the parameter is a 
-<code>function</code>
-,
-elements for which the function returns 
-<code>true</code>
- will be in the same
-group. If the parameter is a 
-<code>string</code>
-, objects in the input list with
-the same value at that key will be placed in the same group.
+            <span class='code bold'>grouper</span> <code class='quiet'>(any)</code>
+	    One of:
+<ul>
+<li>A curried function taking two <code>A</code>s and returning a boolean.</li>
+<li>A string, representing a key of objects in the list. In this case <code>A</code> is the type of the value at the given key.</li>
+</ul>
 
           </div>
           
@@ -2717,13 +2649,28 @@ the same value at that key will be placed in the same group.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>function (input: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>></code>:
-        A curried function taking a list of values of type 
-<code>T</code>
-,
-returning a list of lists of 
-<code>T</code>
-s - each sublist is a single group.
+      <code>any</code>:
+        A function taking a 
+<code>A[]</code>
+, and returning a 
+<code>A[][]</code>
+.
+Alternatively, a function taking a 
+<code>Object[]</code>
+ where the value at 
+<code>grouper</code>
+
+is an 
+<code>A</code>
+ (if 
+<code>grouper</code>
+ is a string), and returning a 
+<code>Object[][]</code>
+.
+<p>If <code>grouper</code> was passed as a string, each sublist of the result will contain
+objects where the value at key <code>grouper</code> is equal (<code>===</code>).</p>
+<p>Otherwise, each sublist of the result will contain <code>A</code>s which return
+<code>true</code> when passed pairwise to <code>grouper</code>.</p>
 
       
     
@@ -2735,10 +2682,9 @@ s - each sublist is a single group.
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>groupBy(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> y =&gt; x % <span class="hljs-number">2</span> === y % <span class="hljs-number">2</span>)([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]) = [[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>]]</pre>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>groupBy(<span class="hljs-string">'id'</span>)([{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }]) = ([{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }], [{ <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> }]</pre>
+      <pre class='p1 overflow-auto round fill-light'>groupBy(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> y =&gt; x % <span class="hljs-number">2</span> === y % <span class="hljs-number">2</span>)([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]) = [[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>]]
+
+groupBy(<span class="hljs-string">'id'</span>)([{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }]) = [[{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> }], [{ <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> }]]</pre>
     
   
 
@@ -4490,7 +4436,7 @@ overwriten by right most object.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>&lt;V, T: $ReadOnlyArray&lt;T&gt;&gt;(fn: (x: V) =&gt; boolean): T =&gt; [T, T]</div>
+    <div class='pre p1 fill-light mt0'>&lt;A&gt;(fn: (x: A) =&gt; boolean) =&gt; (input: A[]) =&gt; [A[], A[]]</div>
   
   
   
@@ -4508,7 +4454,7 @@ overwriten by right most object.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>fn</span> <code class='quiet'>(function (x: V): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
 	    A predicate function.
 
           </div>
@@ -4523,17 +4469,17 @@ overwriten by right most object.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>function (T): [T, T]</code>:
-        A curried function taking a value of type 
-<code>T</code>
-,
-returning a two-tuple (list) of 
-<code>T</code>
-s - the first element consists
-of elements for which the predicate returned 
+      <code>any</code>:
+        A function taking a 
+<code>A[]</code>
+ and returning a two-tuple of 
+<code>A[]</code>
+s.
+The first element of the tuple consists of elements for which
+the predicate returned 
 <code>true</code>
-, the second
-of elements for which it returned 
+, the second of elements for which
+it returned 
 <code>false</code>
 .
 
