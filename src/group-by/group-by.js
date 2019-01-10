@@ -9,7 +9,7 @@ import { partition } from "../partition/partition"
 
 const groupByFn: GroupByFnType = <A>(fn) => input => {
   if (input.length === 0) {
-    return [input]
+    return []
   }
 
   const [head, ...tail] = input

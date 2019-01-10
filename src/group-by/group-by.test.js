@@ -1,5 +1,5 @@
-const test = require("tape")
-const groupBy = require("./group-by")
+import test from "tape"
+import { groupBy } from "./group-by"
 
 test("array::groupBy", t => {
   const sameParity = x => y => x % 2 === y % 2

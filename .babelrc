@@ -7,12 +7,12 @@
            "browsers": ["> 1%", "last 2 versions", "not ie <= 8"],
            "node": "8"
          },
-      },
-      "flow"
-    ]
+      }
+    ],
+    "@babel/preset-flow"
   ],
-
   "plugins": [
+    ["@babel/plugin-syntax-flow"]
     // let result = "hello"
     //   |> doubleSay
     //   |> capitalize
