@@ -12,7 +12,7 @@
 - [Use](#use)
 - [Develop](#develop)
 - [Changelog](#changelog)
-    - [0.20.0 - 11 December 2018](#0200---11-december-2018)
+    - [0.22 - 10 January 2019](#022---10-january-2019)
 
 <!-- /MarkdownTOC -->
 
@@ -57,8 +57,9 @@ npm run tdd
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.21.1 - 14 December 2018
+### 0.22 - 10 January 2019
 
-#### Change
+#### Add 
 
-- Export `groupBy` and `partition` functions
+- Start using FlowType (`partition`, `groupBy`)
+- Generating documentation with `documentation.js` based on code comments

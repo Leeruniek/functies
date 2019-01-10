@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.22] - 10 January 2019
+
+### Add 
+
+- Start using FlowType (`partition`, `groupBy`)
+- Generating documentation with `documentation.js` based on code comments
+
 ## [0.21.1] - 14 December 2018
 
 ### Change
@@ -71,8 +78,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.21.0...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.22...HEAD
 
+[0.22]: https://github.com/leeruniek/functies/compare/v0.21.1...v0.22
 [0.21.1]: https://github.com/leeruniek/functies/compare/v0.21.0...v0.21.1
 [0.21.0]: https://github.com/leeruniek/functies/compare/v0.20.0...v0.21.0
 [0.20.0]: https://github.com/leeruniek/functies/compare/v0.19.4...v0.20.0
