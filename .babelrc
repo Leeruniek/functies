@@ -12,7 +12,6 @@
     "@babel/preset-flow"
   ],
   "plugins": [
-    ["@babel/plugin-syntax-flow"]
     // let result = "hello"
     //   |> doubleSay
     //   |> capitalize
