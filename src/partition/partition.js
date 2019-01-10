@@ -12,10 +12,10 @@ import type { PartitionType } from "./partition.js.flow"
  * A predicate function.
  *
  * @return
- * A curried function taking a value of type `A`,
- * returning a two-tuple of `A`s - the first element consists
- * of elements for which the predicate returned `true`, the second
- * of elements for which it returned `false`.
+ * A function taking a `A[]` and returning a two-tuple of `A[]`s.
+ * The first element of the tuple consists of elements for which
+ * the predicate returned `true`, the second of elements for which
+ * it returned `false`.
  *
  * @example
  * partition(x => x % 2 === 0)([1,2,3,4,5]) = [[2,4],[1,3,5]]
