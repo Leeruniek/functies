@@ -1,0 +1,7 @@
+// @flow
+
+type PartitionType = <A>(fn: (x: A) => boolean) => (input: A[]) => [A[], A[]]
+
+declare export var partition: PartitionType
+
+export type { PartitionType }

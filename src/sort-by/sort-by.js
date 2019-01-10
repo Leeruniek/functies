@@ -1,6 +1,8 @@
 /**
  * Sort an array of objects by a custom field
  *
+ * @name   sortBy
+ *
  * @tag Array
  * @signature ( field: string, direction: string ) => ( source: Array ): Array
  *

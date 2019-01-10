@@ -1,6 +1,8 @@
 /**
  * Test if a variable holds nothing
  *
+ * @name isNot
+ *
  * @tag Core
  * @signature isNot(source): boolean
  *

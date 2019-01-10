@@ -1,0 +1,25 @@
+// @flow
+
+// Type helper: An object where one of the values is of type A
+type ObjWithType<A> = { [key: string]: A }
+
+// Type helper: A binary predicate function
+type GrouperFnType<A> = (x: A) => (y: A) => boolean
+
+type GroupByFnType = <A>(fn: GrouperFnType<A>) => (input: A[]) => A[][]
+
+type GroupByKeyType = <A>(
+  key: string
+) => (input: ObjWithType<A>[]) => ObjWithType<A>[][]
+
+type GroupByReturnType<A> = (input: A[]) => A[][]
+
+type GroupByType = <A>(
+  grouper: GrouperFnType<A> | string
+) => GroupByReturnType<A> | GroupByReturnType<ObjWithType<A>>
+
+declare export var groupBy: GroupByType
+
+declare export var groupByKey: GroupByKeyType
+
+export type { GroupByFnType, GroupByKeyType, GroupByType }

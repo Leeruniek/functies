@@ -1,6 +1,8 @@
 /**
  * Extract top elements from array
  *
+ * @name   top
+ *
  * @tag Array
  * @signature (count: number) => (source: Array): Array
  *

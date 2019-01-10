@@ -4,6 +4,8 @@ const type = require("../type/type")
  * Returns a partial copy of an object containing only the keys specified.
  * If the key does not exist, the property is ignored.
  *
+ * @name       pick
+ *
  * @tag Object
  * @signature ( keys: string[] ) => ( source: Object ): Object
  *

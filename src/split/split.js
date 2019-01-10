@@ -3,6 +3,8 @@
  * into substrings, using a specified separator string to determine where to
  * make each split.
  *
+ * @name    split
+ *
  * @tag String
  * @signature ( separator: string|RegExp )( source: string ): Array
  *

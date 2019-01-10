@@ -2,8 +2,10 @@
  * Iterate over an input list, calling `fn` for each element, return a new
  * array
  *
+ * @name   map
+ *
  * @param  {Function}  fn    The function
- * @param  {[]}        list  Array
+ * @param  {Array}        list  Array
  *
  * @return {Array}
  */

@@ -1,6 +1,8 @@
 /**
  * Determines if one object's properties are equal to another
  *
+ * @name   isMatch
+ *
  * @tag Core
  * @signature (subset: Object)(source: Object): boolean
  *

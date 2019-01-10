@@ -1,6 +1,8 @@
 /**
  * Find the minimum value in a source array
  *
+ * @name   min
+ *
  * @param  {number[]}  source  Array of numbers
  *
  * @return {number}

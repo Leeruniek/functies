@@ -6,6 +6,8 @@ const I = require("../i/i")
  *
  * Sort array using custom function
  *
+ * @name   sort
+ *
  * @param  {Function}  fn      Sort function
  * @param  {Array}     source  Array
  *

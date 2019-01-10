@@ -3,6 +3,7 @@ const deepEqual = require("../deep-equal/deep-equal")
 /**
  * Remove repeating values
  *
+ * @name   distinct
  * @param  {Array}  source  The source
  *
  * @return {Array}

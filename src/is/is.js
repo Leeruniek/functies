@@ -1,6 +1,8 @@
 /**
  * Test if a variable holds something
  *
+ * @name is
+ *
  * @tag Core
  * @signature is(source): boolean
  *

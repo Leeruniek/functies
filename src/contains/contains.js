@@ -1,6 +1,7 @@
 /**
  * Test if string contains substring
  *
+ * @name   contains
  * @param  {string}  search  Search string
  * @param  {string}  source  Source string
  *

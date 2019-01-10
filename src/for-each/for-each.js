@@ -1,6 +1,8 @@
 /**
  * Call `fn` over each element of an array
  *
+ * @name   forEach
+ *
  * @param  {Function}   fn      Function
  * @param  {Array}      source  Source array
  *

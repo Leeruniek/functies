@@ -1,6 +1,8 @@
 /**
  * Less compare
  *
+ * @name   lt
+ *
  * @param  {number}  first   First number
  * @param  {number}  second  Second number
  *

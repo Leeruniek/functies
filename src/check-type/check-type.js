@@ -18,6 +18,7 @@ const isOfType = (value, ofType) => {
 /**
  * Validate field types
  *
+ * @name   checkType
  * @param  {Object}     arg1          Props
  * @param  {Object}     arg1.schema   Validation schema
  * @param  {String}     arg1.context  Name of function or object the error is

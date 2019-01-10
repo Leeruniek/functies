@@ -1,6 +1,8 @@
 /**
  * Group an array of objects by field. Only truthy fields will be indexed.
  *
+ * @name   indexBy
+ *
  * @param  {string}  field  The field to index by
  * @param  {Array}   array  Input
  *

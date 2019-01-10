@@ -1,6 +1,8 @@
 /**
  * Check if input has objects with certain properties
  *
+ * @name   hasWith
+ *
  * @param  {Object}   filters  The filters
  * @param  {Array}    input    Haystack
  *

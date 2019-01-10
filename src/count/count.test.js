@@ -5,10 +5,10 @@ const count = require("./count")
  * Count the number of elements that satisfies a function
  *
  * @tag Array
- * @signature (fn: Function)(source: Array <Object>): number
+ * @signature (fn: Function)(source: Array|Object): number
  *
  * @param   {Function}        fn      Test function
- * @param   {Array <Object>}  source  Source array
+ * @param   {Array|Object}  source  Source array
  *
  * @return  {number}
  *

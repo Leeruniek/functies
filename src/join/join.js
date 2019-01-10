@@ -1,6 +1,8 @@
 /**
  * Join all elements of an array into a string
  *
+ * @name    join
+ *
  * @tag Array
  * @signature (separator: string)(source: Array): string
  *

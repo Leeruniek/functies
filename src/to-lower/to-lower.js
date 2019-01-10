@@ -1,6 +1,8 @@
 /**
  * Convert string to lower case
  *
+ * @name    toLower
+ *
  * @tag String
  * @signature ( source: string ): string
  *

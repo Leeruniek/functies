@@ -37,6 +37,8 @@ const replaceArray = (oldElm, newElm) => source => {
  * Replace substring if source is string, replace element (shallow equal) if
  * source is Array
  *
+ * @name  replace
+ *
  * @param {string|mixed}  oldElm  To be cloned
  * @param {string|mixed}  newElm  Copy of this object.
  * @param {string|Array}  source  Source array

@@ -3,6 +3,8 @@
  * Properties will be shallow copied. Those with the same name will be
  * overwriten by right most object.
  *
+ * @name    merge
+ *
  * @tag Object
  * @signature ( ...source: Object[] ): Object
  *

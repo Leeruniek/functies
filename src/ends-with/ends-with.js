@@ -1,6 +1,7 @@
 /**
  * Test if string ends with substring
  *
+ * @name   endsWith
  * @param  {string}  search  Search string
  * @param  {string}  source  Source string
  *

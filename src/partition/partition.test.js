@@ -1,5 +1,5 @@
-const test = require("tape")
-const partition = require("./partition")
+import test from "tape"
+import { partition } from "./partition"
 
 test("array::partition", t => {
   const equalsTwo = x => x === 2

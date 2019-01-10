@@ -3,6 +3,8 @@ const type = require("../type/type")
 /**
  * Functional if-then-else
  *
+ * @name   ifThen
+ *
  * @param  {Function}  conditionFn  Condition function
  * @param  {Function}  thenFn       Then function
  * @param  {Function}  elseFn       Else function, if not specified will return

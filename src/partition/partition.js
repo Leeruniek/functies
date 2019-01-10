@@ -1,30 +1,35 @@
+/* eslint-disable no-unused-vars*/
+
+// @flow
+
+import type { PartitionType } from "./partition.js.flow"
+
 /**
- * partition splits a list based on a predicate function.
+ * Split a list based on a predicate function.
  *
- * @signature (p: (x: T): boolean): (Array<T>): Array<Array<T>>
+ * @signature
+ * <A>(fn: (x: A) => boolean) => (input: A[]) => [A[], A[]]
  *
- * @param   {Function}  p       The predicate function, which returns a
- *                              truthy or falsy value for every value given
- *                              an input
+ * @param fn
+ * A predicate function.
  *
- * @param   {Array}     input   List of values to test
+ * @return
+ * A function taking a `A[]` and returning a two-tuple of `A[]`s.
+ * The first element of the tuple consists of elements for which
+ * the predicate returned `true`, the second of elements for which
+ * it returned `false`.
  *
- * @return  {Array<Array>}      2-tuple of arrays. The first array consists
- *                              of values for which the predicate returned
- *                              a truthy value, the second of values for
- *                              which it returned a falsy value.
+ * @example
+ * partition(x => x % 2 === 0)([1,2,3,4,5]) = [[2,4],[1,3,5]]
  */
-module.exports = p => input => {
-  const pass = []
-  const fail = []
+const partition: PartitionType = <A>(fn) => input =>
+  input.reduce(
+    (acc, val) => {
+      const [pass, fail] = acc
 
-  for (let i = 0; i < input.length; i++) {
-    if (p(input[i])) {
-      pass.push(input[i])
-    } else {
-      fail.push(input[i])
-    }
-  }
+      return fn(val) ? [[...pass, val], fail] : [pass, [...fail, val]]
+    },
+    [[], []]
+  )
 
-  return [pass, fail]
-}
+export { partition }
