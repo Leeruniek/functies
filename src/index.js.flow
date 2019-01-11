@@ -1,0 +1,7 @@
+// @flow
+
+import type { GroupByType } from "./group-by/group-by.js.flow"
+import type { PartitionType } from "./partition/partition.js.flow"
+
+declare export var groupBy: GroupByType
+declare export var partition: PartitionType
