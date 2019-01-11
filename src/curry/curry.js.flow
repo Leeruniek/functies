@@ -1,8 +1,8 @@
 // @flow
 
-type CurryType = <A>(
-  fn: (...args: Array<mixed>) => A
-) => (args: mixed[]) => A | ((rest: mixed[]) => A | ((mixed[]) => A))
+type CurryReturnType<A> = (...mixed[]) => A | CurryReturnType<A>
+
+type CurryType = <A>(fn: (...args: mixed[]) => A) => CurryReturnType<A>
 
 declare export var curry: CurryType
 

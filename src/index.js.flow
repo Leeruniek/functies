@@ -2,9 +2,11 @@
 /* eslint-disable flowtype/no-weak-types */
 // @flow
 
+import type { CurryType } from "./curry/curry.js.flow"
 import type { GroupByType } from "./group-by/group-by.js.flow"
 import type { PartitionType } from "./partition/partition.js.flow"
 
+declare export var curry: CurryType
 declare export var groupBy: GroupByType
 declare export var partition: PartitionType
 
