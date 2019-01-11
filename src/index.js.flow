@@ -1,3 +1,4 @@
+/* eslint-disable flowtype/no-weak-types flowtype-errors/no-min-coverage */
 // @flow
 
 import type { GroupByType } from "./group-by/group-by.js.flow"
@@ -5,3 +6,63 @@ import type { PartitionType } from "./partition/partition.js.flow"
 
 declare export var groupBy: GroupByType
 declare export var partition: PartitionType
+
+declare export var all: any
+declare export var coinToss: any
+declare export var contains: any
+declare export var count: any
+declare export var countBy: any
+declare export var debounce: any
+declare export var deepEqual: any
+declare export var distinct: any
+declare export var elapsedTime: any
+declare export var endsWith: any
+declare export var escapeHTML: any
+declare export var escapeRegExp: any
+declare export var filter: any
+declare export var filterBy: any
+declare export var find: any
+declare export var findBy: any
+declare export var flatten: any
+declare export var forEach: any
+declare export var get: any
+declare export var gt: any
+declare export var has: any
+declare export var hasKey: any
+declare export var hasWith: any
+declare export var head: any
+declare export var hist: any
+declare export var i: any
+declare export var ifThen: any
+declare export var indexBy: any
+declare export var is: any
+declare export var isEmpty: any
+declare export var isMatch: any
+declare export var isNot: any
+declare export var join: any
+declare export var lt: any
+declare export var map: any
+declare export var max: any
+declare export var merge: any
+declare export var min: any
+declare export var pick: any
+declare export var pipe: any
+declare export var pluck: any
+declare export var push: any
+declare export var raise: any
+declare export var random: any
+declare export var reduce: any
+declare export var remove: any
+declare export var replace: any
+declare export var sequence: any
+declare export var set: any
+declare export var sort: any
+declare export var sortBy: any
+declare export var split: any
+declare export var tail: any
+declare export var throttle: any
+declare export var toggle: any
+declare export var toLower: any
+declare export var top: any
+declare export var type: any
+declare export var zipToObj: any
