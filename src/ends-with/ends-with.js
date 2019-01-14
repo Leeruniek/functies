@@ -14,16 +14,4 @@
  * endWith("ipsum")("lorem ipsum")
  * // => true
  */
-module.exports = search => source => {
-  if (search.length > source.length) {
-    return false
-  }
-
-  const searchPosition = source.indexOf(search)
-
-  if (searchPosition === -1) {
-    return false
-  }
-
-  return searchPosition === source.length - search.length
-}
+module.exports = search => source => source.endsWith(search)

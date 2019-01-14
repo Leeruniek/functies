@@ -12,9 +12,7 @@
  * @signature (fn: Function) => (source: Array): undefined
  */
 module.exports = fn => source => {
-  for (let i = 0, length = source.length; i < length; i++) {
-    fn.call(null, source[i], i, source)
-  }
+  source.forEach(fn)
 
   return source
 }

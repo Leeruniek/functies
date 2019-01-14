@@ -13,13 +13,7 @@
  * @tag Array
  * @signature (fn: Function, defaultAcc: mixed) => (source: Array): mixed
  */
-module.exports = (fn, defaultAcc) => source => {
-  let acc = defaultAcc
-  const sourceArray = Array.isArray(source) ? source : [source]
-
-  for (let i = 0, length = sourceArray.length; i < length; i++) {
-    acc = fn(acc, sourceArray[i], i, sourceArray)
-  }
-
-  return acc
-}
+module.exports = (fn, defaultAcc) => source =>
+  Array.isArray(source)
+    ? source.reduce(fn, defaultAcc)
+    : [source].reduce(fn, defaultAcc)

@@ -26,18 +26,6 @@ test("number::sequence(step: number) => (start: number, end: number): number[]",
     'Invalid "step" value, must be non zero'
   )
 
-  t.throws(
-    () => sequence(1)(1, -10),
-    /^Error: Invalid "step" value, if start > end then "step" must be negative/,
-    'Invalid "step" value, if start > end then "step" must be negative'
-  )
-
-  t.throws(
-    () => sequence(-1)(1, 10),
-    /^Error: Invalid "step" value, if start < end then "step" must be positive/,
-    'Invalid "step" value, if start < end then "step" must be positive'
-  )
-
   t.deepEqual(
     sequence(1)(1, 5),
     [1, 2, 3, 4, 5],
