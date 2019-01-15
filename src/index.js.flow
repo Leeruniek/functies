@@ -1,9 +1,4 @@
-/* eslint-disable flowtype-errors/enforce-min-coverage */
-/* eslint-disable flowtype/no-weak-types */
 // @flow
-
-import type { GroupByType } from "./group-by/group-by.js.flow"
-import type { PartitionType } from "./partition/partition.js.flow"
 
 declare module "@leeruniek/functies" {
   declare module.exports: {
