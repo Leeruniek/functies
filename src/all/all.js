@@ -1,3 +1,7 @@
+// @flow
+
+import type { AllType } from "./all.js.flow"
+
 /**
  * Test if all elements of array satisfy function
  *
@@ -16,4 +20,6 @@
  * all(is)([1, "asd", null])
  * // => false
  */
-module.exports = fn => source => source.every(fn)
+const all: AllType = <A>(fn) => source => source.every(fn)
+
+export { all }

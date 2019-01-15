@@ -1,0 +1,11 @@
+// @flow
+
+type IfThenType = <A, B, C>(
+  conditionFn: (A) => boolean,
+  thenFn: (A) => B,
+  elseFn: ?(A) => C
+) => A | B | C
+
+declare export var ifThen: IfThenType
+
+export type { IfThenType }

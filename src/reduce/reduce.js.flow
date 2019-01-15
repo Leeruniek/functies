@@ -1,0 +1,7 @@
+// @flow
+
+type ReduceType = <A, B>(fn: (B, A) => B, A) => (A | A[]) => B
+
+declare export var reduce: ReduceType
+
+export type { ReduceType }

@@ -1,6 +1,6 @@
-const filter = require("../filter/filter")
+const filter = require("../filter/filter").filter
 const get = require("../get/get")
-const pipe = require("../pipe/pipe")
+const pipe = require("../pipe/pipe").pipe
 
 /**
  * Count the number of elements that satisfies a function

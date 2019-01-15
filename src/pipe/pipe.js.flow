@@ -1,0 +1,10 @@
+// @flow
+
+type PipeType = <A, B>(
+  fn: (...A[]) => Function,
+  ...fns: Function[]
+) => (...input: A[]) => B
+
+declare export var pipe: PipeType
+
+export type { PipeType }

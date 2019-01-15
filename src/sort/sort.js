@@ -1,4 +1,4 @@
-const map = require("../map/map")
+const map = require("../map/map").map
 const I = require("../i/i")
 
 /**

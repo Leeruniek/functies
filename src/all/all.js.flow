@@ -1,0 +1,7 @@
+// @flow
+
+type AllType = <A>(fn: (A) => boolean) => (A[]) => boolean
+
+declare export var all: AllType
+
+export type { AllType }

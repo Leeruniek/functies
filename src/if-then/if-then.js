@@ -1,4 +1,6 @@
-const type = require("../type/type")
+// @flow
+
+import type { IfThenType } from "./if-then.js.flow"
 
 /**
  * Functional if-then-else
@@ -12,9 +14,11 @@ const type = require("../type/type")
  *
  * @return {mixed}
  */
-module.exports = (conditionFn, thenFn, elseFn) => input =>
+const ifThen: IfThenType = <A, B, C>(conditionFn, thenFn, elseFn) => input =>
   conditionFn(input)
     ? thenFn(input)
-    : type(elseFn) === "Function"
+    : typeof elseFn === "function"
     ? elseFn(input)
     : input
+
+export { ifThen }

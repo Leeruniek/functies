@@ -1,4 +1,4 @@
-const ifThen = require("../if-then/if-then")
+const ifThen = require("../if-then/if-then").ifThen
 const has = require("../has/has")
 const remove = require("../remove/remove")
 const push = require("../push/push")

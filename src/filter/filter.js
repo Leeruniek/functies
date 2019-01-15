@@ -1,3 +1,7 @@
+// @flow
+
+import type { FilterType } from "./filter.js.flow"
+
 /**
  * Remove elements that dont match based on custom function
  *
@@ -9,12 +13,6 @@
  * @tag Array
  * @signature ( fn: Function ) => ( source: Array): Array
  */
-module.exports = fn => source => {
-  const filteredArray = []
+const filter: FilterType = <A>(fn) => source => source.filter(fn)
 
-  for (let i = 0, length = source.length; i < length; i++) {
-    fn.call(null, source[i]) === true && filteredArray.push(source[i])
-  }
-
-  return filteredArray
-}
+export { filter }

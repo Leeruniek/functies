@@ -1,5 +1,5 @@
-const any = require("../any/any")
-const reduce = require("../reduce/reduce")
+const any = require("../any/any").any
+const reduce = require("../reduce/reduce").reduce
 
 /**
  * Check if value is in array
