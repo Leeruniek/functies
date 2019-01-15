@@ -1,6 +1,7 @@
 module.exports = {
   // findFiles: require("./find-files/find-files"),
-  all: require("./all/all"),
+  all: require("./all/all").all,
+  any: require("./all/all").any,
   coinToss: require("./coin-toss/coin-toss"),
   contains: require("./contains/contains"),
   count: require("./count/count"),

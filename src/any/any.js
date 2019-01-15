@@ -1,3 +1,7 @@
+// @flow
+
+import type { AnyType } from "./any.js.flow"
+
 /**
  * Test if at least one element of array satisfies function
  *
@@ -16,5 +20,7 @@
  * any(is)([null])
  * // => false
  */
-module.exports = fn => source =>
+const any: AnyType = <A>(fn) => source =>
   source.some(element => fn(element) && typeof fn(element) === "boolean")
+
+export { any }

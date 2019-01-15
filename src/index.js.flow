@@ -2,6 +2,8 @@
 
 declare module "@leeruniek/functies" {
   declare module.exports: {
+    all: AllType,
+    any: AnyType,
     filter: FilterType,
     groupBy: GroupByType,
     map: MapType,
@@ -9,7 +11,6 @@ declare module "@leeruniek/functies" {
     pipe: PipeType,
     reduce: ReduceType,
 
-    all: any,
     coinToss: any,
     contains: any,
     count: any,
@@ -21,7 +22,6 @@ declare module "@leeruniek/functies" {
     endsWith: any,
     escapeHTML: any,
     escapeRegExp: any,
-    filter: any,
     filterBy: any,
     find: any,
     findBy: any,

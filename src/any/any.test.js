@@ -1,6 +1,5 @@
-const test = require("tape")
-
-const any = require("./any")
+import test from "tape"
+import { any } from "./any"
 
 const isNumber = source => Number.isFinite(source)
 

@@ -1,4 +1,4 @@
-const any = require("../any/any")
+const any = require("../any/any").any
 const reduce = require("../reduce/reduce").reduce
 
 /**
