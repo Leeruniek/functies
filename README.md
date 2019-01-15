@@ -11,7 +11,7 @@
 - [Develop](#develop)
 - [Docs](#docs)
 - [Changelog](#changelog)
-    - [0.22 - 10 January 2019](#022---10-january-2019)
+    - [0.22.1 - 14 January 2019](#0221---14-january-2019)
 
 <!-- /MarkdownTOC -->
 
@@ -60,9 +60,8 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.22 - 10 January 2019
+### 0.22.1 - 14 January 2019
 
 #### Add 
 
-- Start using FlowType (`partition`, `groupBy`)
-- Generating documentation with `documentation.js` based on code comments
+- Distribute .flow files in build artifact so library consumers can use types

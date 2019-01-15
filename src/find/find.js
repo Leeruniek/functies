@@ -11,14 +11,4 @@
  * @example
  * find(x => x % 2 === 0)([1,2,3,4,5]) = 2
  */
-module.exports = matchFn => source => {
-  for (let i = 0, length = source.length; i < length; i++) {
-    const found = matchFn(source[i], i, source)
-
-    if (found === true) {
-      return source[i]
-    }
-  }
-
-  return undefined
-}
+module.exports = matchFn => source => source.find(matchFn)

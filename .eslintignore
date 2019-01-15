@@ -1,1 +1,4 @@
 lib/docs-theme
+dist
+node_modules
+src/index.js.flow

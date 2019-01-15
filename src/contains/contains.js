@@ -14,10 +14,4 @@
  * contains("ipsum")("lorem ipsum")
  * // => true
  */
-module.exports = search => source => {
-  if (search.length > source.length) {
-    return false
-  }
-
-  return source.indexOf(search) !== -1
-}
+module.exports = search => source => source.includes(search)

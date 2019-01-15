@@ -1,6 +1,6 @@
 {
   "name": "@leeruniek/functies",
-  "version": "0.22.0",
+  "version": "0.22.1",
   "description": "Functional library for Javascript",
   "homepage": "https://github.com/Leeruniek/functies",
   "repository": {
@@ -28,8 +28,9 @@
     "docs:watch": "documentation serve --watch --document-exported src/index.js --theme lib/docs-theme",
     "update": "npm-check -u",
     "----BUNDLE-----------------------------------": "",
+    "build:flow-libdef": "node lib/build-flow-libdef.js",
     "build:docs": "documentation build src/index.js -f html -o docs --theme lib/docs-theme",
-    "build": "rm -rf ./dist && babel src --out-dir dist --copy-files",
+    "build": "rm -rf ./dist && babel src --out-dir dist && npm run build:flow-libdef",
     "prepare": "npm audit fix && npm test && npm run lint && npm run build && npm run build:docs",
     "prepublishOnly": "npm run test:cover | coveralls",
     "----LINTING----------------------------------": "",

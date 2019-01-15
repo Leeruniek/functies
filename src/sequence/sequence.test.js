@@ -27,15 +27,15 @@ test("number::sequence(step: number) => (start: number, end: number): number[]",
   )
 
   t.throws(
-    () => sequence(1)(1, -10),
-    /^Error: Invalid "step" value, if start > end then "step" must be negative/,
-    'Invalid "step" value, if start > end then "step" must be negative'
+    () => sequence(-1)(1, 10),
+    /Invalid parameters, sequence must approach end/,
+    "Invalid parameters, sequence must approach end"
   )
 
   t.throws(
-    () => sequence(-1)(1, 10),
-    /^Error: Invalid "step" value, if start < end then "step" must be positive/,
-    'Invalid "step" value, if start < end then "step" must be positive'
+    () => sequence(1)(10, 1),
+    /Invalid parameters, sequence must approach end/,
+    "Invalid parameters, sequence must approach end"
   )
 
   t.deepEqual(
