@@ -25,25 +25,23 @@ module.exports = step => (start, end) => {
     )
   }
 
-  if (start < end && step < 0) {
+  if (
+    (start + step > start && start > end) ||
+    (start + step < start && start < end)
+  ) {
     throw new Error(
-      `Invalid "step" value, if start < end then "step" must be positive. Got "step": ${step}, "start": ${start}, "end": ${end}`
+      `Invalid parameters, sequence must approach end value. Got "step": ${step}, "start": ${start}, "end": ${end}`
     )
   }
 
-  if (start > end && step > 0) {
-    throw new Error(
-      `Invalid "step" value, if start > end then "step" must be negative. Got "step": ${step}, "start": ${start}, "end": ${end}`
-    )
-  }
-
-  let current = start
   const result = []
 
-  while ((step > 0 && current <= end) || (step < 0 && current >= end)) {
-    result.push(current)
-
-    current = current + step
+  for (
+    let i = 0;
+    i <= Math.floor(Math.abs(start - end) / Math.abs(step));
+    i++
+  ) {
+    result.push(start + i * step)
   }
 
   return result

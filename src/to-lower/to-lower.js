@@ -14,4 +14,4 @@
  * toLower("Lorem Ipsum")
  * // "lorem ipsum"
  */
-module.exports = source => "".toLowerCase.call(source)
+module.exports = source => source.toLowerCase()
