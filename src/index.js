@@ -1,5 +1,4 @@
 module.exports = {
-  // findFiles: require("./find-files/find-files"),
   all: require("./all/all").all,
   any: require("./all/all").any,
   coinToss: require("./coin-toss/coin-toss"),
@@ -18,6 +17,7 @@ module.exports = {
   filterBy: require("./filter-by/filter-by"),
   find: require("./find/find"),
   findBy: require("./find-by/find-by"),
+  findFiles: require("./find-files/find-files"),
   flatten: require("./flatten/flatten"),
   forEach: require("./for-each/for-each"),
   get: require("./get/get"),

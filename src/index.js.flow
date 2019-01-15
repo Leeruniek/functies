@@ -25,6 +25,7 @@ declare module "@leeruniek/functies" {
     filterBy: any,
     find: any,
     findBy: any,
+    findFiles: any,
     flatten: any,
     forEach: any,
     get: any,
