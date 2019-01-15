@@ -2,8 +2,12 @@
 
 declare module "@leeruniek/functies" {
   declare module.exports: {
+    filter: FilterType,
     groupBy: GroupByType,
+    map: MapType,
     partition: PartitionType,
+    pipe: PipeType,
+    reduce: ReduceType,
 
     all: any,
     coinToss: any,
@@ -39,17 +43,14 @@ declare module "@leeruniek/functies" {
     isNot: any,
     join: any,
     lt: any,
-    map: any,
     max: any,
     merge: any,
     min: any,
     pick: any,
-    pipe: any,
     pluck: any,
     push: any,
     raise: any,
     random: any,
-    reduce: any,
     remove: any,
     replace: any,
     sequence: any,

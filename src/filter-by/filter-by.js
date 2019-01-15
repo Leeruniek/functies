@@ -1,4 +1,4 @@
-const filter = require("../filter/filter")
+const filter = require("../filter/filter").filter
 const isMatch = require("../is-match/is-match")
 
 /**

@@ -1,0 +1,7 @@
+// @flow
+
+type FilterType = <A>(fn: (A) => boolean) => (A[]) => A[]
+
+declare export var filter: FilterType
+
+export type { FilterType }

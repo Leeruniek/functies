@@ -13,7 +13,7 @@ module.exports = {
   endsWith: require("./ends-with/ends-with"),
   escapeHTML: require("./escapeHTML/escapeHTML"),
   escapeRegExp: require("./escapeRegExp/escapeRegExp"),
-  filter: require("./filter/filter"),
+  filter: require("./filter/filter").filter,
   filterBy: require("./filter-by/filter-by"),
   find: require("./find/find"),
   findBy: require("./find-by/find-by"),
