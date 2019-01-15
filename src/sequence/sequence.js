@@ -25,6 +25,15 @@ module.exports = step => (start, end) => {
     )
   }
 
+  if (
+    (start + step > start && start > end) ||
+    (start + step < start && start < end)
+  ) {
+    throw new Error(
+      `Invalid parameters, sequence must approach end value. Got "step": ${step}, "start": ${start}, "end": ${end}`
+    )
+  }
+
   const result = []
 
   for (
