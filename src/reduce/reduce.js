@@ -1,3 +1,7 @@
+// @flow
+
+import type { ReduceType } from "./reduce.js.flow"
+
 /**
  * Apply a function against an accumulator and each  element in the array (from
  * left to right) to reduce it to a single value.
@@ -13,7 +17,7 @@
  * @tag Array
  * @signature (fn: Function, defaultAcc: mixed) => (source: Array): mixed
  */
-module.exports = (fn, defaultAcc) => source =>
-  Array.isArray(source)
-    ? source.reduce(fn, defaultAcc)
-    : [source].reduce(fn, defaultAcc)
+const reduce: ReduceType = <A, B>(fn, defaultAcc) => source =>
+  Array.isArray(source) ? source.reduce(fn, defaultAcc) : fn(defaultAcc, source)
+
+export { reduce }

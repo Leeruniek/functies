@@ -1,5 +1,5 @@
 const type = require("../type/type")
-const reduce = require("../reduce/reduce")
+const reduce = require("../reduce/reduce").reduce
 
 /**
  * Recursively concat all arrays intro a single array

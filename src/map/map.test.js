@@ -1,5 +1,5 @@
-const test = require("tape")
-const map = require("./map")
+import test from "tape"
+import { map } from "./map"
 
 /**
  * Iterate over an input list, calling `fn` for each element, return a new

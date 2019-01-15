@@ -1,0 +1,7 @@
+// @flow
+
+type MapOneType = <A, B>(fn: (a: A) => B) => (A[] | A) => B[]
+
+type MapType = <A, B>(...fns: Function[]) => (source: A[] | A) => B[]
+
+export type { MapOneType, MapType }

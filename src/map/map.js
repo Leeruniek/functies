@@ -1,3 +1,12 @@
+// @flow
+
+import { pipe } from "../pipe/pipe"
+import type { MapOneType, MapType } from "./map.js.flow"
+
+// Map a single function over an array
+const mapOne: MapOneType = <A, B>(fn) => source =>
+  Array.isArray(source) ? source.map(fn) : [fn(source)]
+
 /**
  * Iterate over an input list, calling `fn` for each element, return a new
  * array
@@ -9,20 +18,6 @@
  *
  * @return {Array}
  */
-module.exports = (...fn) => source => {
-  const result = []
-  const sourceArray = Array.isArray(source) ? source : [source]
+const map: MapType = <A, B>(...fns) => source => mapOne(pipe(...fns))(source)
 
-  for (let i = 0, valuesCount = sourceArray.length; i < valuesCount; i++) {
-    let value = sourceArray[i]
-
-    // pipe functions through each value
-    for (let j = 0, fnCount = fn.length; j < fnCount; j++) {
-      value = fn[j].call(null, value, i, sourceArray)
-    }
-
-    result.push(value)
-  }
-
-  return result
-}
+export { map }

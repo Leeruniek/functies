@@ -2,11 +2,11 @@
 
 const path = require("path")
 const fs = require("fs")
-const pipe = require("../pipe/pipe")
-const map = require("../map/map")
+const pipe = require("../pipe/pipe").pipe
+const map = require("../map/map").map
 const push = require("../push/push")
 const flatten = require("../flatten/flatten")
-const reduce = require("../reduce/reduce")
+const reduce = require("../reduce/reduce").reduce
 
 /**
  * Determines if file name valid.
