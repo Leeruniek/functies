@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## 0.23 - 16 January 2019
+## [0.23] - 16 January 2019
 
 ### Add 
 
@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   which concatenates all `.js.flow` files in `src/` together. This change was
   made to work around [facebook/flow/issues/6650](https://github.com/facebook/flow/issues/6650).
 
-## 0.22.1 - 14 January 2019
+## [0.22.1] - 14 January 2019
 
 ### Add
 
