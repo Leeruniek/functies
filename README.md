@@ -65,7 +65,7 @@ History of all changes in [CHANGELOG.md](CHANGELOG.md)
 #### Add 
 
 - Add flow types for several common functies: `map`, `filter`, `reduce`, `all`,
-  `any`, `if-then`, `pipe
+  `any`, `if-then`, `pipe`
 
 #### Change
 

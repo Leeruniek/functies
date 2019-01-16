@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Add 
 
 - Add flow types for several common functies: `map`, `filter`, `reduce`, `all`,
-  `any`, `if-then`, `pipe
+  `any`, `if-then`, `pipe`
 
 ### Change
 
