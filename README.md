@@ -11,7 +11,7 @@
 - [Develop](#develop)
 - [Docs](#docs)
 - [Changelog](#changelog)
-    - [0.22.1 - 14 January 2019](#0221---14-january-2019)
+    - [0.23 - 16 January 2019](#023---16-january-2019)
 
 <!-- /MarkdownTOC -->
 
@@ -60,8 +60,16 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.22.1 - 14 January 2019
+### 0.23 - 16 January 2019
 
 #### Add 
 
-- Distribute .flow files in build artifact so library consumers can use types
+- Add flow types for several common functies: `map`, `filter`, `reduce`, `all`,
+  `any`, `if-then`, `pipe
+
+#### Change
+
+- Only distribute `index.js.flow` in build artifact, not other `.js.flow` files.
+  This file is generated at build time by the script `lib/build-flow-libdef.js`,
+  which concatenates all `.js.flow` files in `src/` together. This change was
+  made to work around [facebook/flow/issues/6650](https://github.com/facebook/flow/issues/6650).

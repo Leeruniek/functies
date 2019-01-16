@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## 0.23 - 16 January 2019
+
+### Add 
+
+- Add flow types for several common functies: `map`, `filter`, `reduce`, `all`,
+  `any`, `if-then`, `pipe
+
+### Change
+
+- Only distribute `index.js.flow` in build artifact, not other `.js.flow` files.
+  This file is generated at build time by the script `lib/build-flow-libdef.js`,
+  which concatenates all `.js.flow` files in `src/` together. This change was
+  made to work around [facebook/flow/issues/6650](https://github.com/facebook/flow/issues/6650).
+
 ## 0.22.1 - 14 January 2019
 
 ### Add
