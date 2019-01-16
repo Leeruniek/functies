@@ -100,6 +100,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]: https://github.com/leeruniek/functies/compare/v0.22...HEAD
 
+[0.23]: https://github.com/leeruniek/functies/compare/v0.22...v0.23
 [0.22.1]: https://github.com/leeruniek/functies/compare/v0.22...v0.22.1
 [0.22]: https://github.com/leeruniek/functies/compare/v0.21.1...v0.22
 [0.21.1]: https://github.com/leeruniek/functies/compare/v0.21.0...v0.21.1
