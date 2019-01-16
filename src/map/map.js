@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // @flow
 
 import { pipe } from "../pipe/pipe"

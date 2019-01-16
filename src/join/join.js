@@ -16,4 +16,4 @@
  * // => "lorem,ipsum"
  */
 module.exports = (separator = ",") => source =>
-  Array.isArray(source) ? source.join(separator) : ''
+  Array.isArray(source) ? source.join(separator) : ""

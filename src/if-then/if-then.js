@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // @flow
 
 import type { IfThenType } from "./if-then.js.flow"
