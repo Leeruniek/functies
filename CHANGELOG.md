@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.23.1] - 21 January 2019
+
+### Change
+
+- Remove `findFiles` from main index file. 
+
 ## [0.23] - 16 January 2019
 
 ### Add 
@@ -98,8 +104,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.22...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.23.1...HEAD
 
+[0.23.1]: https://github.com/leeruniek/functies/compare/v0.23...v0.23.1
 [0.23]: https://github.com/leeruniek/functies/compare/v0.22...v0.23
 [0.22.1]: https://github.com/leeruniek/functies/compare/v0.22...v0.22.1
 [0.22]: https://github.com/leeruniek/functies/compare/v0.21.1...v0.22
