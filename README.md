@@ -11,7 +11,7 @@
 - [Develop](#develop)
 - [Docs](#docs)
 - [Changelog](#changelog)
-    - [0.23 - 16 January 2019](#023---16-january-2019)
+    - [0.23.2 - 22 January 2019](#0232---22-january-2019)
 
 <!-- /MarkdownTOC -->
 
@@ -60,8 +60,8 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.23.1 - 21 January 2019
+### 0.23.2 - 22 January 2019
 
 #### Change
 
-- Remove `findFiles` from main index file. 
+- Fix export of `ifThen` in main index file. 
