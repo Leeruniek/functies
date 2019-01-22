@@ -29,7 +29,7 @@ module.exports = {
   head: require("./head/head"),
   hist: require("./hist/hist"),
   i: require("./i/i"),
-  ifThen: require("./if-then/if-then"),
+  ifThen: require("./if-then/if-then").ifThen,
   indexBy: require("./index-by/index-by"),
   is: require("./is/is"),
   isEmpty: require("./is-empty/is-empty"),
