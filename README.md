@@ -11,7 +11,7 @@
 - [Develop](#develop)
 - [Docs](#docs)
 - [Changelog](#changelog)
-    - [0.23.2 - 22 January 2019](#0232---22-january-2019)
+    - [0.24 - 24 January 2019](#024---24-january-2019)
 
 <!-- /MarkdownTOC -->
 
@@ -60,8 +60,13 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.23.2 - 22 January 2019
+### 0.24 - 24 January 2019
+
+#### Add
+
+- Add `zip`, `zipWith` list processing functions
 
 #### Change
 
-- Fix export of `ifThen` in main index file. 
+- Reimplement `*By` functions in terms of a new helper function, `byMatch`
+- Consolidate variations of the same function in the same module

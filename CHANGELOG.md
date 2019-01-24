@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.24] - 24 January 2019
+
+### Add
+
+- Add `zip`, `zipWith` list processing functions
+
+### Change
+
+- Reimplement `*By` functions in terms of a new helper function, `byMatch`
+- Consolidate variations of the same function in the same module
+
 ## [0.23.2] - 22 January 2019
 
 ### Change
@@ -112,6 +123,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]: https://github.com/leeruniek/functies/compare/v0.23.1...HEAD
 
+[0.24]: https://github.com/leeruniek/functies/compare/v0.23.2...v0.24
 [0.23.2]: https://github.com/leeruniek/functies/compare/v0.23.1...v0.23.2
 [0.23.1]: https://github.com/leeruniek/functies/compare/v0.23...v0.23.1
 [0.23]: https://github.com/leeruniek/functies/compare/v0.22...v0.23
