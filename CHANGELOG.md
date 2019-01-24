@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.25] - 24 January 2019
+
+### Change
+
+- Convert all to ES6 import/export 
+- Test files loads testing function from main index file
+- `indexBy` takes array and returns object of objects
+- `get` is now `prop`. Also exporting `get` as alias 
+- `all` and `any` accept non array input
+- `isMatch` accepts predicate functions
+
+### Remove
+
+- `coinToss`, `random`, `raise`
+
 ## [0.24] - 24 January 2019
 
 ### Add
@@ -20,12 +35,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Reimplement `*By` functions in terms of a new helper function, `byMatch`
 - Consolidate variations of the same function in the same module
 
-## [0.23.2] - 22 January 2019
-
-### Change
-
-- Fix export of `ifThen` in main index file. 
-
 ## [0.23.1] - 21 January 2019
 
 ### Change
@@ -34,7 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.23] - 16 January 2019
 
-### Add 
+### Add
 
 - Add flow types for several common functies: `map`, `filter`, `reduce`, `all`,
   `any`, `if-then`, `pipe`
@@ -54,7 +63,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.22] - 10 January 2019
 
-### Add 
+### Add
 
 - Start using FlowType (`partition`, `groupBy`)
 - Generating documentation with `documentation.js` based on code comments
@@ -121,10 +130,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.23.1...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.25...HEAD
 
-[0.24]: https://github.com/leeruniek/functies/compare/v0.23.2...v0.24
-[0.23.2]: https://github.com/leeruniek/functies/compare/v0.23.1...v0.23.2
+[0.25]: https://github.com/leeruniek/functies/compare/v0.24...v0.25
+[0.24]: https://github.com/leeruniek/functies/compare/v0.23.1...v0.24
 [0.23.1]: https://github.com/leeruniek/functies/compare/v0.23...v0.23.1
 [0.23]: https://github.com/leeruniek/functies/compare/v0.22...v0.23
 [0.22.1]: https://github.com/leeruniek/functies/compare/v0.22...v0.22.1
