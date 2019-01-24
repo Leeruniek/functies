@@ -1,5 +1,5 @@
 import test from "tape"
-import { all } from "./all"
+import { all } from ".."
 
 const isNumber = source => Number.isFinite(source)
 
@@ -11,6 +11,8 @@ test("core::all", t => {
     false,
     "Check all elements are numbers"
   )
+
+  t.equal(all(isNumber)(2), true, "Check non array input")
 
   t.end()
 })

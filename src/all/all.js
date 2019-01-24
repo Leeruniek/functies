@@ -21,6 +21,7 @@ import type { AllType } from "./all.js.flow"
  * all(is)([1, "asd", null])
  * // => false
  */
-const all: AllType = <A>(fn) => source => source.every(fn)
+const all: AllType = <A>(fn) => source =>
+  (Array.isArray(source) ? source : [source]).every(fn)
 
 export { all }

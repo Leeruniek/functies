@@ -22,6 +22,10 @@ import type { AnyType } from "./any.js.flow"
  * // => false
  */
 const any: AnyType = <A>(fn) => source =>
-  source.some(element => fn(element) && typeof fn(element) === "boolean")
+  (Array.isArray(source) ? source : [source]).some(element => {
+    const testResult = fn(element)
+
+    return testResult && typeof testResult === "boolean"
+  })
 
 export { any }
