@@ -1,7 +1,7 @@
-import { filter } from "../filter/filter"
-import { pipe } from "../pipe/pipe"
 import { byMatch } from "../is-match/is-match"
-const get = require("../get/get")
+import { prop } from "../prop/prop"
+import { pipe } from "../pipe/pipe"
+import { filter } from "../filter/filter"
 
 /**
  * Count the number of elements that satisfies a function
@@ -37,7 +37,7 @@ const count = arg =>
     ? arg.length
     : pipe(
         filter(arg),
-        get("length")
+        prop("length")
       )
 
 const countBy = byMatch(count)

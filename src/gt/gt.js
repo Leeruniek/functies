@@ -17,4 +17,6 @@
  * gt(14)(10)
  * // => true
  */
-module.exports = first => second => first > second
+const gt = first => second => first > second
+
+export { gt }

@@ -1,5 +1,5 @@
-const i = require("../i/i")
-const type = require("../type/type")
+import { i } from "../i/i"
+import { type } from "../type/type"
 
 /**
  * Creates a new instance of the object with same properties than original
@@ -52,4 +52,4 @@ const clone = source => {
   return byType[type(source)](source)
 }
 
-module.exports = clone
+export { clone }

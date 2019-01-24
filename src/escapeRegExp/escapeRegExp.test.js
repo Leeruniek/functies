@@ -1,5 +1,5 @@
-const test = require("tape")
-const escapeRegExp = require("./escapeRegExp")
+import test from "tape"
+import { escapeRegExp } from ".."
 
 /**
  * Make safe for RegExp'ing

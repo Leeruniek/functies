@@ -1,5 +1,5 @@
-const test = require("tape")
-const elapsedTime = require("./elapsed-time")
+import test from "tape"
+import { elapsedTime } from ".."
 
 /**
  * Calculate elapsed time between to dates. In days, hours, minutes and seconds

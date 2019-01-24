@@ -8,7 +8,7 @@
  *
  * @return {Function}
  */
-module.exports = (fn, { timeWindow = 50, bind = null } = {}) => {
+const debounce = (fn, { timeWindow = 50, bind = null } = {}) => {
   let finalRunTimer
 
   return (...args) => {
@@ -20,3 +20,5 @@ module.exports = (fn, { timeWindow = 50, bind = null } = {}) => {
     }, timeWindow)
   }
 }
+
+export { debounce }

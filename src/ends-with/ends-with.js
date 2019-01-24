@@ -14,4 +14,6 @@
  * endWith("ipsum")("lorem ipsum")
  * // => true
  */
-module.exports = search => source => source.endsWith(search)
+const endsWith = search => source => source.endsWith(search)
+
+export { endsWith }

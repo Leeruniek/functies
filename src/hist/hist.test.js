@@ -1,5 +1,5 @@
-const test = require("tape")
-const hist = require("./hist")
+import test from "tape"
+import { hist } from ".."
 
 /**
  * Determine the count of all field's distinct values in a list of objects
@@ -40,7 +40,7 @@ const hist = require("./hist")
  * //  "Math": 2
  * // }
  */
-test("array::hist(field: string)(source: Object[]): Object", t => {
+test("array::hist", t => {
   const scores = [
     {
       name: "Bob",

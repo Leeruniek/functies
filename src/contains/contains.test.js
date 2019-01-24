@@ -1,5 +1,5 @@
-const test = require("tape")
-const contains = require("./contains")
+import test from "tape"
+import { contains } from ".."
 
 /**
  * Test if string contains substring

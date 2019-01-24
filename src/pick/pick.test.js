@@ -1,5 +1,5 @@
-const test = require("tape")
-const pick = require("./pick")
+import test from "tape"
+import { pick } from ".."
 
 /**
  * Returns a partial copy of an object containing only the keys specified.

@@ -1,5 +1,5 @@
-const test = require("tape")
-const isNot = require("./is-not")
+import test from "tape"
+import { isNot } from ".."
 
 /**
  * Test if a variable holds nothing

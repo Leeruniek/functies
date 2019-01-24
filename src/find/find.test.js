@@ -1,5 +1,5 @@
 import test from "tape"
-import { find } from "./find"
+import { find } from ".."
 
 /**
  * Find the first element that satisfies the matchFn

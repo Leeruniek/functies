@@ -1,5 +1,5 @@
-const test = require("tape")
-const checkType = require("./check-type")
+import test from "tape"
+import { checkType } from "./check-type"
 
 test("core::checkType( { schema: Object, context: String } )( input: Object )", t => {
   t.doesNotThrow(() => {

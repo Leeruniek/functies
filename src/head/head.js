@@ -1,2 +1,4 @@
 /* eslint-disable no-unused-vars */
-module.exports = ([head, ...tail]) => head
+const head = ([first, ...rest]) => first
+
+export { head }

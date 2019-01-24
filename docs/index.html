@@ -46,16 +46,6 @@
               
                 
                 <li><a
-                  href='#cointoss'
-                  class="">
-                  coinToss
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#contains'
                   class="">
                   contains
@@ -236,9 +226,9 @@
               
                 
                 <li><a
-                  href='#get'
+                  href='#prop'
                   class="">
-                  get
+                  prop
                   
                 </a>
                 
@@ -466,16 +456,6 @@
               
                 
                 <li><a
-                  href='#random'
-                  class="">
-                  random
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#reduce'
                   class="">
                   reduce
@@ -586,9 +566,9 @@
               
                 
                 <li><a
-                  href='#toggle'
+                  href='#tolower'
                   class="">
-                  toggle
+                  toLower
                   
                 </a>
                 
@@ -596,9 +576,9 @@
               
                 
                 <li><a
-                  href='#tolower'
+                  href='#toggle'
                   class="">
-                  toLower
+                  toggle
                   
                 </a>
                 
@@ -829,62 +809,6 @@ all(is)([<span class="hljs-number">1</span>, <span class="hljs-string">"asd"</sp
 any(is)([<span class="hljs-literal">null</span>])
 <span class="hljs-comment">// =&gt; false</span></pre>
     
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='cointoss'>
-      coinToss
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Simulate coin toss</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>coinToss</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        True for heads, false for tails
-
-      
-    
-  
-
-  
-
   
 
   
@@ -2279,8 +2203,8 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>flatten( [ <span class="hljs-number">1</span>, [ <span class="hljs-number">2</span> ], [ <span class="hljs-number">3</span>, [ <span class="hljs-number">4</span> ] ] ] )
-<span class="hljs-comment">// =&gt; [ 1, 2, 3, 4 ]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>flatten([<span class="hljs-number">1</span>, [<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, [<span class="hljs-number">4</span>]]])
+<span class="hljs-comment">// =&gt; [1, 2, 3, 4]</span></pre>
     
   
 
@@ -2377,8 +2301,8 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='get'>
-      get
+    <h3 class='fl m0' id='prop'>
+      prop
     </h3>
     
     
@@ -2389,7 +2313,7 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
 
 
   
-    <div class='pre p1 fill-light mt0'>( key: string ) =&gt; ( source: Object ): mixed</div>
+    <div class='pre p1 fill-light mt0'>(key: string) =&gt; (source: Object): mixed</div>
   
   
   
@@ -2444,8 +2368,8 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>get( <span class="hljs-string">"lorem"</span> )( { <span class="hljs-attr">lorem</span>: <span class="hljs-string">"ipsum"</span> } ) <span class="hljs-comment">// =&gt; "ipsum"</span>
-get( <span class="hljs-string">"not-exist"</span> )( { <span class="hljs-attr">lorem</span>: <span class="hljs-string">"ipsum"</span> } ) <span class="hljs-comment">// =&gt; undefined</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>prop(<span class="hljs-string">"lorem"</span>)({ <span class="hljs-attr">lorem</span>: <span class="hljs-string">"ipsum"</span> }) <span class="hljs-comment">// =&gt; "ipsum"</span>
+prop(<span class="hljs-string">"not-exist"</span>)({ <span class="hljs-attr">lorem</span>: <span class="hljs-string">"ipsum"</span> }) <span class="hljs-comment">// =&gt; undefined</span></pre>
     
   
 
@@ -3011,11 +2935,11 @@ input
   </div>
   
 
-  <p>Group an array of objects by field. Only truthy fields will be indexed.</p>
+  <p>Index an array of objects by field. Only truthy fields will be indexed.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>indexBy</div>
+    <div class='pre p1 fill-light mt0'>(field: string) =&gt; (source: Object[]): Object</div>
   
   
   
@@ -3070,15 +2994,13 @@ input
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>indexBy( <span class="hljs-string">"user_id"</span> )( [
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">user_id</span>: <span class="hljs-number">2</span> },
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">user_id</span>: <span class="hljs-number">3</span> },
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">user_id</span>: <span class="hljs-number">2</span> },
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">user_id</span>: <span class="hljs-literal">null</span> },
-] )
+      <pre class='p1 overflow-auto round fill-light'>indexBy(<span class="hljs-string">"id"</span>)([
+  {<span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">user_id</span>: <span class="hljs-number">2</span>},
+  {<span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">user_id</span>: <span class="hljs-number">3</span>},
+])
 <span class="hljs-comment">// =&gt; {</span>
-<span class="hljs-comment">//   2: [ { id: 1, user_id: 2 }, { id: 3, user_id: 2 } ],</span>
-<span class="hljs-comment">//   3: [ { id: 2, user_id: 3 } ],</span>
+<span class="hljs-comment">//   1: {id: 1, user_id: 2},</span>
+<span class="hljs-comment">//   2: {id: 2, user_id: 3},</span>
 <span class="hljs-comment">// }</span></pre>
     
   
@@ -4392,110 +4314,6 @@ push( <span class="hljs-number">2</span>, <span class="hljs-number">4</span> )( 
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='random'>
-      random
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Generate random number between interval</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>random</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>arg1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    Props
-
-          </div>
-          
-          <table class='mt1 mb2 fixed-table h5 col-12'>
-            <colgroup>
-              <col width='30%' />
-              <col width='70%' />
-            </colgroup>
-            <thead>
-              <tr class='bold fill-light'>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody class='mt1'>
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>arg1.min</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
-  </td>
-  <td class='break-word'><span>The minimum
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>arg1.max</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
-  </td>
-  <td class='break-word'><span>The maximum
-</span></td>
-</tr>
-
-
-              
-            </tbody>
-          </table>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>integer</code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='reduce'>
       reduce
     </h3>
@@ -5111,8 +4929,7 @@ value</p>
   </div>
   
 
-  <p>TODO: reactor with propper sorting algorithms</p>
-<p>Sort array using custom function</p>
+  <p>Sort array using custom function</p>
 
 
   
@@ -5476,83 +5293,6 @@ run the
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='toggle'>
-      toggle
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Add element if not exists, remove otherwise</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>( element: mixed ) =&gt; ( input: Array ): Array</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>element</span> <code class='quiet'>(mixed)</code>
-	    Toggable value
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>toggle( <span class="hljs-number">1</span> )( [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span> ] ) <span class="hljs-comment">// =&gt; [ 2 ]</span>
-toggle( <span class="hljs-number">1</span> )( [ <span class="hljs-number">2</span> ] ) <span class="hljs-comment">// =&gt; [ 1, 2 ]</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='tolower'>
       toLower
     </h3>
@@ -5613,6 +5353,85 @@ toggle( <span class="hljs-number">1</span> )( [ <span class="hljs-number">2</spa
       
       <pre class='p1 overflow-auto round fill-light'>toLower(<span class="hljs-string">"Lorem Ipsum"</span>)
 <span class="hljs-comment">// "lorem ipsum"</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='toggle'>
+      toggle
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Add if not exists, remove otherwise</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(item: mixed) =&gt; (input: Array): Array</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>item</span> <code class='quiet'>(mixed)</code>
+	    Toggable value
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>toggle(<span class="hljs-number">1</span>)([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+<span class="hljs-comment">// =&gt; [2]</span>
+toggle(<span class="hljs-number">1</span>)([<span class="hljs-number">2</span>])
+<span class="hljs-comment">// =&gt; [1, 2]</span></pre>
     
   
 

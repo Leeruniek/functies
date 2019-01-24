@@ -1,5 +1,5 @@
 import test from "tape"
-import { pipe } from "./pipe"
+import { pipe } from ".."
 
 /**
  * Performs left-to-right function composition. The leftmost function may have
@@ -9,7 +9,7 @@ import { pipe } from "./pipe"
  * pipe( inc, inc )( 2 )
  * // => 4
  */
-test("core::pipe( ...fn )( ...input )", t => {
+test("core::pipe", t => {
   const inc = input => input + 1
   const sum = (a, b) => a + b
 

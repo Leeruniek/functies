@@ -114,4 +114,4 @@ const deepEqual = alice => bob => {
   return byType[aliceType](alice, bob)
 }
 
-module.exports = deepEqual
+export { deepEqual }

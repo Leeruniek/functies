@@ -1,5 +1,5 @@
-const test = require("tape")
-const endsWith = require("./ends-with")
+import test from "tape"
+import { endsWith } from ".."
 
 /**
  * Test if string ends with substring

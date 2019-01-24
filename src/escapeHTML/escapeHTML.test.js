@@ -1,5 +1,5 @@
-const test = require("tape")
-const escapeHTML = require("./escapeHTML")
+import test from "tape"
+import { escapeHTML } from ".."
 
 /**
  * Make safe for rendering

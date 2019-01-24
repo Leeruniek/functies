@@ -1,5 +1,5 @@
 import test from "tape"
-import { partition } from "./partition"
+import { partition } from ".."
 
 test("array::partition", t => {
   const equalsTwo = x => x === 2

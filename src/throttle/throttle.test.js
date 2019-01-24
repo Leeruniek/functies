@@ -1,5 +1,5 @@
-const test = require("tape")
-const throttle = require("./throttle")
+import test from "tape"
+import { throttle } from ".."
 
 /**
  * Call a function only if it hasn't been called in the last `timeWindow` ms.

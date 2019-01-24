@@ -1,5 +1,5 @@
-const test = require("tape")
-const debounce = require("./debounce")
+import test from "tape"
+import { debounce } from ".."
 
 /**
  * Call a function only if it hasn't been called in the last `timeWindow` ms.

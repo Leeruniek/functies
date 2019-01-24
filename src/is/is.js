@@ -19,5 +19,7 @@
  * is(false)     // => true
  * is(NaN)       // => false
  */
-module.exports = source =>
+const is = source =>
   source !== null && source !== undefined && !Number.isNaN(source)
+
+export { is }

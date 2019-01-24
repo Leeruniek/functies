@@ -1,5 +1,5 @@
-const test = require("tape")
-const flatten = require("./flatten")
+import test from "tape"
+import { flatten } from ".."
 
 /**
  * Recursively concat all arrays intro a single array

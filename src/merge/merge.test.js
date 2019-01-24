@@ -1,5 +1,5 @@
-const test = require("tape")
-const merge = require("./merge")
+import test from "tape"
+import { merge } from ".."
 
 /**
  * Combine from left to right, 2 or more objects into a new single one.
@@ -17,7 +17,7 @@ const merge = require("./merge")
  * merge({a: "lorem"}, {b: "ipsum", c: 41}, {c: 42})
  * // => { a: "lorem", b: "ipsum", c: 42 }
  */
-test("object::merge( ...sources: Object[] ): Object", t => {
+test("object::merge", t => {
   const obj1 = { a: undefined }
   const obj2 = { a: "lorem", b: "ipsum", c: 41 }
   const obj3 = { c: 42, b: undefined }

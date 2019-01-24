@@ -1,6 +1,6 @@
-const test = require("tape")
-const findFiles = require("./find-files")
-const endsWith = require("../ends-with/ends-with")
+import test from "tape"
+import { endsWith } from "../ends-with/ends-with"
+import { findFiles } from "./find-files"
 
 /**
  * Recursive dir walk with regular expression matching on file name

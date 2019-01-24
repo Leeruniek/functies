@@ -1,5 +1,5 @@
-const test = require("tape")
-const clone = require("./clone")
+import test from "tape"
+import { clone } from "./clone"
 
 /**
  * Creates a new instance of the object with same properties than original

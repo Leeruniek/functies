@@ -1,5 +1,5 @@
-const test = require("tape")
-const isEmpty = require("./is-empty")
+import test from "tape"
+import { isEmpty } from ".."
 
 /**
  * Determines something is empty

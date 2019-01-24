@@ -1,5 +1,5 @@
-const test = require("tape")
-const forEach = require("./for-each")
+import test from "tape"
+import { forEach } from ".."
 
 /**
  * Call `fn` over each element of an array

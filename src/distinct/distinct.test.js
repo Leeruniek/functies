@@ -1,5 +1,5 @@
-const test = require("tape")
-const distinct = require("./distinct")
+import test from "tape"
+import { distinct } from ".."
 
 /**
  * Remove repeating values

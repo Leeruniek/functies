@@ -1,4 +1,4 @@
-const type = require("../type/type")
+import { type } from "../type/type"
 
 /**
  * Returns a partial copy of an object containing only the keys specified.
@@ -18,7 +18,7 @@ const type = require("../type/type")
  * pick(["id", "name"])({id: 2, name: "lorem", description: "lorem ipsum"})
  * // => {id: 2, name: lorem}
  */
-module.exports = keys => source => {
+const pick = keys => source => {
   const result = {}
 
   if (type(source) !== "Object") {
@@ -40,3 +40,5 @@ module.exports = keys => source => {
 
   return result
 }
+
+export { pick }

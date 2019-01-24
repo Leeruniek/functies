@@ -1,5 +1,5 @@
-const filterBy = require("../filter/filter").filterBy
-const any = require("../any/any").any
+import { byMatch } from "../is-match/is-match"
+import { any } from "../any/any"
 
 /**
  * Check if value is in array
@@ -26,6 +26,6 @@ const has = arg =>
 const hasKey = key => obj =>
   typeof obj.hasOwnProperty === "function" && obj.hasOwnProperty(key)
 
-const hasWith = obj => any(filterBy(obj))
+const hasWith = byMatch(has)
 
 export { has, hasKey, hasWith }

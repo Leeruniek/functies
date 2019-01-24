@@ -1,4 +1,4 @@
-const type = require("../type/type")
+import { type } from "../type/type"
 
 // const ARRAY_REG = /^Array<(String|Object|Function|Number)?>$/
 
@@ -28,7 +28,7 @@ const isOfType = (value, ofType) => {
  *
  * @return {undefined}  { description_of_the_return_value }
  */
-module.exports = ({ schema, context = "" }) => input => {
+const checkType = ({ schema, context = "" }) => input => {
   if (type(schema) === "String" && type(input) !== schema) {
     throw new TypeError(
       `Expected "input" to be "${schema}" in "${context}". Received "${input}", type "${type(
@@ -55,3 +55,5 @@ module.exports = ({ schema, context = "" }) => input => {
 
   return input
 }
+
+export { checkType }

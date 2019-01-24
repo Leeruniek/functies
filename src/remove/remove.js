@@ -1,4 +1,4 @@
-const filter = require("../filter/filter").filter
+import { filter } from "../filter/filter"
 
 /**
  * { lambda_description }
@@ -10,4 +10,6 @@ const filter = require("../filter/filter").filter
  *
  * @return {Array}
  */
-module.exports = value => filter(element => element !== value)
+const remove = value => filter(element => element !== value)
+
+export { remove }

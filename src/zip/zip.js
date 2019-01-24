@@ -27,4 +27,3 @@ const zipWith: ZipWithType = <A, B, C>(fn) => ([aHead, ...aTail]) => ([
 const zip: ZipType = <A, B>(as) => bs => zipWith(a => b => [a, b])(as)(bs)
 
 export { zip, zipWith }
-// const zip: ZipType = (<A, B>() => zipWith < A, B, _ > (a => b => [a, b]))()

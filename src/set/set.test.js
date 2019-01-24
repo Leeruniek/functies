@@ -1,5 +1,5 @@
-const test = require("tape")
-const set = require("./set")
+import test from "tape"
+import { set } from ".."
 
 /**
  * Shallow clone of an object, setting or overriding a property with the given

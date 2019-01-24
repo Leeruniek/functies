@@ -11,7 +11,7 @@
 - [Develop](#develop)
 - [Docs](#docs)
 - [Changelog](#changelog)
-    - [0.24 - 24 January 2019](#024---24-january-2019)
+    - [0.25 - 24 January 2019](#025---24-january-2019)
 
 <!-- /MarkdownTOC -->
 
@@ -60,13 +60,17 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.24 - 24 January 2019
-
-#### Add
-
-- Add `zip`, `zipWith` list processing functions
+### 0.25 - 24 January 2019
 
 #### Change
 
-- Reimplement `*By` functions in terms of a new helper function, `byMatch`
-- Consolidate variations of the same function in the same module
+- Convert all to ES6 import/export 
+- Test files loads testing function from main index file
+- `indexBy` takes array and returns object of objects
+- `get` is now `prop`. Also exporting `get` as alias 
+- `all` and `any` accept non array input
+- `isMatch` accepts predicate functions
+
+#### Remove
+
+- `coinToss`, `random`, `raise`

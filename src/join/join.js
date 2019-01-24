@@ -15,5 +15,7 @@
  * join( "," )( [ "lorem", "ipsum" ] )
  * // => "lorem,ipsum"
  */
-module.exports = (separator = ",") => source =>
+const join = (separator = ",") => source =>
   Array.isArray(source) ? source.join(separator) : ""
+
+export { join }

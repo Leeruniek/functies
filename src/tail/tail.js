@@ -1,2 +1,3 @@
-/* eslint-disable no-unused-vars */
-module.exports = ([head, ...tail]) => tail
+const tail = ([, ...rest]) => rest
+
+export { tail }

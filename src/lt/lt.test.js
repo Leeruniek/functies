@@ -1,5 +1,5 @@
-const test = require("tape")
-const lt = require("./lt")
+import test from "tape"
+import { lt } from ".."
 
 /**
  * Less compare

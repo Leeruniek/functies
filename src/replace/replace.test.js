@@ -1,5 +1,5 @@
-const test = require("tape")
-const replace = require("./replace")
+import test from "tape"
+import { replace } from ".."
 
 /**
  * Replace substring if source is string, replace element (shallow equal) if

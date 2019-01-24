@@ -16,7 +16,7 @@
  * zipToObj( [ a, b ] )( [ 1, 2 ] ) // => { a: 1, b: 2 }
  * zipToObj( [ a ] )( [ 1, 2 ] ) // => { a: 1 }
  */
-module.exports = keys => values => {
+const zipToObj = keys => values => {
   const result = {}
   const length = Math.min(keys.length, values.length)
 
@@ -26,3 +26,5 @@ module.exports = keys => values => {
 
   return result
 }
+
+export { zipToObj }

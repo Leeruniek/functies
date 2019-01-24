@@ -1,9 +1,10 @@
-const test = require("tape")
-const top = require("./top")
+import test from "tape"
+import { top } from ".."
 
 /**
  * Extract top elements from array
  *
+ * @name top
  * @tag Array
  * @signature (count: number) => (source: Array): Array
  *

@@ -1,8 +1,7 @@
 /**
  * Extract top elements from array
  *
- * @name   top
- *
+ * @name top
  * @tag Array
  * @signature (count: number) => (source: Array): Array
  *
@@ -15,4 +14,6 @@
  * top(2)([ 1, 2, 3 ])
  * // => [1, 2]
  */
-module.exports = (count = 1) => source => source.slice(0, count)
+const top = (count = 1) => source => source.slice(0, count)
+
+export { top }

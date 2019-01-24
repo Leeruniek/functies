@@ -14,4 +14,6 @@
  * contains("ipsum")("lorem ipsum")
  * // => true
  */
-module.exports = search => source => source.includes(search)
+const contains = search => source => source.includes(search)
+
+export { contains }

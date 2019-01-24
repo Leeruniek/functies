@@ -7,4 +7,6 @@
  *
  * @return {mixed}
  */
-module.exports = input => input
+const i = input => input
+
+export { i }

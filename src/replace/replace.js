@@ -1,4 +1,4 @@
-const type = require("../type/type")
+import { type } from "../type/type"
 
 /**
  * Replace substring in string
@@ -49,7 +49,7 @@ const replaceArray = (oldElm, newElm) => source => {
  * @signature (oldElm: string|mixed, newElm: string|mixed) => (source: Array): Array
  *
  */
-module.exports = (oldElm, newElm) => source => {
+const replace = (oldElm, newElm) => source => {
   const sourceType = type(source)
   const byType = {
     String: replaceString,
@@ -58,3 +58,5 @@ module.exports = (oldElm, newElm) => source => {
 
   return byType[sourceType](oldElm, newElm)(source)
 }
+
+export { replace }

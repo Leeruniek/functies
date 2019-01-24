@@ -1,5 +1,5 @@
 import test from "tape"
-import { groupBy } from "./group-by"
+import { groupBy } from ".."
 
 test("array::groupBy", t => {
   const sameParity = x => y => x % 2 === y % 2

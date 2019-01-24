@@ -1,5 +1,5 @@
 import test from "tape"
-import { count } from "./count"
+import { count } from ".."
 
 /**
  * Count the number of elements that satisfies a function

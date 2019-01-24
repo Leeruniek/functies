@@ -17,4 +17,6 @@
  * split( "," )( "lorem,ipsum" )
  * // [ "lorem", "ipsum" ]
  */
-module.exports = separator => source => "".split.call(source, separator)
+const split = separator => source => "".split.call(source, separator)
+
+export { split }

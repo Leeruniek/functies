@@ -1,6 +1,5 @@
 import test from "tape"
-
-import { curry } from "./curry"
+import { curry } from ".."
 
 test("fn::curry", t => {
   const sum = (a, b) => a + b

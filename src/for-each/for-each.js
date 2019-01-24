@@ -11,8 +11,10 @@
  * @tag Array
  * @signature (fn: Function) => (source: Array): undefined
  */
-module.exports = fn => source => {
+const forEach = fn => source => {
   source.forEach(fn)
 
   return source
 }
+
+export { forEach }

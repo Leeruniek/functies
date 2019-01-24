@@ -1,5 +1,5 @@
-const type = require("../type/type")
-const reduce = require("../reduce/reduce").reduce
+import { reduce } from "../reduce/reduce"
+import { type } from "../type/type"
 
 /**
  * Recursively concat all arrays intro a single array
@@ -9,8 +9,8 @@ const reduce = require("../reduce/reduce").reduce
  * @return {Array}  1 level deep array
  *
  * @example
- * flatten( [ 1, [ 2 ], [ 3, [ 4 ] ] ] )
- * // => [ 1, 2, 3, 4 ]
+ * flatten([1, [2], [3, [4]]])
+ * // => [1, 2, 3, 4]
  */
 const flatten = reduce(
   (acc, item) =>
@@ -18,4 +18,4 @@ const flatten = reduce(
   []
 )
 
-module.exports = flatten
+export { flatten }

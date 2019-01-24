@@ -17,4 +17,6 @@
  * lt(14)(10)
  * // => false
  */
-module.exports = first => second => first < second
+const lt = first => second => first < second
+
+export { lt }

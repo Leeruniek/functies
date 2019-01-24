@@ -1,5 +1,5 @@
-const test = require("tape")
-const sequence = require("./sequence")
+import test from "tape"
+import { sequence } from ".."
 
 /**
  * Create an array of numbers

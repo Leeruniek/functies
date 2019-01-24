@@ -1,5 +1,5 @@
-const test = require("tape")
-const gt = require("./gt")
+import test from "tape"
+import { gt } from ".."
 
 /**
  * Grater compare

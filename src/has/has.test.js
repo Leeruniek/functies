@@ -1,5 +1,5 @@
 import test from "tape"
-import { has, hasKey } from "./has"
+import { has, hasKey, hasWith } from ".."
 
 /**
  * Check if value is in array
@@ -20,7 +20,7 @@ import { has, hasKey } from "./has"
  * has( elm => elm.id === 1 )([{}, {id: 1}])
  * // => true
  */
-test("array::has( value: Function|mixed )( source: Array ): boolean", t => {
+test("array::has", t => {
   t.deepEqual(has(2)([1, 2]), true, "primitive is in array should return true")
 
   t.deepEqual(
@@ -44,7 +44,23 @@ test("array::has( value: Function|mixed )( source: Array ): boolean", t => {
   t.end()
 })
 
-test("object::has( key: string ) => ( input: Object ): boolean", t => {
+test("array::hasWith", t => {
+  t.equal(
+    hasWith({ name: "lorem" })([{ name: "ipsum" }, { name: "lorem" }]),
+    true,
+    "Array of objects contains item"
+  )
+
+  t.equal(
+    hasWith({ name: "no-lorem" })([{ name: "ipsum" }, { name: "lorem" }]),
+    false,
+    "Array of objects doesnt contain item"
+  )
+
+  t.end()
+})
+
+test("object::hasKey", t => {
   t.equal(hasKey("lorem")({ lorem: "ipsum" }), true, "Key exists")
 
   t.equal(hasKey("lorem")({}), false, "Key does not exist")

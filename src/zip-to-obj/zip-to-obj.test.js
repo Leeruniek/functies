@@ -1,5 +1,5 @@
-const test = require("tape")
-const zipToObj = require("./zip-to-obj")
+import test from "tape"
+import { zipToObj } from ".."
 
 /**
  * Create an object from two arrays, one containing keys, the other values.

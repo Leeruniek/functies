@@ -1,5 +1,5 @@
-const test = require("tape")
-const pluck = require("./pluck")
+import test from "tape"
+import { pluck } from ".."
 
 /**
  * Returns a new list by extracting the same named property off all objects in
@@ -17,7 +17,7 @@ const pluck = require("./pluck")
  * pluck("position")([{id: 1, position: 3}, {id:2, position: -1}])
  * // => [3, -1]
  */
-test("array::pluck( field: string ) => ( source: Object[] ): mixed[]", t => {
+test("array::pluck", t => {
   const source = [
     {
       id: 1,

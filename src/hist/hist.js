@@ -29,7 +29,7 @@
  * hist( "score" )( scores )
  * // => { "1": 1, "10": 2 }
  */
-module.exports = field => source => {
+const hist = field => source => {
   const result = {}
 
   for (let i = 0, length = source.length; i < length; i++) {
@@ -42,3 +42,5 @@ module.exports = field => source => {
 
   return result
 }
+
+export { hist }

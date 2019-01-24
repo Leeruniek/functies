@@ -1,12 +1,12 @@
 /* eslint-disable no-sync */
 
-const path = require("path")
-const fs = require("fs")
-const pipe = require("../pipe/pipe").pipe
-const map = require("../map/map").map
-const push = require("../push/push")
-const flatten = require("../flatten/flatten")
-const reduce = require("../reduce/reduce").reduce
+import path from "path"
+import fs from "fs"
+import { pipe } from "../pipe/pipe"
+import { map } from "../map/map"
+import { push } from "../push/push"
+import { flatten } from "../flatten/flatten"
+import { reduce } from "../reduce/reduce"
 
 /**
  * Determines if file name valid.
@@ -68,8 +68,10 @@ const matchInFolder = test =>
     )
   )
 
-module.exports = (test = /.*/) =>
+const findFiles = (test = /.*/) =>
   pipe(
     map(matchInFolder(test)),
     flatten
   )
+
+export { findFiles }

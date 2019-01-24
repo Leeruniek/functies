@@ -1,5 +1,5 @@
 import test from "tape"
-import { reduce } from "./reduce"
+import { reduce } from ".."
 
 /**
  * Apply a function against an accumulator and each  element in the array (from

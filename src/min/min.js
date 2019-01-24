@@ -14,7 +14,7 @@
  * min([-1, 1, 10, 3])
  * // => -1
  */
-module.exports = source => {
+const min = source => {
   let minValue = 0
 
   if (source.length === 0) {
@@ -29,3 +29,5 @@ module.exports = source => {
 
   return minValue
 }
+
+export { min }
