@@ -1,5 +1,14 @@
 import { all } from "../all/all"
 
+const byValue = ({ shouldBe, value, not }) =>
+  not ? shouldBe !== value : shouldBe === value
+
+const byFn = ({ shouldBe, value, not }) => {
+  const result = shouldBe(value) === true
+
+  return not ? !result : result
+}
+
 /**
  * Determines if one object's properties are equal to another
  *
@@ -38,13 +47,15 @@ import { all } from "../all/all"
  * // false
  */
 const isMatch = subset => source =>
-  all(([key, value]) => {
+  all(([key, shouldBe]) => {
     const shouldTestNegation = key[0] === "!"
-    const cleanKey = key.replace("!", "")
 
-    return shouldTestNegation
-      ? source[cleanKey] !== value
-      : source[cleanKey] === value
+    const sourceKey = key.replace("!", "")
+    const value = source[sourceKey]
+
+    return typeof shouldBe === "function"
+      ? byFn({ shouldBe, value, not: shouldTestNegation })
+      : byValue({ shouldBe, value, not: shouldTestNegation })
   })(Object.entries(subset))
 
 const byMatch = fn => obj => fn(isMatch(obj))

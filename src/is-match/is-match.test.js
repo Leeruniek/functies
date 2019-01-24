@@ -1,11 +1,14 @@
 import test from "tape"
-import { isMatch } from "./is-match"
+import { contains } from "../contains/contains"
+import { all } from "../all/all"
+import { is } from "../is/is"
+import { isMatch } from ".."
 
 /**
  * Determines one object's properties are equal to another
  *
  * @tag Core
- * @signature ( subset: Object )( source: Object ): boolean
+ * @signature (subset: Object)(source: Object): boolean
  *
  * @param  {Object}   subset  Set of properties that should match
  * @param  {Object}   source  Object matching against
@@ -23,7 +26,7 @@ import { isMatch } from "./is-match"
  *  parentId: null
  *  name: "John",
  * })
- * // true
+ * // => true
  *
  * isMatch({
  *  "!parentId": null,
@@ -33,9 +36,24 @@ import { isMatch } from "./is-match"
  *  parentId: null,
  *  name: "John",
  * })
- * // false
+ * // => false
+ *
+ * isMatch({
+ *   name: contains("lorem"),
+ * })({
+ *   id: 2,
+ *   name: "lorem ipsum",
+ * })
+ * // => true
+ *
+ * isMatch({
+ *   name: all(is, contains("lorem")),
+ * })({
+ *   label: "bogus",
+ * })
+ * // => false
  */
-test("isMatch::(test: Object)(source: Object): boolean", t => {
+test("object::isMatch", t => {
   t.deepEqual(
     isMatch({
       id: 2,
@@ -85,6 +103,38 @@ test("isMatch::(test: Object)(source: Object): boolean", t => {
     }),
     true,
     "Properties are not present"
+  )
+
+  t.equals(
+    isMatch({
+      name: contains("lorem"),
+    })({
+      id: 2,
+      name: "lorem ipsum",
+    }),
+    true,
+    "Object has field and matches predicate"
+  )
+
+  t.equals(
+    isMatch({
+      name: all(is, contains("lorem")),
+    })({
+      label: "bogus",
+    }),
+    false,
+    "Object does not have test field"
+  )
+
+  t.equals(
+    isMatch({
+      "!name": contains("lorem"),
+    })({
+      id: 1,
+      name: "bogus",
+    }),
+    true,
+    "Object has field and does not match predicate"
   )
 
   t.end()
