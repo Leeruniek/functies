@@ -1,5 +1,5 @@
-const test = require("tape")
-const get = require("./get")
+import test from "tape"
+import { prop } from ".."
 
 /**
  * Get value from obj property
@@ -13,12 +13,12 @@ const get = require("./get")
  * @signature ( key: string ) => ( source: Object ): mixed
  *
  * @example
- * get( "lorem" )( { lorem: "ipsum" } ) // => "ipsum"
- * get( "not-exist" )( { lorem: "ipsum" } ) // => undefined
+ * prop( "lorem" )( { lorem: "ipsum" } ) // => "ipsum"
+ * prop( "not-exist" )( { lorem: "ipsum" } ) // => undefined
  */
-test("object::get(key: string) => (source: Object) => mixed", t => {
+test("object::prop", t => {
   t.equal(
-    get("lorem")({
+    prop("lorem")({
       lorem: "ipsum",
     }),
     "ipsum",
@@ -26,7 +26,7 @@ test("object::get(key: string) => (source: Object) => mixed", t => {
   )
 
   t.equal(
-    get("not-exist")({
+    prop("not-exist")({
       lorem: "ipsum",
     }),
     undefined,
@@ -34,13 +34,13 @@ test("object::get(key: string) => (source: Object) => mixed", t => {
   )
 
   t.equal(
-    get("not-exist")(undefined),
+    prop("not-exist")(undefined),
     undefined,
     "Get prop from undefined // undefined"
   )
 
   t.equal(
-    get("not-exist")(2),
+    prop("not-exist")(2),
     undefined,
     "Get prop from non object // undefined"
   )
