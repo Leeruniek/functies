@@ -1,9 +1,5 @@
-const pipe = require("../pipe/pipe").pipe
 const filterBy = require("../filter/filter").filterBy
-const get = require("../get/get")
-const gt = require("../gt/gt")
 const any = require("../any/any").any
-const reduce = require("../reduce/reduce").reduce
 
 /**
  * Check if value is in array
@@ -24,9 +20,11 @@ const reduce = require("../reduce/reduce").reduce
  * has( elm => elm.id === 1 )([{}, {id: 1}])
  * // => true
  */
-const has = arg => typeof arg === "function" ? any(arg) : any(val => val === arg)
+const has = arg =>
+  typeof arg === "function" ? any(arg) : any(val => val === arg)
 
-const hasKey = key => obj => typeof obj.hasOwnProperty === "function" && obj.hasOwnProperty(key)
+const hasKey = key => obj =>
+  typeof obj.hasOwnProperty === "function" && obj.hasOwnProperty(key)
 
 const hasWith = obj => any(filterBy(obj))
 

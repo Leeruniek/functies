@@ -1,8 +1,8 @@
 // @flow
 
-type ZipWithType = <A, B, C>(fn: A => B => C) => A[] => B[] => C[]
+type ZipWithType = <A, B, C>(fn: (A) => B => C) => (A[]) => (B[]) => C[]
 
-type ZipType = <A, B>(A[]) => B[] => [A, B][]
+type ZipType = <A, B>(A[]) => (B[]) => [A, B][]
 
 declare export var zipWith: ZipWithType
 declare export var zip: ZipType
