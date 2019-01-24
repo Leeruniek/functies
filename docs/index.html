@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>@leeruniek/functies 0.23.0 | Documentation</title>
+  <title>@leeruniek/functies 0.24.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@leeruniek/functies</h3>
-          <div class='mb1'><code>0.23.0</code></div>
+          <div class='mb1'><code>0.24.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -69,16 +69,6 @@
                   href='#count'
                   class="">
                   count
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#countby'
-                  class="">
-                  countBy
                   
                 </a>
                 
@@ -216,69 +206,9 @@
               
                 
                 <li><a
-                  href='#filterby'
-                  class="">
-                  filterBy
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#find'
                   class="">
                   find
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#findby'
-                  class="">
-                  findBy
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#isfilenamevalid'
-                  class="">
-                  isFileNameValid
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#readdir'
-                  class="">
-                  readDir
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#isdir'
-                  class="">
-                  isDir
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#matchinfolder'
-                  class="">
-                  matchInFolder
                   
                 </a>
                 
@@ -339,26 +269,6 @@
                   href='#has'
                   class="">
                   has
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#haskey'
-                  class="">
-                  hasKey
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#haswith'
-                  class="">
-                  hasWith
                   
                 </a>
                 
@@ -709,6 +619,26 @@
                   href='#type'
                   class="">
                   type
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#zipwith'
+                  class="">
+                  zipWith
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#zip'
+                  class="">
+                  zip
                   
                 </a>
                 
@@ -1147,108 +1077,6 @@ any(is)([<span class="hljs-literal">null</span>])
 }]
 
 count( <span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> element.score === <span class="hljs-number">10</span> )( scores )
-<span class="hljs-comment">// =&gt; 2</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='countby'>
-      countBy
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Count the number of objects that match a criteria</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>(matchObject: Object)(source: Object[]): number</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>matchObject</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    Match object
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
-	    Array of objects
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> scores = [{
- <span class="hljs-attr">name</span>   : <span class="hljs-string">"Bob"</span>,
- <span class="hljs-attr">score</span>  : <span class="hljs-number">1</span>,
- <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span>
-}, {
- <span class="hljs-attr">name</span>   : <span class="hljs-string">"Alice"</span>,
- <span class="hljs-attr">score</span>  : <span class="hljs-number">10</span>,
- <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span>
-}, {
- <span class="hljs-attr">name</span>   : <span class="hljs-string">"Hatter"</span>,
- <span class="hljs-attr">score</span>  : <span class="hljs-number">10</span>,
- <span class="hljs-attr">subject</span>: <span class="hljs-string">"Nature"</span>
-}]
-
-countBy({
- <span class="hljs-string">"subject"</span>: <span class="hljs-string">"Math"</span>
-})(scores)
 <span class="hljs-comment">// =&gt; 2</span></pre>
     
   
@@ -2308,102 +2136,6 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='filterby'>
-      filterBy
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Filter an array of objects</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>(matchObject: Object) =&gt; (source: Object[]): Object[]</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>matchObject</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    Match object
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
-        Array of objects that match the filter criteria
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>{ example }
-
-filterBy( { <span class="hljs-string">"!id"</span>: <span class="hljs-number">2</span> } )( [
-  { <span class="hljs-attr">lorem</span>: <span class="hljs-number">2</span> },
-  { <span class="hljs-attr">lorem</span>: <span class="hljs-number">3</span> },
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> }
-] )
-<span class="hljs-comment">// [</span>
-<span class="hljs-comment">// { lorem: 2 },</span>
-<span class="hljs-comment">// { lorem: 3 }</span>
-<span class="hljs-comment">// ]</span>
-
-filterBy( { <span class="hljs-string">"items"</span>: <span class="hljs-number">2</span> } )( [
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">items</span>: <span class="hljs-number">2</span> }
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">items</span>: <span class="hljs-number">1</span> }
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">items</span>: <span class="hljs-number">2</span> }
-] )
-<span class="hljs-comment">// [</span>
-<span class="hljs-comment">// { id: 2, items: 2 },</span>
-<span class="hljs-comment">// { id: 4, items: 2 }</span>
-<span class="hljs-comment">// ]</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='find'>
       find
     </h3>
@@ -2472,423 +2204,6 @@ filterBy( { <span class="hljs-string">"items"</span>: <span class="hljs-number">
     
       
       <pre class='p1 overflow-auto round fill-light'>find(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>)([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]) = <span class="hljs-number">2</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='findby'>
-      findBy
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Find the first element that matches the filter criteria</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>findBy</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>filter</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    Object containing one or more fields
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>notFound</span> <code class='quiet'>(Any)</code>
-	    Value to return in case not found
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>input</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    Object containing one or more fields
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)</code>:
-        First element that matches
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> comments = [ { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">body</span>: <span class="hljs-string">""</span> }, { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">body</span>: <span class="hljs-string">"dolor"</span> } ]
-
-findBy( { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> } )( comments )
-<span class="hljs-comment">// =&gt; { id: 2, body: "dolor" }</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='isfilenamevalid'>
-      isFileNameValid
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Determines if file name valid.</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>isFileNameValid</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>match</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a>))</code>
-	    The match
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        True if file name valid, False otherwise.
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='readdir'>
-      readDir
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Reads a folder contents</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>readDir</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>dir</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    The dir path
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>:
-        Array of files paths
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='isdir'>
-      isDir
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Determines if dir.</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>isDir</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>dirPath</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    The dir path
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        True if dir, False otherwise.
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='matchinfolder'>
-      matchInFolder
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Recursive dir walk with regular expression matching on file name</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>matchInFolder</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>test</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>arg1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    Function props
-
-          </div>
-          
-          <table class='mt1 mb2 fixed-table h5 col-12'>
-            <colgroup>
-              <col width='30%' />
-              <col width='70%' />
-            </colgroup>
-            <thead>
-              <tr class='bold fill-light'>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody class='mt1'>
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>arg1.test</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a>)</code>
-  </td>
-  <td class='break-word'><span>Test function or RegExp to match
-file name agains
-</span></td>
-</tr>
-
-
-              
-            </tbody>
-          </table>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>:
-        Array of files paths
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>find({<span class="hljs-attr">test</span>: <span class="hljs-comment">/*.\.plugin\.js/})("./root-folder")</span></pre>
     
   
 
@@ -3411,178 +2726,6 @@ has( <span class="hljs-number">3</span> )( [ <span class="hljs-number">1</span>,
 <span class="hljs-comment">// =&gt; false</span>
 has( <span class="hljs-function"><span class="hljs-params">elm</span> =&gt;</span> elm.id === <span class="hljs-number">1</span> )([{}, {<span class="hljs-attr">id</span>: <span class="hljs-number">1</span>}])
 <span class="hljs-comment">// =&gt; true</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='haskey'>
-      hasKey
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Check if property exists on a given object</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>( key: string ) =&gt; ( source: Object ): boolean</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    Property name
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
-	    Source object
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>has( <span class="hljs-string">"lorem"</span> )( { <span class="hljs-attr">lorem</span>: <span class="hljs-literal">null</span> } ) <span class="hljs-comment">// =&gt; true</span>
-has( <span class="hljs-string">"toString"</span> )( { <span class="hljs-attr">lorem</span>: <span class="hljs-string">"ipsum"</span> } ) <span class="hljs-comment">// =&gt; false</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='haswith'>
-      hasWith
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Check if input has objects with certain properties</p>
-
-
-  
-    <div class='pre p1 fill-light mt0'>hasWith</div>
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>filters</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    The filters
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>input</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Haystack
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        True if has, False otherwise.
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>hasWith( { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> } )( [ { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">"todo #1"</span>} ] ) <span class="hljs-comment">// true</span>
-hasWith( { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span> } )( [ { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">"todo #2"</span>} ] ) <span class="hljs-comment">// false</span></pre>
     
   
 
@@ -6646,6 +5789,119 @@ type(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</spa
 type(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {})          <span class="hljs-comment">// "Function"</span>
 type(<span class="hljs-built_in">Promise</span>.resolve()) <span class="hljs-comment">// "Promise"</span></pre>
     
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='zipwith'>
+      zipWith
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Combine pairs of values from two lists by an arbitrary function.
+If the lists differ in length, the output will have the length
+of the shorter list.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>&lt;A, B, C&gt;(fn: A =&gt; B =&gt; C) =&gt; A[] =&gt; B[] =&gt; C[]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='zip'>
+      zip
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Combine pairs of values from two lists into a list of tuples.
+If the lists differ in length, the output will have the length
+of the shorter list.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>&lt;A, B&gt;(A[]) =&gt; B[] =&gt; [A, B][]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
