@@ -1,3 +1,5 @@
+import { byMatch } from "../is-match/is-match"
+
 /**
  * Find the first element that satisfies the matchFn
  *
@@ -11,4 +13,8 @@
  * @example
  * find(x => x % 2 === 0)([1,2,3,4,5]) = 2
  */
-module.exports = matchFn => source => source.find(matchFn)
+const find = fn => source => source.find(fn)
+
+const findBy = byMatch(find)
+
+export { find, findBy }

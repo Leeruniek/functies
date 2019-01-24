@@ -1,5 +1,5 @@
-const test = require("tape")
-const isMatch = require("./is-match")
+import test from "tape"
+import { isMatch } from "./is-match"
 
 /**
  * Determines one object's properties are equal to another

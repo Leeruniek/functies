@@ -1,5 +1,5 @@
-const test = require("tape")
-const find = require("./find")
+import test from "tape"
+import { find } from "./find"
 
 /**
  * Find the first element that satisfies the matchFn

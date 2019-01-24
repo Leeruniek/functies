@@ -2,6 +2,7 @@
 
 // @flow
 
+import { byMatch } from "../is-match/is-match"
 import type { PartitionType } from "./partition.js.flow"
 
 /**
@@ -32,4 +33,6 @@ const partition: PartitionType = <A>(fn) => input =>
     [[], []]
   )
 
-export { partition }
+const partitionBy = byMatch(partition)
+
+export { partition, partitionBy }

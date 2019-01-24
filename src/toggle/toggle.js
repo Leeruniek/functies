@@ -1,5 +1,5 @@
 const ifThen = require("../if-then/if-then").ifThen
-const has = require("../has/has")
+const has = require("../has/has").has
 const remove = require("../remove/remove")
 const push = require("../push/push")
 

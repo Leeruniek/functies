@@ -1,5 +1,5 @@
-const test = require("tape")
-const count = require("./count")
+import test from "tape"
+import { count } from "./count"
 
 /**
  * Count the number of elements that satisfies a function
