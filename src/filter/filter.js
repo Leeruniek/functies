@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 // @flow
 
+import { byMatch } from "../is-match/is-match"
 import type { FilterType } from "./filter.js.flow"
 
 /**
@@ -16,4 +17,6 @@ import type { FilterType } from "./filter.js.flow"
  */
 const filter: FilterType = <A>(fn) => source => source.filter(fn)
 
-export { filter }
+const filterBy = byMatch(filter)
+
+export { filter, filterBy }

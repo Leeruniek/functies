@@ -1,6 +1,7 @@
-const filter = require("../filter/filter").filter
+import { filter } from "../filter/filter"
+import { pipe } from "../pipe/pipe"
+import { byMatch } from "../is-match/is-match"
 const get = require("../get/get")
-const pipe = require("../pipe/pipe").pipe
 
 /**
  * Count the number of elements that satisfies a function
@@ -31,10 +32,14 @@ const pipe = require("../pipe/pipe").pipe
  * count( element => element.score === 10 )( scores )
  * // => 2
  */
-module.exports = arg =>
+const count = arg =>
   Array.isArray(arg)
     ? arg.length
     : pipe(
         filter(arg),
         get("length")
       )
+
+const countBy = byMatch(count)
+
+export { count, countBy }

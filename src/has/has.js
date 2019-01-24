@@ -1,3 +1,7 @@
+const pipe = require("../pipe/pipe").pipe
+const filterBy = require("../filter/filter").filterBy
+const get = require("../get/get")
+const gt = require("../gt/gt")
 const any = require("../any/any").any
 const reduce = require("../reduce/reduce").reduce
 
@@ -20,7 +24,10 @@ const reduce = require("../reduce/reduce").reduce
  * has( elm => elm.id === 1 )([{}, {id: 1}])
  * // => true
  */
-module.exports = arg =>
-  typeof arg === "function"
-    ? any(arg)
-    : reduce((acc, val) => acc || arg === val, false)
+const has = arg => typeof arg === "function" ? any(arg) : any(val => val === arg)
+
+const hasKey = key => obj => typeof obj.hasOwnProperty === "function" && obj.hasOwnProperty(key)
+
+const hasWith = obj => any(filterBy(obj))
+
+export { has, hasKey, hasWith }

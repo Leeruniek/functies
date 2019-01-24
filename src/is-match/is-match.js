@@ -1,3 +1,5 @@
+import { all } from "../all/all"
+
 /**
  * Determines if one object's properties are equal to another
  *
@@ -35,21 +37,16 @@
  * })
  * // false
  */
-module.exports = subset => source => {
-  const subsetEntries = Object.entries(subset)
-
-  for (let i = 0, length = subsetEntries.length; i < length; i++) {
-    const [key, value] = subsetEntries[i]
+const isMatch = subset => source =>
+  all(([key, value]) => {
     const shouldTestNegation = key[0] === "!"
     const cleanKey = key.replace("!", "")
-    const isFieldMatch = shouldTestNegation
+
+    return shouldTestNegation
       ? source[cleanKey] !== value
       : source[cleanKey] === value
+  })(Object.entries(subset))
 
-    if (isFieldMatch === false) {
-      return false
-    }
-  }
+const byMatch = fn => obj => fn(isMatch(obj))
 
-  return true
-}
+export { isMatch, byMatch }
