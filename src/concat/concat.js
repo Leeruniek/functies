@@ -16,4 +16,4 @@
 const concat = source1 => source2 =>
   (Array.isArray(source1) ? source1 : [source1]).concat(source2)
 
-export {concat}
+export { concat }
