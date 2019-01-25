@@ -11,7 +11,7 @@ declare module "@leeruniek/functies" {
     pipe: PipeType,
     reduce: ReduceType,
 
-    coinToss: any,
+    concat: any,
     contains: any,
     count: any,
     countBy: any,
@@ -65,6 +65,8 @@ declare module "@leeruniek/functies" {
     toLower: any,
     top: any,
     type: any,
+    zip: any,
+    zipWith: any,
     zipToObj: any,
   }
 }
