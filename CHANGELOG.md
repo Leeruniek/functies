@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.26] - 25 January 2019
+
+### Add
+
+- Add `concat` -  Merge two arrays into one
+
+### Change
+
+- Add `concat`, `zip`, `zipWith` to flow lib def 
+
 ## [0.25] - 24 January 2019
 
 ### Change
@@ -130,8 +140,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.25...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.26...HEAD
 
+[0.26]: https://github.com/leeruniek/functies/compare/v0.25...v0.26
 [0.25]: https://github.com/leeruniek/functies/compare/v0.24...v0.25
 [0.24]: https://github.com/leeruniek/functies/compare/v0.23.1...v0.24
 [0.23.1]: https://github.com/leeruniek/functies/compare/v0.23...v0.23.1
