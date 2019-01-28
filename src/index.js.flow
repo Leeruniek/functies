@@ -4,6 +4,7 @@ declare module "@leeruniek/functies" {
   declare module.exports: {
     all: AllType,
     any: AnyType,
+    cases: CasesType,
     filter: FilterType,
     groupBy: GroupByType,
     map: MapType,
