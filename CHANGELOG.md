@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.27] - 28 January 2019
+
+### Add
+
+- Add `cases` - Functional `switch` statement
+
+### Change
+
+- Change `ifThen` type that the return types of the `then` and `else` branches must match
+
 ## [0.26] - 25 January 2019
 
 ### Add
@@ -142,6 +152,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]: https://github.com/leeruniek/functies/compare/v0.26...HEAD
 
+[0.27]: https://github.com/leeruniek/functies/compare/v0.26...v0.27
 [0.26]: https://github.com/leeruniek/functies/compare/v0.25...v0.26
 [0.25]: https://github.com/leeruniek/functies/compare/v0.24...v0.25
 [0.24]: https://github.com/leeruniek/functies/compare/v0.23.1...v0.24

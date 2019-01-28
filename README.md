@@ -11,7 +11,7 @@
 - [Develop](#develop)
 - [Docs](#docs)
 - [Changelog](#changelog)
-    - [0.26 - 25 January 2019](#026---25-january-2019)
+    - [0.27 - 25 January 2019](#027---28-january-2019)
 
 <!-- /MarkdownTOC -->
 
@@ -60,12 +60,12 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.26 - 25 January 2019
+### 0.27 - 28 January 2019
 
 #### Add
 
-- Add `concat` -  Merge two arrays into one
+- Add `cases` - Functional `switch` statement
 
 #### Change
 
-- Add `concat`, `zip`, `zipWith` to flow lib def 
+- Change `ifThen` type that the return types of the `then` and `else` branches must match
