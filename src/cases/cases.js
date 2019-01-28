@@ -26,7 +26,7 @@ import type { CasesType } from "./cases.js.flow"
  * otherwise function on the input.
  *
  * @example
- * case([
+ * cases([
  *  [x === 0, x => x * 2],
  *  [x === 1, x => x],
  * ], x => x + 1)(2) = 3
