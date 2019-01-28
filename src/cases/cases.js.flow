@@ -1,0 +1,10 @@
+// @flow
+
+type CasesType = <A, B>(
+  conditions: [(A) => boolean, (A) => B][],
+  otherwise: (A) => B
+) => A => B
+
+declare export var cases: CasesType
+
+export type { CasesType }

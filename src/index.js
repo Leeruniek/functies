@@ -1,5 +1,6 @@
 export { all } from "./all/all"
 export { any } from "./any/any"
+export { cases } from "./cases/cases"
 export { concat } from "./concat/concat"
 export { contains } from "./contains/contains"
 export { count, countBy } from "./count/count"
