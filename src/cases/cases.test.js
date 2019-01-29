@@ -1,5 +1,3 @@
-// @flow
-
 import test from "tape"
 import { cases } from ".."
 

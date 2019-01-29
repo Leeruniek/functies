@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
-// @flow
 
 import { ifThen } from "../if-then/if-then"
 import { i } from "../i/i"
-import type { CasesType } from "./cases.js.flow"
 
 /**
  * Functional case statement.
@@ -31,7 +29,7 @@ import type { CasesType } from "./cases.js.flow"
  *  [x === 1, x => x],
  * ], x => x + 1)(2) = 3
  */
-const cases: CasesType = <A, B>(
+const cases = (
   [[conditionFn, thenFn], ...rest],
   otherwise = i
 ) => input =>
