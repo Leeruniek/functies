@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars, no-negated-condition */
 
 import { ifThen } from "../if-then/if-then"
 import { i } from "../i/i"
@@ -29,10 +29,7 @@ import { i } from "../i/i"
  *  [x === 1, x => x],
  * ], x => x + 1)(2) = 3
  */
-const cases = (
-  [[conditionFn, thenFn], ...rest],
-  otherwise = i
-) => input =>
+const cases = ([[conditionFn, thenFn], ...rest], otherwise = i) => input =>
   ifThen(
     conditionFn,
     thenFn,
