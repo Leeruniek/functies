@@ -60,12 +60,9 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.27 - 28 January 2019
+### 0.28 - 30 January 2019
 
 #### Add
 
-- Add `cases` - Functional `switch` statement
+- Add `isEqual` - tripple equal
 
-#### Change
-
-- Change `ifThen` type that the return types of the `then` and `else` branches must match
