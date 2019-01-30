@@ -7,6 +7,7 @@ declare module "@leeruniek/functies" {
     cases: CasesType,
     filter: FilterType,
     groupBy: GroupByType,
+    isEqual: IsEqualType,
     map: MapType,
     partition: PartitionType,
     pipe: PipeType,

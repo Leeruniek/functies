@@ -1,0 +1,5 @@
+// @flow
+
+type IsEqualType = <A>(A) => A => boolean
+
+export type { IsEqualType }
