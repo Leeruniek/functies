@@ -1,5 +1,5 @@
 import test from "tape"
-import { prop } from ".."
+import { prop, props } from ".."
 
 /**
  * Get value from obj property
@@ -43,6 +43,20 @@ test("object::prop", t => {
     prop("not-exist")(2),
     undefined,
     "Get prop from non object // undefined"
+  )
+
+  t.deepEqual(
+    props(["a", "b", "d"])({
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4,
+    }),
+    {
+      a: 1,
+      b: 2,
+      d: 4,
+    }
   )
 
   t.end()
