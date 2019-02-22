@@ -55,6 +55,7 @@ declare module "@leeruniek/functies" {
     pick: any,
     pluck: any,
     prop: any,
+    props: any,
     push: any,
     raise: any,
     random: any,

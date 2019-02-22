@@ -1,3 +1,5 @@
+import { pipe, map, reduce } from ".."
+
 /**
  * Get value from obj property
  *
@@ -17,4 +19,16 @@
 const prop = key => source =>
   typeof source === "object" ? source[key] : undefined
 
-export { prop }
+const props = keys => source =>
+  pipe(
+    map(key => [key, prop(key)(source)]),
+    reduce(
+      (acc, [key, value]) => ({
+        ...acc,
+        [key]: value,
+      }),
+      {}
+    )
+  )(keys)
+
+export { prop, props }
