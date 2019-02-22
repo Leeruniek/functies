@@ -1,0 +1,15 @@
+// @flow
+
+type GetType<A> = (obj: Object) => A
+
+type SetType<A> = (value: A) => (obj: Object) => Object
+
+type LensType = <A>(keys: string[]) => [GetType<A>, SetType<A>]
+
+type LensesType = <A>(paths: string[][]) => [GetType<A>, SetType<A>][][]
+
+declare export var lens: LensType
+
+declare export var lenses: LensesType
+
+export type { LensType, LensesType }
