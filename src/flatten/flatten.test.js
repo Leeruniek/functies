@@ -1,5 +1,5 @@
 import test from "tape"
-import { flatten } from ".."
+import { flatten, flattenBranches } from ".."
 
 /**
  * Recursively concat all arrays intro a single array
@@ -19,6 +19,22 @@ test("array::flatten", t => {
     flatten([1, [2], [3, [4]]]),
     [1, 2, 3, 4],
     "[ 1, [2], [3, [4]], [] ] should equal [ 1, 2, 3, 4 ]"
+  )
+
+  t.end()
+})
+
+test("array:flattenBranches", t => {
+  t.deepEqual(
+    flattenBranches([1, 2, [3, 4]]),
+    [[1, 2, 3], [1, 2, 4]],
+    "should flatten a single branch"
+  )
+
+  t.deepEqual(
+    flattenBranches([1, [2, 3], [4, 5]]),
+    [[1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5]],
+    "should return all permutations of given branches"
   )
 
   t.end()
