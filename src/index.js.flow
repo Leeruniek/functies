@@ -6,6 +6,8 @@ declare module "@leeruniek/functies" {
     any: AnyType,
     cases: CasesType,
     filter: FilterType,
+    flip: FlipType,
+    flipUncurried: FlipUncurriedType,
     groupBy: GroupByType,
     isEqual: IsEqualType,
     lens: LensType,

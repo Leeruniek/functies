@@ -1,0 +1,10 @@
+// @flow
+
+type FlipType = <A, B, C>(f: (A) => B => C) => A => B => C
+
+type FlipUncurriedType = <A, B, C, D>(f: (A, B, C) => D) => (B, A, C) => D
+
+declare export var flip: FlipType
+declare export var flipUncurried: FlipUncurriedType
+
+export type { FlipType, FlipUncurriedType }
