@@ -12,6 +12,6 @@ const flip: FlipType = <A, B, C>(f) => a => b => f(b)(a)
  * Reverse the first two parameters of an uncurried function.
  */
 const flipUncurried: FlipUncurriedType = <A, B, C, D>(f) => (a, b, ...rest) =>
-  curry(f)(b, a, ...rest)
+  f(b, a, ...rest)
 
 export { flip, flipUncurried }
