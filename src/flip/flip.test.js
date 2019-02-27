@@ -24,7 +24,7 @@ test("flipUncurried", t => {
     banana: false,
   }
 
-  const flippedMerge = flip(merge)
+  const flippedMerge = flipUncurried(merge)
 
   t.deepEqual(flippedMerge(objA, objB), {
     id: 1,
