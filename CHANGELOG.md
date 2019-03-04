@@ -9,9 +9,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### [0.28] - 30 January 2019
+## [0.29] - 04 March 2019
 
-#### Add
+### Add
+
+- `last` - Return last element in array
+- `flip`, `flipUncurried` - Reverse function parameters
+- `lens`, `lenses` - Create a pair of lenses, functions for retrieving or 
+updating the value at an object key.
+- `props` -  Get a set of properties from an object
+
+## [0.28] - 30 January 2019
+
+### Add
 
 - Add `isEqual` - tripple equal
 
@@ -156,8 +166,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.28...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.29...HEAD
 
+[0.29]: https://github.com/leeruniek/functies/compare/v0.28...v0.29
 [0.28]: https://github.com/leeruniek/functies/compare/v0.27...v0.28
 [0.27]: https://github.com/leeruniek/functies/compare/v0.26...v0.27
 [0.26]: https://github.com/leeruniek/functies/compare/v0.25...v0.26

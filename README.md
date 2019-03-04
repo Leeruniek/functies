@@ -4,16 +4,17 @@
 
 ---
 
-<!-- MarkdownTOC levels="2,3" autolink="true" autoanchor="false" -->
+<!-- vim-markdown-toc GFM -->
 
-- [Install](#install)
-- [Use](#use)
-- [Develop](#develop)
-- [Docs](#docs)
-- [Changelog](#changelog)
-    - [0.27 - 25 January 2019](#027---28-january-2019)
+* [Install](#install)
+* [Use](#use)
+* [Develop](#develop)
+* [Docs](#docs)
+* [Changelog](#changelog)
+  * [0.29 - 04 March 2019](#029---04-march-2019)
+    * [Add](#add)
 
-<!-- /MarkdownTOC -->
+<!-- vim-markdown-toc -->
 
 ## Install
 
@@ -60,9 +61,12 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.28 - 30 January 2019
+### 0.29 - 04 March 2019
 
 #### Add
 
-- Add `isEqual` - tripple equal
-
+- `last` - Return last element in array
+- `flip`, `flipUncurried` - Reverse function parameters
+- `lens`, `lenses` - Create a pair of lenses, functions for retrieving or 
+updating the value at an object key.
+- `props` -  Get a set of properties from an object
