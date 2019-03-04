@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>@leeruniek/functies 0.28.0 | Documentation</title>
+  <title>@leeruniek/functies 0.29.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@leeruniek/functies</h3>
-          <div class='mb1'><code>0.28.0</code></div>
+          <div class='mb1'><code>0.29.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -226,9 +226,49 @@
               
                 
                 <li><a
+                  href='#flattenone'
+                  class="">
+                  flattenOne
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#flatten'
                   class="">
                   flatten
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#flattenbranches'
+                  class="">
+                  flattenBranches
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#flip'
+                  class="">
+                  flip
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#flipuncurried'
+                  class="">
+                  flipUncurried
                   
                 </a>
                 
@@ -369,6 +409,46 @@
                   href='#join'
                   class="">
                   join
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#last'
+                  class="">
+                  last
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#lens'
+                  class="">
+                  lens
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#_lenses'
+                  class="">
+                  _lenses
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#lenses'
+                  class="">
+                  lenses
                   
                 </a>
                 
@@ -569,6 +649,16 @@
                   href='#split'
                   class="">
                   split
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#tail'
+                  class="">
+                  tail
                   
                 </a>
                 
@@ -2400,6 +2490,67 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='flattenone'>
+      flattenOne
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Flatten a single level of an array.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>flattenOne</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='flatten'>
       flatten
     </h3>
@@ -2461,6 +2612,191 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
       <pre class='p1 overflow-auto round fill-light'>flatten([<span class="hljs-number">1</span>, [<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, [<span class="hljs-number">4</span>]]])
 <span class="hljs-comment">// =&gt; [1, 2, 3, 4]</span></pre>
     
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='flattenbranches'>
+      flattenBranches
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>An alternate version of flatten that treats nested arrays as branches,
+constructing a set of arrays which represent the permutations of
+concatenations possible when taking a single value from each branch.</p>
+<p>Unlike flatten, flattenBranches does not recurse on subelements.</p>
+<p>WARNING:
+As a permutation function, it's subject to combinatorial explosion.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>flattenBranches</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>flattenBranches([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]) =
+  [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>]]
+
+flattenBranches([<span class="hljs-number">1</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]]) =
+  [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>]]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='flip'>
+      flip
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Reverse the first two parameters of a function.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>flip</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='flipuncurried'>
+      flipUncurried
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Reverse the first two parameters of an uncurried function.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>flipUncurried</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -3706,6 +4042,334 @@ isNot(<span class="hljs-literal">false</span>)     <span class="hljs-comment">//
       
       <pre class='p1 overflow-auto round fill-light'>join( <span class="hljs-string">","</span> )( [ <span class="hljs-string">"lorem"</span>, <span class="hljs-string">"ipsum"</span> ] )
 <span class="hljs-comment">// =&gt; "lorem,ipsum"</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='last'>
+      last
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Return last element in array</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>T[] =&gt; T</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;T>)</code>
+	    Source array
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>T</code>:
+        Last element or undefined if empty source
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>last([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-comment">// 3</span>
+
+last([])
+<span class="hljs-comment">// undefined</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='lens'>
+      lens
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Create a pair of lenses - functions for retrieving or updating
+the value at an object key.</p>
+<p>The lens functions will throw errors if they are passed objects
+which are invalid for the lens.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>lens</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>keys</span> <code class='quiet'>(...any)</code>
+	    The path to the value to make lenses for. This must be flat.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        A 2-tuple of lenses - the getter and the setter
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"id"</span>)({ <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> } } }) = [<span class="hljs-keyword">get</span>, <span class="hljs-keyword">set</span>]
+
+where <span class="hljs-keyword">get</span>(obj)    =&gt; 1
+      <span class="hljs-keyword">set</span>(3)(obj) =&gt; { a: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span> } } }</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='_lenses'>
+      _lenses
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>A version of lens that allows nesting, allowing for the creation of
+multiple lenses simultaneously. Be careful with this one, it's subject
+to combinatorial explosion.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>_lenses</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>keys</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>_lenses(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, [<span class="hljs-string">"id"</span>, <span class="hljs-string">"name"</span>]) = [
+  lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"id"</span>)
+  lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"name"</span>)
+]
+
+_lenses(<span class="hljs-string">"a"</span>, [<span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>], [<span class="hljs-string">"id"</span>, <span class="hljs-string">"name"</span>]) = [
+  lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"id"</span>)
+  lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"name"</span>)
+  lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"id"</span>)
+  lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"name"</span>)
+]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='lenses'>
+      lenses
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Make several lenses at once, which may be completely unrelated to one
+another.</p>
+<p>Imagine we have an object:</p>
+<p>{
+a: {
+b: {
+id: 1,
+name: "Test"
+},
+c: {
+banana: 1,
+message: "Error"
+}
+}
+}</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>lenses</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>paths</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>lenses(
+  [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, [<span class="hljs-string">"id"</span>, <span class="hljs-string">"name"</span>]],
+  [<span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"banana"</span>]
+) = [
+  [[getId, setId], [getName, setName]],
+  [getBanana, setBanana]
+]</pre>
     
   
 
@@ -5165,7 +5829,7 @@ value</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>set( <span class="hljs-string">"a"</span>, <span class="hljs-string">"lorem"</span> )( { <span class="hljs-attr">b</span>: <span class="hljs-string">"ipsum"</span> } )
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">set</span>( "a", "lorem" )( { b: <span class="hljs-string">"ipsum"</span> } )
 <span class="hljs-comment">// =&gt; { a: "lorem", b: "ipsum" }</span></pre>
     
   
@@ -5448,6 +6112,83 @@ make each split.</p>
       
       <pre class='p1 overflow-auto round fill-light'>split( <span class="hljs-string">","</span> )( <span class="hljs-string">"lorem,ipsum"</span> )
 <span class="hljs-comment">// [ "lorem", "ipsum" ]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='tail'>
+      tail
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Return last element in array</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>T[] =&gt; T[]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    Source array
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        All but first elements in array
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>tail([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-comment">// =&gt; [2, 3]</span></pre>
     
   
 
