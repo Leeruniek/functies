@@ -23,8 +23,7 @@ import { any } from "../any/any"
 const has = arg =>
   typeof arg === "function" ? any(arg) : any(val => val === arg)
 
-const hasKey = key => obj =>
-  typeof obj.hasOwnProperty === "function" && obj.hasOwnProperty(key)
+const hasKey = key => obj => Object.prototype.hasOwnProperty.call(obj, key)
 
 const hasWith = byMatch(has)
 

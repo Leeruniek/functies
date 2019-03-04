@@ -97,5 +97,15 @@ test("object::hasKey", t => {
 
   t.equal(hasKey("lorem")({ lorem: 0 }), true, 'Key exists when value is "0"')
 
+  const objWithoutPrototype = Object.create(null)
+
+  objWithoutPrototype.foo = "bar"
+
+  t.equal(
+    hasKey("foo")(objWithoutPrototype),
+    true,
+    "Key exists on object created with base prototype null"
+  )
+
   t.end()
 })
