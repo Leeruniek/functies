@@ -11,8 +11,8 @@
 * [Develop](#develop)
 * [Docs](#docs)
 * [Changelog](#changelog)
-  * [0.30- 04 March 2019](#030--04-march-2019)
-    * [Add](#add)
+  * [0.30.1- 04 March 2019](#0301--04-march-2019)
+    * [Change](#change)
 
 <!-- vim-markdown-toc -->
 
@@ -61,8 +61,8 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.30- 04 March 2019
+### 0.30.1- 04 March 2019
 
-#### Add
+#### Change
 
-- `findIndexBy` - Find the position of first element that matches the filter criteria
+- `hasKey` - Also work on objects created without base prototype, via `Object.create(null)`.

@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.30.1]- 04 March 2019
+
+### Change
+
+- `hasKey` - Also work on objects created without base prototype, via `Object.create(null)`.
+
 ## [0.30]- 04 March 2019
 
 ### Add
@@ -172,8 +178,9 @@ updating the value at an object key.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.30...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.30.1...HEAD
 
+[0.30.1]: https://github.com/leeruniek/functies/compare/v0.30...v0.30.1
 [0.30]: https://github.com/leeruniek/functies/compare/v0.29...v0.30
 [0.29]: https://github.com/leeruniek/functies/compare/v0.28...v0.29
 [0.28]: https://github.com/leeruniek/functies/compare/v0.27...v0.28
