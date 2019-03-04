@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.30]- 04 March 2019
+
+### Add
+
+- `findIndexBy` - Find the position of first element that matches the filter criteria
+
 ## [0.29] - 04 March 2019
 
 ### Add
@@ -166,8 +172,9 @@ updating the value at an object key.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.29...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.30...HEAD
 
+[0.30]: https://github.com/leeruniek/functies/compare/v0.29...v0.30
 [0.29]: https://github.com/leeruniek/functies/compare/v0.28...v0.29
 [0.28]: https://github.com/leeruniek/functies/compare/v0.27...v0.28
 [0.27]: https://github.com/leeruniek/functies/compare/v0.26...v0.27

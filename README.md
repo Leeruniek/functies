@@ -11,7 +11,7 @@
 * [Develop](#develop)
 * [Docs](#docs)
 * [Changelog](#changelog)
-  * [0.29 - 04 March 2019](#029---04-march-2019)
+  * [0.30- 04 March 2019](#030--04-march-2019)
     * [Add](#add)
 
 <!-- vim-markdown-toc -->
@@ -61,12 +61,8 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.29 - 04 March 2019
+### 0.30- 04 March 2019
 
 #### Add
 
-- `last` - Return last element in array
-- `flip`, `flipUncurried` - Reverse function parameters
-- `lens`, `lenses` - Create a pair of lenses, functions for retrieving or 
-updating the value at an object key.
-- `props` -  Get a set of properties from an object
+- `findIndexBy` - Find the position of first element that matches the filter criteria
