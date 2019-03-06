@@ -6,7 +6,7 @@ import type { AnyType } from "./any.js.flow"
 /**
  * Test if at least one element of array satisfies function
  *
- * @name  all
+ * @name  any
  * @param {Function}  fn      Function to be satisfied
  * @param {Array}     source  Source array
  *
