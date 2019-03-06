@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.31] - 06 March 2019
+
+### Add
+
+- `zipFindWith`, `zipFind`, `zipByWith`, `zipBy` - zip variants which allow custom matching predicates
+
+### Change
+
+- `indexBy` - Allow multiple values at each key in the output
+- `any` - Fix docstring so it appears as `any` in the documentation (previously it was showing as `all`)
+
 ## [0.30.1]- 04 March 2019
 
 ### Change

@@ -11,7 +11,7 @@
 * [Develop](#develop)
 * [Docs](#docs)
 * [Changelog](#changelog)
-  * [0.30.1- 04 March 2019](#0301--04-march-2019)
+  * [0.31- 06 March 2019](#031--06-march-2019)
     * [Change](#change)
 
 <!-- vim-markdown-toc -->
@@ -61,8 +61,13 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.30.1- 04 March 2019
+### 0.31 - 06 March 2019
+
+#### Add
+
+- `zipFindWith`, `zipFind`, `zipByWith`, `zipBy` - zip variants which allow custom matching predicates
 
 #### Change
 
-- `hasKey` - Also work on objects created without base prototype, via `Object.create(null)`.
+- `indexBy` - Allow multiple values at each key in the output
+- `any` - Fix docstring so it appears as `any` in the documentation (previously it was showing as `all`)
