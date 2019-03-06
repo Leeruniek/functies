@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>@leeruniek/functies 0.30.0 | Documentation</title>
+  <title>@leeruniek/functies 0.31.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@leeruniek/functies</h3>
-          <div class='mb1'><code>0.30.0</code></div>
+          <div class='mb1'><code>0.31.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -36,9 +36,9 @@
               
                 
                 <li><a
-                  href='#all'
+                  href='#any'
                   class="">
-                  all
+                  any
                   
                 </a>
                 
@@ -746,6 +746,46 @@
               
                 
                 <li><a
+                  href='#zipfindwith'
+                  class="">
+                  zipFindWith
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#zipfind'
+                  class="">
+                  zipFind
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#zipbywith'
+                  class="">
+                  zipByWith
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#zipby'
+                  class="">
+                  zipBy
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#ziptoobj'
                   class="">
                   zipToObj
@@ -857,8 +897,8 @@ all(is)([<span class="hljs-number">1</span>, <span class="hljs-string">"asd"</sp
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='all'>
-      all
+    <h3 class='fl m0' id='any'>
+      any
     </h3>
     
     
@@ -3656,6 +3696,23 @@ hist( <span class="hljs-string">"score"</span> )( scores )
       
         <div class='space-bottom0'>
           <div>
+            <span class='code bold'>key</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>startingObj</span> <code class='quiet'>(any
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
             <span class='code bold'>field</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The field to index by
 
@@ -3698,8 +3755,8 @@ hist( <span class="hljs-string">"score"</span> )( scores )
   {<span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">user_id</span>: <span class="hljs-number">3</span>},
 ])
 <span class="hljs-comment">// =&gt; {</span>
-<span class="hljs-comment">//   1: {id: 1, user_id: 2},</span>
-<span class="hljs-comment">//   2: {id: 2, user_id: 3},</span>
+<span class="hljs-comment">//   1: [{id: 1, user_id: 2}],</span>
+<span class="hljs-comment">//   2: [{id: 2, user_id: 3}],</span>
 <span class="hljs-comment">// }</span></pre>
     
   
@@ -3748,7 +3805,7 @@ hist( <span class="hljs-string">"score"</span> )( scores )
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>source</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="#any">any</a>)</code>
 	    Source variable
 
           </div>
@@ -4021,7 +4078,7 @@ isMatch({
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>source</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="#any">any</a>)</code>
 	    Source variable
 
           </div>
@@ -4300,10 +4357,10 @@ which are invalid for the lens.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"id"</span>)({ <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> } } }) = [<span class="hljs-keyword">get</span>, <span class="hljs-keyword">set</span>]
+      <pre class='p1 overflow-auto round fill-light'>lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"id"</span>)({ <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> } } }) = [get, set]
 
-where <span class="hljs-keyword">get</span>(obj)    =&gt; 1
-      <span class="hljs-keyword">set</span>(3)(obj) =&gt; { a: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span> } } }</pre>
+where get(obj)    =&gt; <span class="hljs-number">1</span>
+      set(<span class="hljs-number">3</span>)(obj) =&gt; { <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span> } } }</pre>
     
   
 
@@ -5929,7 +5986,7 @@ value</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">set</span>( "a", "lorem" )( { b: <span class="hljs-string">"ipsum"</span> } )
+      <pre class='p1 overflow-auto round fill-light'>set( <span class="hljs-string">"a"</span>, <span class="hljs-string">"lorem"</span> )( { <span class="hljs-attr">b</span>: <span class="hljs-string">"ipsum"</span> } )
 <span class="hljs-comment">// =&gt; { a: "lorem", b: "ipsum" }</span></pre>
     
   
@@ -6761,7 +6818,26 @@ of the shorter list.</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
-	    
+	    The function to combine values by
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>as</span> <code class='quiet'>(any)</code>
+	    The first list
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>bs</span> <code class='quiet'>(any)</code>
+	    The second list
+
           </div>
           
         </div>
@@ -6775,6 +6851,12 @@ of the shorter list.</p>
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>zipWith(<span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; a * b)([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])([<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]) = [<span class="hljs-number">4</span>, <span class="hljs-number">15</span>, <span class="hljs-number">24</span>]</pre>
+    
   
 
   
@@ -6801,7 +6883,8 @@ of the shorter list.</p>
 
   <p>Combine pairs of values from two lists into a list of tuples.
 If the lists differ in length, the output will have the length
-of the shorter list.</p>
+of the shorter list. An alias of <code>zipWith</code> where the <code>fn</code> parameter
+is a tupling function.</p>
 
 
   
@@ -6838,6 +6921,353 @@ of the shorter list.</p>
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>zip([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])([<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]) = [[<span class="hljs-number">2</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">5</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">6</span>]]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='zipfindwith'>
+      zipFindWith
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Combine pairs of values from two lists matching a binary predicate
+into a list of arbitrary values.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>&lt;A, B, C&gt;(
+  p: (A) =&gt; B =&gt; boolean
+) =&gt; (fn: (A) =&gt; B =&gt; C) =&gt; (A[]) =&gt; (B[]) =&gt; C[]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>p</span> <code class='quiet'>(any)</code>
+	    A binary predicate function taking a value from each list and
+returning a boolean
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    A function taking a value from each list and returning anything
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>as</span> <code class='quiet'>(any)</code>
+	    The first list
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>bs</span> <code class='quiet'>(any)</code>
+	    The second list
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>zipFindWith(
+  <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; (a * a) === b
+)(<span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; a + b)([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])([<span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>]) = [<span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">12</span>]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='zipfind'>
+      zipFind
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Combine pairs of values from two lists matching a binary predicate
+into a list of tuples. An alias of <code>zipFindWith</code> where the <code>fn</code> parameter
+is a tupling function.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>&lt;A, B&gt;(p: (A) =&gt; B =&gt; boolean) =&gt; (A[]) =&gt; (B[]) =&gt; [A, B][]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>p</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>zipFind(
+  <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; (a * a) === b
+)([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])([<span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>]) = [[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">9</span>]]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='zipbywith'>
+      zipByWith
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Combine pairs of values from two lists, where the second list must
+be a list of objects and the value from the second list matches
+a matching object (see <code>isMatch</code> for details) generated by a value
+from the first list. The values are combined via an arbitrary function.
+An alias of <code>zipFindWith</code> where the <code>p</code> parameter is generated based
+on the matching object returned by <code>getMatchObj</code>.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>&lt;A, B, C&gt;(
+  getMatchObj: (A) =&gt; Object
+) =&gt; (fn: (A) =&gt; B =&gt; C) =&gt; (A[]) =&gt; (B[]) =&gt; C[]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>getMatchObj</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>zipByWith(
+  <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> ({ <span class="hljs-attr">aId</span>: a.id })
+)(<span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; merge(a, b))([
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'red'</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'green'</span> },
+])([
+  { <span class="hljs-attr">aId</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'pear'</span> },
+  { <span class="hljs-attr">aId</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'apple'</span> },
+]) = [
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">aId</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'red'</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'apple'</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">aId</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'green'</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'pear'</span> }
+]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='zipby'>
+      zipBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Combine pairs of values from two lists, where the second list must
+be a list of objects and the value from the second list matches
+a matching object (see <code>isMatch</code> for details) generated by a value
+from the first list. The values are combined into a tuple. An alias
+of <code>zipByWith</code> where values are combined by a tupling function.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>&lt;A, B&gt;(
+  getMatchObj: (A) =&gt; Object
+) =&gt; (A[]) =&gt; (B[]) =&gt; [A, B][]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>getMatchObj</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>zipByWith(
+  <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> ({ <span class="hljs-attr">aId</span>: a.id })
+)([
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'red'</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'green'</span> },
+])([
+  { <span class="hljs-attr">aId</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'pear'</span> },
+  { <span class="hljs-attr">aId</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'apple'</span> },
+]) = [
+  [{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'red'</span> }, { <span class="hljs-attr">aId</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'apple'</span> }],
+  [{ <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'green'</span> }, { <span class="hljs-attr">aId</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">fruit</span>: <span class="hljs-string">'pear'</span> }],
+]</pre>
+    
   
 
   
