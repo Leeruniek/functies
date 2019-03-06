@@ -60,4 +60,7 @@ const isMatch = subset => source =>
 
 const byMatch = fn => obj => fn(isMatch(obj))
 
-export { isMatch, byMatch }
+const byMatchNary = fn => getMatchObj =>
+  fn((...params) => isMatch(getMatchObj(...params)))
+
+export { isMatch, byMatch, byMatchNary }
