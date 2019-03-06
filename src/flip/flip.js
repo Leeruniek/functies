@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 // @flow
 
-import { curry } from "../curry/curry"
 import type { FlipType, FlipUncurriedType } from "./flip.js.flow"
 
 /**
