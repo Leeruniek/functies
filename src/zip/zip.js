@@ -28,6 +28,9 @@ import { byMatch, byMatchNary } from "../is-match/is-match"
  *
  * @param bs
  * The second list
+ *
+ * @example
+ * zipWith(a => b => a * b)([2,3,4])([2,5,6]) = [4, 15, 24]
  */
 const zipWith: ZipWithType = <A, B, C>(fn) => ([aHead, ...aTail]) => ([
   bHead,
@@ -42,6 +45,9 @@ const zipWith: ZipWithType = <A, B, C>(fn) => ([aHead, ...aTail]) => ([
  *
  * @signature
  * <A, B>(A[]) => B[] => [A, B][]
+ *
+ * @example
+ * zip([2,3,4])([2,5,6]) = [[2, 2], [3, 5], [4, 6]]
  */
 const zip: ZipType = <A, B>(as) => bs => zipWith(a => b => [a, b])(as)(bs)
 
@@ -66,6 +72,11 @@ const zip: ZipType = <A, B>(as) => bs => zipWith(a => b => [a, b])(as)(bs)
  *
  * @param bs
  * The second list
+ *
+ * @example
+ * zipFindWith(
+ *   a => b => (a * a) === b
+ * )(a => b => a + b)([1, 2, 3])([4, 9, 1]) = [2, 6, 12]
  */
 const zipFindWith: ZipFindWithType = <A, B, C>(p) => fn => as => bs =>
   as.map(a => fn(a)(find(p(a))(bs)))
@@ -77,6 +88,11 @@ const zipFindWith: ZipFindWithType = <A, B, C>(p) => fn => as => bs =>
  *
  * @signature
  * <A, B>(p: (A) => B => boolean) => (A[]) => (B[]) => [A, B][]
+ *
+ * @example
+ * zipFind(
+ *   a => b => (a * a) === b
+ * )([1, 2, 3])([4, 9, 1]) = [[1, 1], [2, 4], [3, 9]]
  */
 const zipFind: ZipFindType = <A, B>(p) => zipFindWith(p)(a => b => [a, b])
 
@@ -92,6 +108,20 @@ const zipFind: ZipFindType = <A, B>(p) => zipFindWith(p)(a => b => [a, b])
  * <A, B, C>(
  *   getMatchObj: (A) => Object
  * ) => (fn: (A) => B => C) => (A[]) => (B[]) => C[]
+ *
+ * @example
+ * zipByWith(
+ *   a => ({ aId: a.id })
+ * )(a => b => merge(a, b))([
+ *   { id: 1, color: 'red' },
+ *   { id: 2, color: 'green' },
+ * ])([
+ *   { aId: 2, fruit: 'pear' },
+ *   { aId: 1, fruit: 'apple' },
+ * ]) = [
+ *   { id: 1, aId: 1, color: 'red', fruit: 'apple' },
+ *   { id: 2, aId: 2, color: 'green', fruit: 'pear' }
+ * ]
  */
 const zipByWith: ZipByWithType = <A, B, C>(getMatchObj) =>
   byMatchNary(zipFindWith)(getMatchObj)
@@ -107,6 +137,20 @@ const zipByWith: ZipByWithType = <A, B, C>(getMatchObj) =>
  * <A, B>(
  *   getMatchObj: (A) => Object
  * ) => (A[]) => (B[]) => [A, B][]
+ *
+ * @example
+ * zipByWith(
+ *   a => ({ aId: a.id })
+ * )([
+ *   { id: 1, color: 'red' },
+ *   { id: 2, color: 'green' },
+ * ])([
+ *   { aId: 2, fruit: 'pear' },
+ *   { aId: 1, fruit: 'apple' },
+ * ]) = [
+ *   [{ id: 1, color: 'red' }, { aId: 1, fruit: 'apple' }],
+ *   [{ id: 2, color: 'green' }, { aId: 2, fruit: 'pear' }],
+ * ]
  */
 const zipBy: ZipByType = <A, B>(getMatchObj) =>
   zipByWith(getMatchObj)(a => b => [a, b])
