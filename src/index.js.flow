@@ -16,6 +16,12 @@ declare module "@leeruniek/functies" {
     partition: PartitionType,
     pipe: PipeType,
     reduce: ReduceType,
+    zipWith: ZipWithType,
+    zip: ZipType,
+    zipFindWith: ZipFindWithType,
+    zipFind: ZipFindType,
+    zipByWith: ZipByWithType,
+    zipBy: ZipByType,
 
     concat: any,
     contains: any,
@@ -54,6 +60,7 @@ declare module "@leeruniek/functies" {
     max: any,
     merge: any,
     min: any,
+    partitionBy: any,
     pick: any,
     pluck: any,
     prop: any,
@@ -74,8 +81,6 @@ declare module "@leeruniek/functies" {
     toLower: any,
     top: any,
     type: any,
-    zip: any,
-    zipWith: any,
     zipToObj: any,
   }
 }
