@@ -1,3 +1,35 @@
+import { reduce } from "../reduce/reduce"
+import { pick } from "../pick/pick"
+import { isEmpty } from "../is-empty/is-empty"
+
+/**
+ * Merge two objects.
+ * Keys from the second object corresponding to undefined values will be
+ * ignored, otherwise same-named keys from the second object will take
+ * priority.
+ *
+ * @signature
+ * Object => Object => Object
+ *
+ * @param a
+ * The first object
+ *
+ * @param b
+ * The second object
+ *
+ * @return
+ * An object with the props from both input objects merged together
+ *
+ * @example
+ * mergeTwo({ id: 1, name: "test" })(
+ *   { id: undefined, name: "test2", error: "Error" }
+ * ) = { id: 1, name: "test2", error: "Error" }
+ */
+const mergeTwo = a => b => ({
+  ...a,
+  ...pick(() => value => !isEmpty(value))(b),
+})
+
 /**
  * Combine from left to right, 2 or more objects into a new single one.
  * Properties will be shallow copied. Those with the same name will be
@@ -5,10 +37,10 @@
  *
  * @name    merge
  *
- * @tag Object
  * @signature ( ...source: Object[] ): Object
  *
- * @param   {Object[]}  source  Array of objects
+ * @param   {Object[]}  source
+ * Array of objects
  *
  * @return  {Object}
  *
@@ -16,26 +48,6 @@
  * merge({a: "lorem"}, {b: "ipsum", c: 41}, {c: 42, b: undefined})
  * // => { a: "lorem", b: "ipsum", c: 42 }
  */
-const merge = (...sources) => {
-  const result = {}
+const merge = (...sources) => reduce((a, b) => mergeTwo(a)(b), {})(sources)
 
-  for (let i = 0, length = sources.length; i < length; i++) {
-    const sourceEntries = Object.entries(sources[i])
-
-    for (
-      let j = 0, sourceEntriesLength = sourceEntries.length;
-      j < sourceEntriesLength;
-      j++
-    ) {
-      const [key, value] = sourceEntries[j]
-
-      if (value !== undefined) {
-        result[key] = value
-      }
-    }
-  }
-
-  return result
-}
-
-export { merge }
+export { mergeTwo, merge }

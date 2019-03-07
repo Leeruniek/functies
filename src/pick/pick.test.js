@@ -1,49 +1,41 @@
 import test from "tape"
-import { pick } from ".."
+import { pick, pickKeys } from ".."
 
-/**
- * Returns a partial copy of an object containing only the keys specified.
- * If the key does not exist, the property is ignored.
- *
- * @tag Object
- * @signature ( keys: string[] ) => ( source: Object ): Object
- *
- * @param      {string[]}  keys   The properties to be filtered out
- * @param      {Object}         source  The source object
- *
- * @return     {Object}
- *
- * @example
- * pick(["id", "name"])({id: 2, name: "lorem", description: "lorem ipsum"})
- * // => {id: 2, name: lorem}
- */
-test("object::pick( keys: string[] ) => ( source: Object ): Object", t => {
+test("object::pick", t => {
+  const source = {
+    lorem: "ipsum",
+    dolor: "amet",
+  }
+
+  t.deepEqual(pick(key => () => key === "lorem")(source), { lorem: "ipsum" })
+
+  t.deepEqual(pick(() => value => value.includes("m"))(source), {
+    lorem: "ipsum",
+    dolor: "amet",
+  })
+
+  t.end()
+})
+
+test("object::pickKeys", t => {
   const source = {
     lorem: "ipsum",
     dolor: "amet",
   }
 
   t.deepEqual(
-    pick(["dolor", "lorem"])(source),
+    pickKeys(["dolor", "lorem"])(source),
     { lorem: "ipsum", dolor: "amet" },
     "All existing keys"
   )
 
   t.deepEqual(
-    pick(["lorem", "not-exist"])(source),
+    pickKeys(["lorem", "not-exist"])(source),
     { lorem: "ipsum" },
     "Some non-existing keys"
   )
 
-  t.deepEqual(pick(["not-exist"])(source), {}, "All non-existing keys")
-
-  t.throws(
-    () => {
-      pick(["lorem", "ipsum"])(null)
-    },
-    /Expected input to be "Object"\. Received "null", type "Null"/,
-    "Throw error if input not object"
-  )
+  t.deepEqual(pickKeys(["not-exist"])(source), {}, "All non-existing keys")
 
   t.end()
 })

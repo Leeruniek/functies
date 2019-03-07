@@ -1,3 +1,6 @@
+import { prop } from "../prop/prop"
+import { map } from "../map/map"
+
 /**
  * Returns a new list by extracting the same named property off all objects in
  * the source list
@@ -16,14 +19,6 @@
  * pluck("position")([{id: 1, position: 3}, {id:2, position: -1}])
  * // => [3, -1]
  */
-const pluck = field => source => {
-  const result = []
-
-  for (let i = 0, length = source.length; i < length; i++) {
-    result.push(source[i][field])
-  }
-
-  return result
-}
+const pluck = field => map(prop(field))
 
 export { pluck }

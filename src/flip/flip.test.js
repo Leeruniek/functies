@@ -1,5 +1,5 @@
 import test from "tape"
-import { flip, flipUncurried, merge } from ".."
+import { flip, flipUncurried } from ".."
 
 test("flip", t => {
   const divide = a => b => a / b
@@ -24,7 +24,12 @@ test("flipUncurried", t => {
     banana: false,
   }
 
-  const flippedMerge = flipUncurried(merge)
+  const mergeUncurried = (a, b) => ({
+    ...a,
+    ...b,
+  })
+
+  const flippedMerge = flipUncurried(mergeUncurried)
 
   t.deepEqual(flippedMerge(objA, objB), {
     id: 1,

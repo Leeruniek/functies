@@ -1,0 +1,10 @@
+// @flow
+
+type EntriesType = Object => [string, mixed][]
+
+type FromEntriesType = ([string, mixed][]) => Object
+
+declare export var entries: EntriesType
+declare export var fromEntries: FromEntriesType
+
+export type { EntriesType, FromEntriesType }
