@@ -1,6 +1,5 @@
 import { reduce } from "../reduce/reduce"
 import { pick } from "../pick/pick"
-import { isEmpty } from "../is-empty/is-empty"
 
 /**
  * Merge two objects.
@@ -27,7 +26,7 @@ import { isEmpty } from "../is-empty/is-empty"
  */
 const mergeTwo = a => b => ({
   ...a,
-  ...pick(() => value => !isEmpty(value))(b),
+  ...pick(() => value => value !== undefined)(b),
 })
 
 /**
