@@ -1,0 +1,10 @@
+// @flow
+
+type PickType = (fn: (string) => mixed => boolean) => Object => Object
+
+type PickKeysType = (string[]) => Object => Object
+
+declare export var pick: PickType
+declare export var pickKeys: PickKeysType
+
+export type { PickType, PickKeysType }

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 // @flow
 
+import { byMatch } from "../is-match/is-match"
 import type { AllType } from "./all.js.flow"
 
 /**
@@ -24,4 +25,6 @@ import type { AllType } from "./all.js.flow"
 const all: AllType = <A>(fn) => source =>
   (Array.isArray(source) ? source : [source]).every(fn)
 
-export { all }
+const allBy = byMatch(all)
+
+export { all, allBy }

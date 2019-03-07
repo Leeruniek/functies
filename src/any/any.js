@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 // @flow
 
+import { byMatch } from "../is-match/is-match"
 import type { AnyType } from "./any.js.flow"
 
 /**
@@ -28,4 +29,6 @@ const any: AnyType = <A>(fn) => source =>
     return testResult && typeof testResult === "boolean"
   })
 
-export { any }
+const anyBy = byMatch(any)
+
+export { any, anyBy }
