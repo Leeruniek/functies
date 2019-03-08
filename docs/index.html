@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>@leeruniek/functies 0.31.0 | Documentation</title>
+  <title>@leeruniek/functies 0.32.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@leeruniek/functies</h3>
-          <div class='mb1'><code>0.31.0</code></div>
+          <div class='mb1'><code>0.32.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -189,6 +189,26 @@
                   href='#endswith'
                   class="">
                   endsWith
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#entries'
+                  class="">
+                  entries
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fromentries'
+                  class="">
+                  fromEntries
                   
                 </a>
                 
@@ -496,6 +516,16 @@
               
                 
                 <li><a
+                  href='#mergetwo'
+                  class="">
+                  mergeTwo
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#merge'
                   class="">
                   merge
@@ -529,6 +559,16 @@
                   href='#pick'
                   class="">
                   pick
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#pickkeys'
+                  class="">
+                  pickKeys
                   
                 </a>
                 
@@ -2289,6 +2329,164 @@ Everything else are "Primitive"</p>
       
       <pre class='p1 overflow-auto round fill-light'>endWith(<span class="hljs-string">"ipsum"</span>)(<span class="hljs-string">"lorem ipsum"</span>)
 <span class="hljs-comment">// =&gt; true</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='entries'>
+      entries
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Return an array of key-value pairs corresponding to the key-value
+pairs of an Object.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>entries</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>object</span> <code class='quiet'>(any)</code>
+	    (implicit)
+The object to return key-value pairs for
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        Key-value pairs (2-tuples)
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>entries({ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test"</span> }) = [[<span class="hljs-string">"id"</span>, <span class="hljs-number">1</span>], [<span class="hljs-string">"name"</span>, <span class="hljs-string">"test"</span>]]</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fromentries'>
+      fromEntries
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Given an array of key-value tuples, construct an Object.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>fromEntries</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>entries</span> <code class='quiet'>(any)</code>
+	    (implicit)
+The key-value pairs to create the object from
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        An object with the given key-value pairs
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>fromEntries([[<span class="hljs-string">"id"</span>, <span class="hljs-number">1</span>], [<span class="hljs-string">"name"</span>, <span class="hljs-string">"test"</span>]]) = {
+  <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"test"</span>
+}</pre>
     
   
 
@@ -4357,10 +4555,10 @@ which are invalid for the lens.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"id"</span>)({ <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> } } }) = [get, set]
+      <pre class='p1 overflow-auto round fill-light'>lens(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"id"</span>)({ <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> } } }) = [<span class="hljs-keyword">get</span>, <span class="hljs-keyword">set</span>]
 
-where get(obj)    =&gt; <span class="hljs-number">1</span>
-      set(<span class="hljs-number">3</span>)(obj) =&gt; { <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span> } } }</pre>
+where <span class="hljs-keyword">get</span>(obj)    =&gt; 1
+      <span class="hljs-keyword">set</span>(3)(obj) =&gt; { a: { <span class="hljs-attr">b</span>: { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span> } } }</pre>
     
   
 
@@ -4807,6 +5005,96 @@ max(fn)(source)
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='mergetwo'>
+      mergeTwo
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Merge two objects.
+Keys from the second object corresponding to undefined values will be
+ignored, otherwise same-named keys from the second object will take
+priority.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>Object =&gt; Object =&gt; Object</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>a</span> <code class='quiet'>(any)</code>
+	    The first object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>b</span> <code class='quiet'>(any)</code>
+	    The second object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        An object with the props from both input objects merged together
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>mergeTwo({ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test"</span> })(
+  { <span class="hljs-attr">id</span>: <span class="hljs-literal">undefined</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test2"</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">"Error"</span> }
+) = { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test2"</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">"Error"</span> }</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='merge'>
       merge
     </h3>
@@ -5058,6 +5346,55 @@ it returned
   </div>
   
 
+  <p>Returns a partial copy of an object containing only the key-value pairs
+for which the provided predicate function returns true.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>pick</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='pickkeys'>
+      pickKeys
+    </h3>
+    
+    
+  </div>
+  
+
   <p>Returns a partial copy of an object containing only the keys specified.
 If the key does not exist, the property is ignored.</p>
 
@@ -5081,8 +5418,8 @@ If the key does not exist, the property is ignored.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>keys</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
-	    The properties to be filtered out
+            <span class='code bold'>keys</span> <code class='quiet'>(any)</code>
+	    The properties to keep from the source
 
           </div>
           
@@ -5090,8 +5427,9 @@ If the key does not exist, the property is ignored.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    The source object
+            <span class='code bold'>source</span> <code class='quiet'>(any)</code>
+	    (implicit)
+The input object
 
           </div>
           
@@ -5105,8 +5443,8 @@ If the key does not exist, the property is ignored.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        
+      <code>any</code>:
+        The input object, minus any keys which
 
       
     
@@ -5986,7 +6324,7 @@ value</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>set( <span class="hljs-string">"a"</span>, <span class="hljs-string">"lorem"</span> )( { <span class="hljs-attr">b</span>: <span class="hljs-string">"ipsum"</span> } )
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">set</span>( "a", "lorem" )( { b: <span class="hljs-string">"ipsum"</span> } )
 <span class="hljs-comment">// =&gt; { a: "lorem", b: "ipsum" }</span></pre>
     
   
