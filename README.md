@@ -11,8 +11,10 @@
 * [Develop](#develop)
 * [Docs](#docs)
 * [Changelog](#changelog)
-  * [0.31- 06 March 2019](#031--06-march-2019)
+  * [0.32 - 08 March 2019](#032---08-march-2019)
+    * [Add](#add)
     * [Change](#change)
+    * [Delete](#delete)
 
 <!-- vim-markdown-toc -->
 
@@ -61,13 +63,20 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.31 - 06 March 2019
+### 0.32 - 08 March 2019
 
 #### Add
 
-- `zipFindWith`, `zipFind`, `zipByWith`, `zipBy` - zip variants which allow custom matching predicates
-
+- add `allBy` and `anyBy`
+- add `entries` and `fromEntries` for `[key, value][]` <-> `Object` conversion
+- add `mergeTwo` to `reduce` just two objects, and make `merge` reduce over it
+  
 #### Change
 
-- `indexBy` - Allow multiple values at each key in the output
-- `any` - Fix docstring so it appears as `any` in the documentation (previously it was showing as `all`)
+- refactor `pluck` to be much simpler
+- refactor `pick` to take a predicate and rename the old implementation to `pickKeys`
+
+#### Delete
+
+- delete `props` since it's redundant
+

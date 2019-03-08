@@ -9,6 +9,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.32] - 08 March 2019
+
+### Add
+
+- add `allBy` and `anyBy`
+- add `entries` and `fromEntries` for `[key, value][]` <-> `Object` conversion
+- add `mergeTwo` to `reduce` just two objects, and make `merge` reduce over it
+  
+### Change
+
+- refactor `pluck` to be much simpler
+- refactor `pick` to take a predicate and rename the old implementation to `pickKeys`
+
+### Delete
+
+- delete `props` since it's redundant
+
 ## [0.31] - 06 March 2019
 
 ### Add
@@ -189,8 +206,10 @@ updating the value at an object key.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.30.1...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.32...HEAD
 
+[0.32]: https://github.com/leeruniek/functies/compare/v0.31...v0.32
+[0.31]: https://github.com/leeruniek/functies/compare/v0.30.1...v0.31
 [0.30.1]: https://github.com/leeruniek/functies/compare/v0.30...v0.30.1
 [0.30]: https://github.com/leeruniek/functies/compare/v0.29...v0.30
 [0.29]: https://github.com/leeruniek/functies/compare/v0.28...v0.29
