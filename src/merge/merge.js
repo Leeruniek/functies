@@ -33,6 +33,21 @@ const defaultMergeFn = aVal => bVal => (bVal === undefined ? aVal : bVal)
  *
  * @return
  * An object with properties merged from a and b
+ *
+ * @example
+ * mergeTwoWith({ isLoading: a => b => a || b })({
+ *   isLoading: false,
+ *   a: undefined,
+ *   b: 2
+ * })({
+ *   isLoading: true,
+ *   a: "test",
+ *   b: undefined
+ * }) = {
+ *   isLoading: true,
+ *   a: "test",
+ *   b: 2
+ * }
  */
 const mergeTwoWith = (fns = {}, defaultFn = defaultMergeFn) => a => b => {
   // Get the function to merge keys by
@@ -102,6 +117,26 @@ const mergeTwo = mergeTwoWith()
  *
  * @return
  * An object with properties merged from all source objects
+ *
+ * @example
+ * mergeWith({ isLoading: a => b => a || b })({
+ *   isLoading: false,
+ *   a: undefined,
+ *   b: 2
+ * }, {
+ *   isLoading: true,
+ *   a: "test",
+ *   b: undefined
+ * }, {
+ *   isLoading: false,
+ *   a: "test2",
+ *   c: false
+ * }) = {
+ *   isLoading: true,
+ *   a: "test2",
+ *   b: 2,
+ *   c: false
+ * }
  */
 const mergeWith = (fns, defaultFn) => (...sources) =>
   reduce(uncurry(mergeTwoWith(fns, defaultFn)))(sources)
