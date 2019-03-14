@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.33] - 14 March 2019
+
+### Add
+
+- add `mergeTwoWith` and `mergeWith`
+- add `uncurry`
+- add `rename`
+  
+### Change
+
+- refactor `mergeTwo` and `merge` to depend on `mergeTwoWith` and `mergeWith`, respectively
+- refactor `reduce` - like `Array.reduce`, it no longer requires a default accumulator for non-empty arrays
+
 ## [0.32] - 08 March 2019
 
 ### Add

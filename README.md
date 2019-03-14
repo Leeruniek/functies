@@ -11,7 +11,7 @@
 * [Develop](#develop)
 * [Docs](#docs)
 * [Changelog](#changelog)
-  * [0.32 - 08 March 2019](#032---08-march-2019)
+  * [0.33 - 14 March 2019](#033---14-march-2019)
     * [Add](#add)
     * [Change](#change)
     * [Delete](#delete)
@@ -63,20 +63,16 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.32 - 08 March 2019
+### 0.33 - 14 March 2019
 
 #### Add
 
-- add `allBy` and `anyBy`
-- add `entries` and `fromEntries` for `[key, value][]` <-> `Object` conversion
-- add `mergeTwo` to `reduce` just two objects, and make `merge` reduce over it
+- add `mergeTwoWith` and `mergeWith`
+- add `uncurry`
+- add `rename`
   
 #### Change
 
-- refactor `pluck` to be much simpler
-- refactor `pick` to take a predicate and rename the old implementation to `pickKeys`
-
-#### Delete
-
-- delete `props` since it's redundant
+- refactor `mergeTwo` and `merge` to depend on `mergeTwoWith` and `mergeWith`, respectively
+- refactor `reduce` - like `Array.reduce`, it no longer requires a default accumulator for non-empty arrays
 
