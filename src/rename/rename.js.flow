@@ -1,0 +1,7 @@
+// @flow
+
+type RenameType = ({ [key: string]: string }) => Object => Object
+
+declare export var rename: RenameType
+
+export type { RenameType }

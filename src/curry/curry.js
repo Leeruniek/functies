@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars*/
-
 // @flow
 
-import type { CurryType } from "./curry.js.flow"
+import { is } from "../is/is"
+import type { CurryType, UncurryType } from "./curry.js.flow"
 
 /**
  * Partially apply a function.
@@ -13,10 +13,10 @@ import type { CurryType } from "./curry.js.flow"
  * where CurryReturnType<A> = (...mixed[]) => A | CurryReturnType<A>
  *
  * @param fn
- * The function to apply.
+ * The function to apply
  *
  * @param args
- * The arguments to apply, in order.
+ * The arguments to apply, in order
  *
  * @return
  * If the number of arguments provided is sufficient to call the function,
@@ -32,4 +32,35 @@ const curry: CurryType = <A>(fn) => (...args) =>
     ? fn(...args)
     : (...rest) => curry(fn)(...args, ...rest)
 
-export { curry }
+/**
+ * Convert a curried function of arity n to a simple function with n parameters.
+ *
+ * @param fn
+ * The function to apply
+ *
+ * @param args
+ * The arguments to apply, in order
+ *
+ * @return
+ * The result of calling the function on each argument in turn,
+ * until a non-function is the return value. If an insufficient number
+ * of arguments are provided, return the partially applied function.
+ *
+ * @example
+ * uncurry(a => b => c => a + b * c)(1, 2, 3) = 7
+ */
+const uncurry: UncurryType = fn => (arg, ...args) => {
+  // Return the partially applied function if an insufficient number
+  // of arguments are provided.
+  if (!is(arg) && args.length === 0) {
+    return fn
+  }
+
+  // Store the result of `fn(arg)`, because its type could change
+  // between each invocation.
+  const result = fn(arg)
+
+  return typeof result === "function" ? uncurry(result)(...args) : result
+}
+
+export { curry, uncurry }

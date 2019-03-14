@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 // @flow
 
+import { isEmpty } from "../is-empty/is-empty"
 import type { ReduceType } from "./reduce.js.flow"
 
 /**
@@ -10,7 +11,7 @@ import type { ReduceType } from "./reduce.js.flow"
  * @name   reduce
  *
  * @param  {Function}  fn          Reduce function
- * @param  {Object}    defaultAcc  The default acc
+ * @param  {Object}    defaultAcc  Default value for the accumulator
  * @param  {Array}     source      Source input
  *
  * @return {mixed}
@@ -18,7 +19,14 @@ import type { ReduceType } from "./reduce.js.flow"
  * @tag Array
  * @signature (fn: Function, defaultAcc: mixed) => (source: Array): mixed
  */
-const reduce: ReduceType = <A, B>(fn, defaultAcc) => source =>
-  Array.isArray(source) ? source.reduce(fn, defaultAcc) : fn(defaultAcc, source)
+const reduce: ReduceType = <A, B>(...reduceParams) => source => {
+  const [fn, defaultAcc] = reduceParams
+
+  if (!Array.isArray(source)) {
+    return fn(defaultAcc, source)
+  }
+
+  return source.reduce(...reduceParams)
+}
 
 export { reduce }
