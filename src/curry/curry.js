@@ -43,7 +43,8 @@ const curry: CurryType = <A>(fn) => (...args) =>
  *
  * @return
  * The result of calling the function on each argument in turn,
- * until a non-function is the return value
+ * until a non-function is the return value. If an insufficient number
+ * of arguments are provided, return the partially applied function.
  *
  * @example
  * uncurry(a => b => c => a + b * c)(1, 2, 3) = 7
