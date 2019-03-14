@@ -32,5 +32,9 @@ test("fn:uncurry", t => {
 
   t.equal(uncurry(a => b => c => a + b * c)(1, 2, 3), 7)
 
+  console.log(uncurry(a => b => c => a + b * c)(1, 2))
+
+  t.equal(uncurry(a => b => c => a + b * c)(1, 2)(3), 7)
+
   t.end()
 })

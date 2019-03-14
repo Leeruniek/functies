@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars*/
 // @flow
 
+import { is } from "../is/is"
 import type { CurryType, UncurryType } from "./curry.js.flow"
 
 /**
@@ -48,16 +49,17 @@ const curry: CurryType = <A>(fn) => (...args) =>
  * uncurry(a => b => c => a + b * c)(1, 2, 3) = 7
  */
 const uncurry: UncurryType = fn => (arg, ...args) => {
-  // The one liner version of this function doesn't type check because
-  // the type of of `fn(arg)` could change between each invocation. `fn`
-  // is not known to be pure because we can't say anything about its type
-  // in advance - in fact, we don't even know its arity.
-  //
-  // If we knew how to type `fn`, we could write:
-  // typeof fn(arg) === "function" ? uncurry(fn(arg))(...args) : fn(arg)
+  // Return the partially applied function if an insufficient number
+  // of arguments are provided.
+  if (!is(arg) && args.length === 0) {
+    return fn
+  }
+
+  // Store the result of `fn(arg)`, because its type could change
+  // between each invocation.
   const result = fn(arg)
 
-  typeof result === "function" ? uncurry(result)(...args) : result
+  return typeof result === "function" ? uncurry(result)(...args) : result
 }
 
 export { curry, uncurry }
