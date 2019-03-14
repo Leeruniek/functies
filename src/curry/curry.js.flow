@@ -4,6 +4,10 @@ type CurryReturnType<A> = (...mixed[]) => A | CurryReturnType<A>
 
 type CurryType = <A>(fn: (...args: mixed[]) => A) => CurryReturnType<A>
 
+type UncurryType = <A>(fn: Function) => (...mixed[]) => Function | mixed
+
 declare export var curry: CurryType
 
-export type { CurryType }
+declare export var uncurry: UncurryType
+
+export type { CurryType, UncurryType }

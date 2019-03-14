@@ -1,5 +1,5 @@
 import test from "tape"
-import { curry } from ".."
+import { curry, uncurry } from ".."
 
 test("fn::curry", t => {
   const sum = (a, b) => a + b
@@ -21,6 +21,18 @@ test("fn::curry", t => {
 
   t.equal(addFourA(1), 5)
   t.equal(addFourA(1), addFourB(1))
+
+  t.end()
+})
+
+test("fn:uncurry", t => {
+  const sum = a => b => a + b
+
+  t.equal(uncurry(sum)(2, 4), 6)
+
+  t.equal(uncurry(a => b => c => a + b * c)(1, 2, 3), 7)
+
+  t.equal(uncurry(a => b => c => a + b * c)(1, 2)(3), 7)
 
   t.end()
 })
