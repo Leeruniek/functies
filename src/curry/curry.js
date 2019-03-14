@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars*/
-
 // @flow
 
-import type { CurryType } from "./curry.js.flow"
+import type { CurryType, UncurryType } from "./curry.js.flow"
 
 /**
  * Partially apply a function.
@@ -13,10 +12,10 @@ import type { CurryType } from "./curry.js.flow"
  * where CurryReturnType<A> = (...mixed[]) => A | CurryReturnType<A>
  *
  * @param fn
- * The function to apply.
+ * The function to apply
  *
  * @param args
- * The arguments to apply, in order.
+ * The arguments to apply, in order
  *
  * @return
  * If the number of arguments provided is sufficient to call the function,
@@ -32,4 +31,33 @@ const curry: CurryType = <A>(fn) => (...args) =>
     ? fn(...args)
     : (...rest) => curry(fn)(...args, ...rest)
 
-export { curry }
+/**
+ * Convert a curried function of arity n to a simple function with n parameters.
+ *
+ * @param fn
+ * The function to apply
+ *
+ * @param args
+ * The arguments to apply, in order
+ *
+ * @return
+ * The result of calling the function on each argument in turn,
+ * until a non-function is the return value
+ *
+ * @example
+ * uncurry(a => b => c => a + b * c)(1, 2, 3) = 7
+ */
+const uncurry: UncurryType = fn => (arg, ...args) => {
+  // The one liner version of this function doesn't type check because
+  // the type of of `fn(arg)` could change between each invocation. `fn`
+  // is not known to be pure because we can't say anything about its type
+  // in advance - in fact, we don't even know its arity.
+  //
+  // If we knew how to type `fn`, we could write:
+  // typeof fn(arg) === "function" ? uncurry(fn(arg))(...args) : fn(arg)
+  const result = fn(arg)
+
+  typeof result === "function" ? uncurry(result)(...args) : result
+}
+
+export { curry, uncurry }

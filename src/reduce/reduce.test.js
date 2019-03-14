@@ -35,5 +35,11 @@ test("reduce", t => {
     "From array to object with default acc"
   )
 
+  t.equals(
+    reduce((a, b) => a + b)([1, 2, 3]),
+    6,
+    "First value used as initial accumulator if not provided"
+  )
+
   t.end()
 })

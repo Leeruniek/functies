@@ -1,5 +1,5 @@
 import test from "tape"
-import { merge } from ".."
+import { merge, mergeWith } from ".."
 
 /**
  * Combine from left to right, 2 or more objects into a new single one.
@@ -32,6 +32,21 @@ test("object::merge", t => {
   t.notEqual(result, obj1, "result should not equal first obj")
 
   t.notEqual(result, obj2, "result should not equal second obj")
+
+  t.end()
+})
+
+test("object::mergeWith", t => {
+  const obj1 = { isLoading: true, isLoaded: false }
+  const obj2 = { isLoading: false, isLoaded: true }
+
+  t.deepEqual(
+    mergeWith({ isLoading: a => b => a || b, isLoaded: a => b => a && b })(
+      obj1,
+      obj2
+    ),
+    { isLoading: true, isLoaded: false }
+  )
 
   t.end()
 })
