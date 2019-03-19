@@ -9,9 +9,9 @@ import type { AnyType } from "./any.js.flow"
  *
  * @name  any
  * @param {Function}  fn      Function to be satisfied
- * @param {Array}     source  Source array
+ * @param {Array}     source  Input array
  *
- * @return {boolean}
+ * @return {boolean}  True if at least one object passes, false otherwise
  *
  * @tag Core
  * @signature (fn: Function) => (source: Array): boolean
@@ -33,16 +33,16 @@ const any: AnyType = <A>(fn) => source =>
 export { any }
 
 /**
- * Test if at least one element of array satisfies function
+ * Test if object properties match any object in input array
  *
  * @name   anyBy
  * @param  {Object}    subset  Set of properties that should match
- * @param  {Object[]}  source  Source array
+ * @param  {Object[]}  source  Input array
  *
- * @return {boolean}
+ * @return {boolean}  True if at least one object matches, false otherwise
  *
  * @tag Core
- * @signature (subset: Object)(source: Object[]): boolean
+ * @signature (subset: Object) => (source: Object[]): boolean
  *
  * @example
  * anyBy({
