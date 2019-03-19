@@ -11,6 +11,7 @@
   "rules": {
     "prettier/prettier": "error",
     "flowtype/require-return-type": "off",
-    "valid-jsdoc": "off"
+    "valid-jsdoc": "off",
+    "import/exports-last": "off"
   },
 }
