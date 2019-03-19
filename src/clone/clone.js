@@ -1,55 +1,42 @@
-import { i } from "../i/i"
-import { type } from "../type/type"
+import { i, map, reduce, type } from ".."
 
 /**
+ * !!! Will not inherit prototype, only own enumerable properties !!!
+ *
  * Creates a new instance of the object with same properties than original
  *
- * @param  {T}  source  Variable to clone
+ * @param  {any}  source  Input value
  *
- * @return {T}
+ * @return {any}  Cloned value
  *
- * @tag Coore
- * @signature (source: T): T
+ * @name clone
+ * @tag Core
+ * @signature <T>(source: T): T
  *
  * @example
- * clone([1])
- * // => [1]
- * clone({a: [1]})
+ * let x = {a: [1]}
+ *
+ * clone(x)
  * // => {a: [1]}
+ *
+ * close(x) === x
+ * // => false
  */
 const clone = source => {
   const byType = {
-    Number: i,
-    String: i,
-    Boolean: i,
-    Function: i,
-    Null: () => null,
-    Undefined: () => undefined,
     Date: () => new Date(source.getTime()),
-    Array: () => {
-      const result = []
+    Array: () => map(clone)(source),
+    Object: () =>
+      reduce((acc, [key, elm]) => {
+        acc[key] = clone(elm)
 
-      for (let j = 0, length = source.length - 1; j <= length; j++) {
-        result.push(clone(source[j]))
-      }
-
-      return result
-    },
-    Object: () => {
-      const result = {}
-      const sourceEntries = Object.entries(source)
-
-      for (let j = 0, length = sourceEntries.length - 1; j <= length; j++) {
-        const [key, value] = sourceEntries[j]
-
-        result[key] = clone(value)
-      }
-
-      return result
-    },
+        return acc
+      }, {})(Object.entries(source)),
   }
 
-  return byType[type(source)](source)
+  const sourceType = type(source)
+
+  return byType[sourceType] ? byType[sourceType](source) : i(source)
 }
 
 export { clone }

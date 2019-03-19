@@ -48,8 +48,21 @@ test("core::clone", t => {
    */
   const object = { a: 1, b: 2, c: 3 }
 
-  t.notEqual(clone(object), object, "Imutable array")
-  t.deepEqual(clone(object), { a: 1, b: 2, c: 3 }, "Clone array")
+  t.notEqual(clone(object), object, "Imutable object")
+  t.deepEqual(clone(object), { a: 1, b: 2, c: 3 }, "Clone object")
+
+  /*
+   * Recursive
+   */
+  const recursiveObject = { a: [{ foo: "bar" }], b: 2, c: 3 }
+
+  t.deepEqual(
+    clone(recursiveObject),
+    { a: [{ foo: "bar" }], b: 2, c: 3 },
+    "Clone array"
+  )
+
+  t.notEqual(clone(recursiveObject).a[0], recursiveObject.a[0], "Imutable recursive object")
 
   t.end()
 })

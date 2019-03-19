@@ -29,8 +29,7 @@ const all: AllType = <A>(fn) => source =>
 export { all }
 
 /**
- * Test if all object properties match any of the input array
- * Test if one object's properties match all objects in input array
+ * Test if object properties match all objects in input array
  *
  * @name   allBy
  * @param  {Object}  subset  Set of properties that should match
