@@ -1,9 +1,8 @@
 import { i, map, reduce, type } from ".."
 
 /**
- * !!! Will not inherit prototype, only own enumerable properties !!!
- *
- * Creates a new instance of the object with same properties than original
+ * Creates a new instance of the object with same properties than original.
+ * Will not inherit prototype, only own enumerable properties.
  *
  * @param  {any}  source  Input value
  *
