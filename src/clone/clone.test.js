@@ -59,10 +59,14 @@ test("core::clone", t => {
   t.deepEqual(
     clone(recursiveObject),
     { a: [{ foo: "bar" }], b: 2, c: 3 },
-    "Clone array"
+    "Clone object with non-primitive properties"
   )
 
-  t.notEqual(clone(recursiveObject).a[0], recursiveObject.a[0], "Imutable recursive object")
+  t.notEqual(
+    clone(recursiveObject).a[0],
+    recursiveObject.a[0],
+    "Imutable recursive object"
+  )
 
   t.end()
 })
