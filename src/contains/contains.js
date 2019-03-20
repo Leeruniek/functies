@@ -1,14 +1,14 @@
 /**
  * Test if string contains substring
  *
- * @name   contains
+ * @name       contains
+ * @tag        String
+ * @signature  (search: string) => (source: string): boolean
+ *
  * @param  {string}  search  Search string
  * @param  {string}  source  Source string
  *
- * @return {boolean}
- *
- * @tag String
- * @signature (search: string) => (source: string): boolean
+ * @returns {boolean}
  *
  * @example
  * contains("ipsum")("lorem ipsum")

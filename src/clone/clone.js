@@ -7,13 +7,13 @@ import { type } from "../type/type"
  * Creates a new instance of the object with same properties than original.
  * Will not inherit prototype, only own enumerable properties.
  *
+ * @name       clone
+ * @tag        Core
+ * @signature  <T>(source: T): T
+ *
  * @param  {any}  source  Input value
  *
- * @return {any}  Cloned value
- *
- * @name clone
- * @tag Core
- * @signature <T>(source: T): T
+ * @returns  {any}  Cloned value
  *
  * @example
  * let x = {a: [1]}

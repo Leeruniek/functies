@@ -1,14 +1,14 @@
 /**
  * Merge two arrays/values into one array
  *
- * @param {Array|mixed}  source1  First input source
- * @param {Array|mixed}  source2  Second input source
+ * @name       concat
+ * @tag        Array
+ * @signature  (source1: Array|mixed) => (source2: Array|mixed): Array
  *
- * @returns {Array} Array with concatenated values
+ * @param  {Array|mixed}  source1  First input source
+ * @param  {Array|mixed}  source2  Second input source
  *
- * @name concat
- * @tag Array
- * @signature (source1: Array|mixed) => (source2: Array|mixed): Array
+ * @returns  {Array}  Array with concatenated values
  *
  * @example
  * concat([1])([4, 5])
