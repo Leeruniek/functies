@@ -10,6 +10,7 @@ import { type } from "../type/type"
  * @name       clone
  * @tag        Core
  * @signature  <T>(source: T): T
+ * @see        {@link deepEqual}
  *
  * @param  {any}  source  Input value
  *

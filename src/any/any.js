@@ -10,6 +10,7 @@ import type { AnyType } from "./any.js.flow"
  * @name       any
  * @tag        Core
  * @signature  (fn: Function) => (source: Array): boolean
+ * @see        {@link all}
  *
  * @param  {Function}  fn      Function to be satisfied
  * @param  {Array}     source  Input array
@@ -38,6 +39,8 @@ export { any }
  * @name       anyBy
  * @tag        Core
  * @signature  (subset: Object) => (source: Object[]): boolean
+ * @see        {@link isMatch}
+ * @see        {@link allBy}
  *
  * @param  {Object}    subset  Set of properties that should match
  * @param  {Object[]}  source  Input array

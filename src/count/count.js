@@ -9,6 +9,7 @@ import { filter } from "../filter/filter"
  * @name       count
  * @tag        Array
  * @signature  (fn: Function) => (source: Array): number
+ * @see        {@link countBy}
  *
  * @param  {Function}  fn      Test function
  * @param  {Array}     source  Source array
@@ -44,6 +45,7 @@ export { count }
  * @name       countBy
  * @tag        Array
  * @signature  (subset: Object) => (source: Object[]): number
+ * @see        {@link count}
  *
  * @param  {Object}  subset  Set of properties that should match
  * @param  {Array}   source  Input array

@@ -6,11 +6,14 @@ import { i } from "../i/i"
 /**
  * Functional case statement.
  *
+ * @name cases
+ * @tag Core
  * @signature
  * <A, B>(
  *   conditions: [(A) => boolean, (A) => B][],
  *   otherwise: (A) => B
  * ) => A => B
+ * @see {@link ifThen}
  *
  * @param conditions
  * List of 2-tuples of functions (if, then)
