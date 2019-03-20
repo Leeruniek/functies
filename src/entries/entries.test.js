@@ -1,25 +1,22 @@
 import test from "tape"
-import { fromEntries } from ".."
+import { entries, fromEntries } from ".."
 
 test("object::fromEntries", t => {
-  const entries = [
-    ["id", 1],
-    ["name", "test"],
-    [
-      "sub",
-      {
-        id: 2,
-      },
-    ],
-  ]
-
-  t.deepEqual(fromEntries(entries), {
+  t.deepEqual(fromEntries([["id", 1], ["name", "test"], ["sub", { id: 2 }]]), {
     id: 1,
     name: "test",
     sub: {
       id: 2,
     },
   })
+
+  t.deepEqual(
+    entries({
+      foo: "bar",
+      alice: "bob",
+    }),
+    [["foo", "bar"], ["alice", "bob"]]
+  )
 
   t.end()
 })
