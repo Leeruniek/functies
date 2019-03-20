@@ -1,15 +1,7 @@
 import test from "tape"
-import { find } from ".."
+import { find, findBy } from ".."
 
-/**
- * Find the first element that satisfies the matchFn
- *
- * @param  {Function}    matchFn Function applied to each element
- * @param  {Array}       source  Source array
- *
- * @return {mixed|undefined}  First element
- */
-test("array::find( matchFn: Function )( source: Array ): mixed", t => {
+test("array::find", t => {
   const comments = [{ id: 1, body: "" }, { id: 2, body: "dolor" }]
 
   t.deepEqual(
@@ -22,6 +14,17 @@ test("array::find( matchFn: Function )( source: Array ): mixed", t => {
     find(element => element.id === 3)(comments),
     undefined,
     "find with id:3 should return undefined (not found)"
+  )
+
+  t.end()
+})
+
+test("array::findBy", t => {
+  t.deepEqual(
+    findBy({
+      "!id": 1,
+    })([{ id: 1, body: "" }, { id: 2, body: "dolor" }]),
+    { id: 2, body: "dolor" }
   )
 
   t.end()

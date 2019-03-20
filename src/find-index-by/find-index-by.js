@@ -7,6 +7,8 @@ import { curry } from "../curry/curry"
  * @name       findIndexBy
  * @tag        Array
  * @signature  (subset: Object) => (source: Object[]): number
+ * @see        {@link find}
+ * @see        {@link findBy}
  *
  * @param  {Object}    subset  Object containing one or more fields
  * @param  {Object[]}  source  Source input
