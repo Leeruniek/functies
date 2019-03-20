@@ -1,26 +1,7 @@
 import test from "tape"
 import { elapsedTime } from ".."
 
-/**
- * Calculate elapsed time between to dates. In days, hours, minutes and seconds
- *
- * @param  {Data}  startDate  Start date
- * @param  {Data}  endDate    End date
- *
- * @return {Object}
- *
- * @tag Data
- * @signature (startDate: Object) => (endDate: Object): Object
- *
- * @example
- * elapsedTime(
- *   new Date("June 1, 2018 00:00:00")
- * )(
- *   new Date("June 1, 2018 03:24:00")
- * )
- * // => { days: 0, hours: 3, minutes: 24, seconds: 0 }
- */
-test("elapsedTime", t => {
+test("date::elapsedTime", t => {
   t.deepEqual(
     elapsedTime(new Date("June 1, 2018 00:00:00"))(
       new Date("June 2, 2018 03:24:00")

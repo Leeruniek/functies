@@ -92,9 +92,8 @@ const type = source =>
     : "Primitive"
 
 /**
- * Determine if two variables are structurally equal.
- *
- * -- Callable curried or uncurried
+ * Determine if two variables are structurally equal (callable curried or
+ * uncurried)
  *
  * @name       deepEqual
  * @tag        Core

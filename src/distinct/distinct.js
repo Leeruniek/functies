@@ -1,7 +1,7 @@
 import { deepEqual } from "../deep-equal/deep-equal"
 
 /**
- * Remove repeating values. Will use `deepEqual` for comparison
+ * Remove duplicate values. Will use `deepEqual` for comparison.
  *
  * @name       distinct
  * @tag        Array

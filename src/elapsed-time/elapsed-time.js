@@ -1,3 +1,5 @@
+import { curry } from "../curry/curry"
+
 const oneDay = 60 * 60 * 24
 const oneHour = 60 * 60
 const oneMinute = 60
@@ -5,15 +7,16 @@ const oneSecond = 1000
 
 /**
  * Calculate elapsed time between to dates. In days, hours, minutes and seconds
+ * (callable curried or uncurried).
  *
- * @name   elapsedTime
- * @param  {Data}  startDate  Start date
- * @param  {Data}  endDate    End date
+ * @name       elapsedTime
+ * @tag        Date
+ * @signature  (startDate: Object, endDate: Object): Object
  *
- * @return {Object}
+ * @param  {Date}  startDate  Start date
+ * @param  {Date}  endDate    End date
  *
- * @tag Data
- * @signature (startDate: Object) => (endDate: Object): Object
+ * @returns {Object}
  *
  * @example
  * elapsedTime(
@@ -23,7 +26,7 @@ const oneSecond = 1000
  * )
  * // => { days: 0, hours: 3, minutes: 24, seconds: 0 }
  */
-const elapsedTime = startDate => endDate => {
+const elapsedTime = curry((startDate, endDate) => {
   const timePassedInSec = Math.abs(startDate - endDate) / oneSecond
 
   // Number of days
@@ -48,6 +51,6 @@ const elapsedTime = startDate => endDate => {
     minutes,
     seconds,
   }
-}
+})
 
 export { elapsedTime }
