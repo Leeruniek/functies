@@ -1,16 +1,6 @@
 import test from "tape"
 import { debounce } from ".."
 
-/**
- * Call a function only if it hasn't been called in the last `timeWindow` ms.
- *
- * @param  {function} fn            Function to be ran
- * @param  {integer}  timeWindow    Time between each `fn` call
- *
- * @return {function}               Either return `fn` if you've passed the
- *                                  `timeWindow` or return a timer that will
- *                                  run the `fn` in `timeWindow` ms
- */
 test("core::debounce", t => {
   /**
    * Debounce with defaults
@@ -35,7 +25,6 @@ test("core::debounce", t => {
   /**
    * Debounce with custom
    */
-
   let customCounter = 0
   const customSet = debounce(
     source => {
