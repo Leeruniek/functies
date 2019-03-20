@@ -1,24 +1,9 @@
 import test from "tape"
 import { endsWith } from ".."
 
-/**
- * Test if string ends with substring
- *
- * @param  {string}  search  Search string
- * @param  {string}  source  Source string
- *
- * @return {boolean}
- *
- * @tag String
- * @signature (search: string) => (source: string): boolean
- *
- * @example
- * endWith("ipsum")("lorem ipsum")
- * // => true
- */
 test("string::endsWith", t => {
   t.equals(
-    endsWith("ipsum")("lorem ipsum"),
+    endsWith("ipsum", "lorem ipsum"),
     true,
     "Source string ends with search string"
   )
@@ -36,7 +21,7 @@ test("string::endsWith", t => {
   )
 
   t.equals(
-    endsWith("asd")("lorem ipsum"),
+    endsWith("asd", "lorem ipsum"),
     false,
     "Search string does not exist in source"
   )
