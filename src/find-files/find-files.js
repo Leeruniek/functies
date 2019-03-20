@@ -68,6 +68,11 @@ const matchInFolder = test =>
     )
   )
 
+/**
+ * Used in microservices, dont remove unless it gets replaced
+ *
+ * @deprecated Use glob
+ */
 const findFiles = (test = /.*/) =>
   pipe(
     map(matchInFolder(test)),
