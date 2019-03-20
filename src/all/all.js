@@ -7,14 +7,14 @@ import type { AllType } from "./all.js.flow"
 /**
  * Test if all elements of array satisfy function
  *
- * @name  all
+ * @name       all
+ * @tag        Core
+ * @signature  (fn: Function) => (source: Array): boolean
+ *
  * @param {Function}  fn      Function that all elements need to satisfy
  * @param {Array}     source  Input array
  *
- * @return {boolean} True if all objects satisfy, false otherwise
- *
- * @tag Core
- * @signature (fn: Function) => (source: Array): boolean
+ * @returns  {boolean}  True if all objects satisfy, false otherwise
  *
  * @example
  * all(isNumber)([1, 2, 3])
@@ -31,14 +31,14 @@ export { all }
 /**
  * Test if object properties match all objects in input array
  *
- * @name   allBy
+ * @name       allBy
+ * @tag        Core
+ * @signature  (subset: Object) => (source: Object[]): boolean
+ *
  * @param  {Object}  subset  Set of properties that should match
  * @param  {Array}   source  Input array
  *
- * @return {boolean} True if all objects match, false otherwise
- *
- * @tag Core
- * @signature (subset: Object) => (source: Object[]): boolean
+ * @returns {boolean} True if all objects match, false otherwise
  *
  * @example
  * all({

@@ -7,14 +7,14 @@ import type { AnyType } from "./any.js.flow"
 /**
  * Test if at least one element of array satisfies function
  *
- * @name  any
- * @param {Function}  fn      Function to be satisfied
- * @param {Array}     source  Input array
+ * @name       any
+ * @tag        Core
+ * @signature  (fn: Function) => (source: Array): boolean
  *
- * @return {boolean}  True if at least one object passes, false otherwise
+ * @param  {Function}  fn      Function to be satisfied
+ * @param  {Array}     source  Input array
  *
- * @tag Core
- * @signature (fn: Function) => (source: Array): boolean
+ * @returns  {boolean}  True if at least one object passes, false otherwise
  *
  * @example
  * any(isNumber)([1, "string", NaN])
@@ -35,14 +35,14 @@ export { any }
 /**
  * Test if object properties match any object in input array
  *
- * @name   anyBy
+ * @name       anyBy
+ * @tag        Core
+ * @signature  (subset: Object) => (source: Object[]): boolean
+ *
  * @param  {Object}    subset  Set of properties that should match
  * @param  {Object[]}  source  Input array
  *
- * @return {boolean}  True if at least one object matches, false otherwise
- *
- * @tag Core
- * @signature (subset: Object) => (source: Object[]): boolean
+ * @returns  {boolean}  True if at least one object matches, false otherwise
  *
  * @example
  * anyBy({

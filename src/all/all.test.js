@@ -19,7 +19,7 @@ test("core::all", t => {
       id: isNumber,
     })([{ id: 1 }, { id: 2 }]),
     true,
-    "Array of objects should have all items match given subset"
+    "Array of objects should have all items match subset"
   )
 
   t.equal(
@@ -27,7 +27,7 @@ test("core::all", t => {
       "!id": isNumber,
     })([{ id: "1" }, { id: 2 }]),
     false,
-    "Array of objects should not have all items match given subset"
+    "Array of objects should not have all items match subset"
   )
 
   t.end()

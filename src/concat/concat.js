@@ -4,7 +4,7 @@
  * @param {Array|mixed}  source1  First input source
  * @param {Array|mixed}  source2  Second input source
  *
- * @returns {Array} Concatenated arrays or values
+ * @returns {Array} Array with concatenated values
  *
  * @name concat
  * @tag Array

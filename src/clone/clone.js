@@ -1,4 +1,7 @@
-import { i, map, reduce, type } from ".."
+import { i } from "../i/i"
+import { map } from "../map/map"
+import { reduce } from "../reduce/reduce"
+import { type } from "../type/type"
 
 /**
  * Creates a new instance of the object with same properties than original.
