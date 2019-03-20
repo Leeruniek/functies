@@ -4,32 +4,28 @@ import { pipe } from "../pipe/pipe"
 import { filter } from "../filter/filter"
 
 /**
- * Count the number of elements that satisfies a function
+ * Count items in array that satisfies a function
  *
- * @tag Array
- * @signature (fn: Function)(source: Array|Object): number
+ * @name       count
+ * @tag        Array
+ * @signature  (fn: Function) => (source: Array): number
  *
- * @param   {Function}        fn      Test function
- * @param   {Array|Object}  source  Source array
+ * @param  {Function}  fn      Test function
+ * @param  {Array}     source  Source array
  *
- * @return  {number}
+ * @returns  {number}  Number of items that satisfied `fn`
  *
  * @example
- * const scores = [{
- *  name   : "Bob",
- *  score  : 1,
- *  subject: "Math"
- * }, {
- *  name   : "Alice",
- *  score  : 10,
- *  subject: "Math"
- * }, {
- *  name   : "Hatter",
- *  score  : 10,
- *  subject: "Math"
- * }]
+ * count([1, 2, 3])
+ * // => 3
  *
- * count( element => element.score === 10 )( scores )
+ * count(
+ *  item => item.score === 10
+ * )([
+ *   { name: "Bob", score: 1, subject: "CS" },
+ *   { name: "Alice", score: 10, subject: "Math" },
+ *   { name: "Hatter", score: 10, subject: "Math"}
+ * ])
  * // => 2
  */
 const count = arg =>
@@ -40,6 +36,31 @@ const count = arg =>
         prop("length")
       )
 
+export { count }
+
+/**
+ * Count objects that match
+ *
+ * @name       countBy
+ * @tag        Array
+ * @signature  (subset: Object) => (source: Object[]): number
+ *
+ * @param  {Object}  subset  Set of properties that should match
+ * @param  {Array}   source  Input array
+ *
+ * @returns  {number}  Number of objects that match `subset`
+ *
+ * @example
+ * countBy({
+ *  subject: value => value === "Math"
+ *  score: value => value > 5
+ * })([
+ *   { name: "Bob", score: 1, subject: "CS" },
+ *   { name: "Alice", score: 10, subject: "Math" },
+ *   { name: "Hatter", score: 10, subject: "Math"}
+ * ])
+ * // => 2
+ */
 const countBy = byMatch(count)
 
-export { count, countBy }
+export { countBy }
