@@ -1,18 +1,19 @@
 import { deepEqual } from "../deep-equal/deep-equal"
 
 /**
- * Remove repeating values
+ * Remove repeating values. Will use `deepEqual` for comparison
  *
- * @name   distinct
- * @param  {Array}  source  The source
+ * @name       distinct
+ * @tag        Array
+ * @signature  (source: Array): Array
+ * @see        {@link deepEqual}
  *
- * @return {Array}
+ * @param  {Array}  source  Input array
  *
- * @tag Array
- * @signature ( source: Array ): Array
+ * @returns  {Array}  Duplicate free array
  *
  * @example
- * distinct( [1, 1, 2] )
+ * distinct([1, 1, 2])
  * // => [1, 2]
  */
 const distinct = source => {
