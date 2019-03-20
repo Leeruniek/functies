@@ -35,8 +35,6 @@ export { all }
  * @name       allBy
  * @tag        Core
  * @signature  (subset: Object) => (source: Object[]): boolean
- * @see        {@link isMatch}
- * @see        {@link anyBy}
  *
  * @param  {Object}  subset  Set of properties that should match
  * @param  {Array}   source  Input array
