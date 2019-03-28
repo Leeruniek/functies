@@ -18,7 +18,7 @@ test("array::filterBy", t => {
       { id: 3, foo: "bar" },
       { name: "test" },
     ]),
-    [{id: 1}, {id: 3, foo: "bar"}]
+    [{ id: 1 }, { id: 3, foo: "bar" }]
   )
 
   t.end()
