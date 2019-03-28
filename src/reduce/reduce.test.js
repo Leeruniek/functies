@@ -41,5 +41,45 @@ test("reduce", t => {
     "First value used as initial accumulator if not provided"
   )
 
+  // Probably something in map or in pipe that gets called in map if multiple
+  // transform functions provided
+  //
+  // t.deepEquals(
+  //   map(
+  //     item => {
+  //       return Object.entries(item)
+  //     },
+
+  //     reduce((acc, [key, value]) => {
+  //       acc[key] = value
+
+  //       return acc
+  //     }, {})
+  //   )([
+  //     { id: "781" },
+  //     { id: "780" },
+  //     { id: "779" },
+  //     { id: "778" },
+  //     { id: "777" },
+  //     { id: "776" },
+  //     { id: "775" },
+  //     { id: "774" },
+  //     { id: "773" },
+  //     { id: "772" },
+  //   ]),
+  //   [
+  //     { id: "781" },
+  //     { id: "780" },
+  //     { id: "779" },
+  //     { id: "778" },
+  //     { id: "777" },
+  //     { id: "776" },
+  //     { id: "775" },
+  //     { id: "774" },
+  //     { id: "773" },
+  //     { id: "772" },
+  //   ]
+  // )
+
   t.end()
 })
