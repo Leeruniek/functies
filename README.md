@@ -11,10 +11,10 @@
 * [Develop](#develop)
 * [Docs](#docs)
 * [Changelog](#changelog)
-  * [0.33 - 14 March 2019](#033---14-march-2019)
-    * [Add](#add)
+  * [0.34 - 7 May 2019](#034---7-may-2019)
+    * [:boom: Bracking change](#boom-bracking-change)
     * [Change](#change)
-    * [Delete](#delete)
+    * [Remove](#remove)
 
 <!-- vim-markdown-toc -->
 
@@ -63,16 +63,22 @@ See [documentation](https://leeruniek.github.io/functies/) for the awesomeness t
 
 History of all changes in [CHANGELOG.md](CHANGELOG.md)
 
-### 0.33 - 14 March 2019
+### 0.34 - 7 May 2019
 
-#### Add
+#### :boom: Bracking change
 
-- add `mergeTwoWith` and `mergeWith`
-- add `uncurry`
-- add `rename`
-  
+- [`debounce`](src/debounce/debounce.js) - docstring, react example, signature changed
+
 #### Change
 
-- refactor `mergeTwo` and `merge` to depend on `mergeTwoWith` and `mergeWith`, respectively
-- refactor `reduce` - like `Array.reduce`, it no longer requires a default accumulator for non-empty arrays
+- Remove docstring from test files
+- Add [`@see`](http://usejsdoc.org/tags-see.html) where suitable
+- `deepEqual`, `elapsedTIme`, `distinct`, `endsWith`, `findIndexBy`, `find` - add docstring
+- `anyBy`, `allBy`, `countBy`, `filter`, `filterBy`, `findBy`, `remove` - add docstring & tests
+- `clone`- add docstring & tests, simpler rewrite, added to main index
+- `escape`, `escapeHTML`, `escapeRegExp` - move into same file, add docstring
+- `findFiles` - add deprecation notice (use [`glob`](https://www.npmjs.com/package/glob))
 
+#### Remove
+
+- `checkType` - unused

@@ -9,6 +9,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.34] - 7 May 2019
+
+### :boom: Bracking change
+
+- [`debounce`](src/debounce/debounce.js) - docstring, react example, signature changed
+
+### Change
+
+- Remove docstring from test files
+- Add [`@see`](http://usejsdoc.org/tags-see.html) where suitable
+- `deepEqual`, `elapsedTIme`, `distinct`, `endsWith`, `findIndexBy`, `find` - add docstring
+- `anyBy`, `allBy`, `countBy`, `filter`, `filterBy`, `findBy`, `remove` - add docstring & tests
+- `clone`- add docstring & tests, simpler rewrite, added to main index
+- `escape`, `escapeHTML`, `escapeRegExp` - move into same file, add docstring
+- `findFiles` - add deprecation notice (use [`glob`](https://www.npmjs.com/package/glob))
+
+### Remove
+
+- `checkType` - unused
+
 ## [0.33] - 14 March 2019
 
 ### Add
@@ -219,8 +239,10 @@ updating the value at an object key.
 - Change [`map`](/src/map/map.test.js) to allow non-array input
 - Change [`reduce`](/src/reduce/reduce.js) to allow non-array input
 
-[Unreleased]: https://github.com/leeruniek/functies/compare/v0.32...HEAD
+[Unreleased]: https://github.com/leeruniek/functies/compare/v0.34...HEAD
 
+[0.34]: https://github.com/leeruniek/functies/compare/v0.33...v0.34
+[0.33]: https://github.com/leeruniek/functies/compare/v0.32...v0.33
 [0.32]: https://github.com/leeruniek/functies/compare/v0.31...v0.32
 [0.31]: https://github.com/leeruniek/functies/compare/v0.30.1...v0.31
 [0.30.1]: https://github.com/leeruniek/functies/compare/v0.30...v0.30.1
