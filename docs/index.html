@@ -36,9 +36,29 @@
               
                 
                 <li><a
+                  href='#allby'
+                  class="">
+                  allBy
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#any'
                   class="">
                   any
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#anyby'
+                  class="">
+                  anyBy
                   
                 </a>
                 
@@ -66,6 +86,16 @@
               
                 
                 <li><a
+                  href='#clone'
+                  class="">
+                  clone
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#contains'
                   class="">
                   contains
@@ -86,9 +116,29 @@
               
                 
                 <li><a
+                  href='#countby'
+                  class="">
+                  countBy
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#curry'
                   class="">
                   curry
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#uncurry'
+                  class="">
+                  uncurry
                   
                 </a>
                 
@@ -226,9 +276,29 @@
               
                 
                 <li><a
+                  href='#escapehtml'
+                  class="">
+                  escapeHTML
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#filter'
                   class="">
                   filter
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#filterby'
+                  class="">
+                  filterBy
                   
                 </a>
                 
@@ -249,6 +319,16 @@
                   href='#find'
                   class="">
                   find
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#findby'
+                  class="">
+                  findBy
                   
                 </a>
                 
@@ -516,9 +596,29 @@
               
                 
                 <li><a
+                  href='#mergetwowith'
+                  class="">
+                  mergeTwoWith
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#mergetwo'
                   class="">
                   mergeTwo
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mergewith'
+                  class="">
+                  mergeWith
                   
                 </a>
                 
@@ -649,6 +749,16 @@
                   href='#replace'
                   class="">
                   replace
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#rename'
+                  class="">
+                  rename
                   
                 </a>
                 
@@ -889,7 +999,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Source array
+	    Input array
 
           </div>
           
@@ -904,7 +1014,7 @@
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
+        True if all objects satisfy, false otherwise
 
       
     
@@ -918,8 +1028,100 @@
       
       <pre class='p1 overflow-auto round fill-light'>all(isNumber)([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
 <span class="hljs-comment">// =&gt; true</span>
+
 all(is)([<span class="hljs-number">1</span>, <span class="hljs-string">"asd"</span>, <span class="hljs-literal">null</span>])
 <span class="hljs-comment">// =&gt; false</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='allby'>
+      allBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Test if object properties match all objects in input array</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(subset: Object) =&gt; (source: Object[]): boolean</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>subset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Set of properties that should match
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    Input array
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        True if all objects match, false otherwise
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>all({
+  <span class="hljs-attr">id</span>: isString
+})([
+  { <span class="hljs-attr">id</span>: <span class="hljs-string">"uuid1"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"foo"</span>}
+  { <span class="hljs-attr">id</span>: <span class="hljs-string">"uuid2"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"bar"</span>}
+])
+<span class="hljs-comment">// =&gt; true</span></pre>
     
   
 
@@ -977,7 +1179,7 @@ all(is)([<span class="hljs-number">1</span>, <span class="hljs-string">"asd"</sp
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Source array
+	    Input array
 
           </div>
           
@@ -992,7 +1194,7 @@ all(is)([<span class="hljs-number">1</span>, <span class="hljs-string">"asd"</sp
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
+        True if at least one object passes, false otherwise
 
       
     
@@ -1006,8 +1208,102 @@ all(is)([<span class="hljs-number">1</span>, <span class="hljs-string">"asd"</sp
       
       <pre class='p1 overflow-auto round fill-light'>any(isNumber)([<span class="hljs-number">1</span>, <span class="hljs-string">"string"</span>, <span class="hljs-literal">NaN</span>])
 <span class="hljs-comment">// =&gt; true</span>
+
 any(is)([<span class="hljs-literal">null</span>])
 <span class="hljs-comment">// =&gt; false</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='anyby'>
+      anyBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Test if object properties match any object in input array</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(subset: Object) =&gt; (source: Object[]): boolean</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>subset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Set of properties that should match
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
+	    Input array
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        True if at least one object matches, false otherwise
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>anyBy({
+  <span class="hljs-attr">id</span>: isNumber,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"lorem"</span>,
+})([
+  { <span class="hljs-attr">id</span>: <span class="hljs-string">"uuid"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"lorem"</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"foo"</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"lorem"</span>, <span class="hljs-attr">foo</span>: <span class="hljs-string">"bar"</span> },
+])
+<span class="hljs-comment">// =&gt; true</span></pre>
     
   
 
@@ -1058,49 +1354,10 @@ any(is)([<span class="hljs-literal">null</span>])
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>$0</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    
+            <span class='code bold'>conditions</span> <code class='quiet'>(any)</code>
+	    List of 2-tuples of functions (if, then)
+
           </div>
-          
-          <table class='mt1 mb2 fixed-table h5 col-12'>
-            <colgroup>
-              <col width='30%' />
-              <col width='70%' />
-            </colgroup>
-            <thead>
-              <tr class='bold fill-light'>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody class='mt1'>
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>$0.0</span> <code class='quiet'>any</code>
-  </td>
-  <td class='break-word'><span></span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>$0.1</span> <code class='quiet'>any</code>
-  </td>
-  <td class='break-word'><span></span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>$0.rest</span> <code class='quiet'>...any</code>
-  </td>
-  <td class='break-word'><span></span></td>
-</tr>
-
-
-              
-            </tbody>
-          </table>
           
         </div>
       
@@ -1108,15 +1365,6 @@ any(is)([<span class="hljs-literal">null</span>])
           <div>
             <span class='code bold'>otherwise</span> <code class='quiet'>(any)</code>
 	    Function to call if no condition matches. Defaults to identity.
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>conditions</span> <code class='quiet'>(any)</code>
-	    List of 2-tuples of functions (if, then)
 
           </div>
           
@@ -1182,11 +1430,11 @@ otherwise function on the input.
   </div>
   
 
-  <p>Merge two or more arrays into one</p>
+  <p>Merge two arrays/values into one array</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>(source1: Array) =&gt; (source2: Array) =&gt; Array</div>
+    <div class='pre p1 fill-light mt0'>(source1: Array|mixed) =&gt; (source2: Array|mixed): Array</div>
   
   
   
@@ -1204,8 +1452,8 @@ otherwise function on the input.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>source1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    First array
+            <span class='code bold'>source1</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | mixed))</code>
+	    First input source
 
           </div>
           
@@ -1213,8 +1461,8 @@ otherwise function on the input.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>source2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Second array
+            <span class='code bold'>source2</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | mixed))</code>
+	    Second input source
 
           </div>
           
@@ -1229,7 +1477,7 @@ otherwise function on the input.
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
-        
+        Array with concatenated values
 
       
     
@@ -1242,7 +1490,93 @@ otherwise function on the input.
     
       
       <pre class='p1 overflow-auto round fill-light'>concat([<span class="hljs-number">1</span>])([<span class="hljs-number">4</span>, <span class="hljs-number">5</span>])
-<span class="hljs-comment">// =&gt; [1, 4, 5]</span></pre>
+<span class="hljs-comment">// =&gt; [1, 4, 5]</span>
+
+concat(<span class="hljs-number">1</span>)(<span class="hljs-number">4</span>)
+<span class="hljs-comment">// =&gt; [1, 4]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='clone'>
+      clone
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Creates a new instance of the object with same properties than original.
+Will not inherit prototype, only own enumerable properties.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>&lt;T&gt;(source: T): T</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="#any">any</a>)</code>
+	    Input value
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#any">any</a></code>:
+        Cloned value
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">let</span> x = {<span class="hljs-attr">a</span>: [<span class="hljs-number">1</span>]}
+
+clone(x)
+<span class="hljs-comment">// =&gt; {a: [1]}</span>
+
+close(x) === x
+<span class="hljs-comment">// =&gt; false</span></pre>
     
   
 
@@ -1354,11 +1688,11 @@ otherwise function on the input.
   </div>
   
 
-  <p>Count the number of elements that satisfies a function</p>
+  <p>Count items in array that satisfies a function</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>(fn: Function)(source: Array|Object): number</div>
+    <div class='pre p1 fill-light mt0'>(fn: Function) =&gt; (source: Array): number</div>
   
   
   
@@ -1376,14 +1710,6 @@ otherwise function on the input.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>arg</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
             <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
 	    Test function
 
@@ -1393,7 +1719,7 @@ otherwise function on the input.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>source</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
 	    Source array
 
           </div>
@@ -1409,7 +1735,8 @@ otherwise function on the input.
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        
+        Number of items that satisfied 
+<code>fn</code>
 
       
     
@@ -1421,21 +1748,110 @@ otherwise function on the input.
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> scores = [{
- <span class="hljs-attr">name</span>   : <span class="hljs-string">"Bob"</span>,
- <span class="hljs-attr">score</span>  : <span class="hljs-number">1</span>,
- <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span>
-}, {
- <span class="hljs-attr">name</span>   : <span class="hljs-string">"Alice"</span>,
- <span class="hljs-attr">score</span>  : <span class="hljs-number">10</span>,
- <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span>
-}, {
- <span class="hljs-attr">name</span>   : <span class="hljs-string">"Hatter"</span>,
- <span class="hljs-attr">score</span>  : <span class="hljs-number">10</span>,
- <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span>
-}]
+      <pre class='p1 overflow-auto round fill-light'>count([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-comment">// =&gt; 3</span>
 
-count( <span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> element.score === <span class="hljs-number">10</span> )( scores )
+count(
+ <span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item.score === <span class="hljs-number">10</span>
+)([
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Bob"</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">subject</span>: <span class="hljs-string">"CS"</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Hatter"</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span>}
+])
+<span class="hljs-comment">// =&gt; 2</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='countby'>
+      countBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Count objects that match</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(subset: Object) =&gt; (source: Object[]): number</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>subset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Set of properties that should match
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    Input array
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Number of objects that match 
+<code>subset</code>
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>countBy({
+ <span class="hljs-attr">subject</span>: <span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value === <span class="hljs-string">"Math"</span>
+ score: <span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &gt; <span class="hljs-number">5</span>
+})([
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Bob"</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">subject</span>: <span class="hljs-string">"CS"</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Hatter"</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">subject</span>: <span class="hljs-string">"Math"</span>}
+])
 <span class="hljs-comment">// =&gt; 2</span></pre>
     
   
@@ -1487,7 +1903,7 @@ where CurryReturnType&lt;A&gt; = (...mixed[]) =&gt; A | CurryReturnType&lt;A&gt;
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
-	    The function to apply.
+	    The function to apply
 
           </div>
           
@@ -1496,7 +1912,7 @@ where CurryReturnType&lt;A&gt; = (...mixed[]) =&gt; A | CurryReturnType&lt;A&gt;
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    The arguments to apply, in order.
+	    The arguments to apply, in order
 
           </div>
           
@@ -1546,6 +1962,93 @@ on the function with the provided parameters.
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='uncurry'>
+      uncurry
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Convert a curried function of arity n to a simple function with n parameters.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>uncurry</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    The function to apply
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
+	    The arguments to apply, in order
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        The result of calling the function on each argument in turn,
+until a non-function is the return value. If an insufficient number
+of arguments are provided, return the partially applied function.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>uncurry(<span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> a + b * c)(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>) = <span class="hljs-number">7</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='debounce'>
       debounce
     </h3>
@@ -1554,11 +2057,11 @@ on the function with the provided parameters.
   </div>
   
 
-  <p>Call a function only after it wasn't called for <code>timeWindow</code> ms.</p>
+  <p>Call function after <code>wait</code> milliseconds have elapsed</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>debounce</div>
+    <div class='pre p1 fill-light mt0'>(fn: Function, { wait: number, bind: Object }): Function</div>
   
   
   
@@ -1585,11 +2088,51 @@ on the function with the provided parameters.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>timeWindow</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    Time that needs to pass without calling
-so that the function is actually called
+            <span class='code bold'>props</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?)</code>
+	    Properties
 
           </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.wait</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  
+    (default <code>50</code>)
+  </td>
+  <td class='break-word'><span>Time in milliseconds to wait without
+calling until invoke
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>props.bind</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>null</code>)
+  </td>
+  <td class='break-word'><span><code>this</code>
+ provided for the call to 
+<code>fn</code>
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
           
         </div>
       
@@ -1602,7 +2145,12 @@ so that the function is actually called
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
-        
+        Wrapper function that calls 
+<code>fn</code>
+ after 
+<code>wait</code>
+
+passed without calling
 
       
     
@@ -1610,6 +2158,19 @@ so that the function is actually called
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// constructor</span>
+<span class="hljs-keyword">this</span>.debouncedAutocomplete = debounce(autocompleteFromAPI, {
+  <span class="hljs-attr">wait</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-attr">bind</span>: <span class="hljs-keyword">this</span>
+})
+
+<span class="hljs-comment">// render</span>
+&lt;input onChange={<span class="hljs-keyword">this</span>.debouncedAutocomplete} ... /&gt;</pre>
+    
   
 
   
@@ -1706,11 +2267,11 @@ Everything else are "Primitive"</p>
   </div>
   
 
-  <p>Determine if 2 arrays are equal. Order counts: [1,2] !== [2,1]</p>
+  <p>Determine if 2 arrays are equal. Order counts: [1, 2] !== [2, 1]</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>Array(alice: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Array&lt;/a&gt;, bob: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Array&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
+    <div class='pre p1 fill-light mt0'>Array(a: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Array&lt;/a&gt;, b: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array&quot;&gt;Array&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1728,7 +2289,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>alice</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+            <span class='code bold'>a</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
 	    Source input
 
           </div>
@@ -1737,7 +2298,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>bob</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+            <span class='code bold'>b</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
 	    Other source input
 
           </div>
@@ -1789,7 +2350,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>Object(alice: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object&quot;&gt;Object&lt;/a&gt;, bob: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object&quot;&gt;Object&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
+    <div class='pre p1 fill-light mt0'>Object(a: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object&quot;&gt;Object&lt;/a&gt;, b: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object&quot;&gt;Object&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1807,7 +2368,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>alice</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>a</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    Source input
 
           </div>
@@ -1816,7 +2377,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>bob</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>b</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    Other source input
 
           </div>
@@ -1868,7 +2429,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>RegExp(alice: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp&quot;&gt;RegExp&lt;/a&gt;, bob: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp&quot;&gt;RegExp&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
+    <div class='pre p1 fill-light mt0'>RegExp(a: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp&quot;&gt;RegExp&lt;/a&gt;, b: &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp&quot;&gt;RegExp&lt;/a&gt;): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1886,7 +2447,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>alice</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a>)</code>
+            <span class='code bold'>a</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a>)</code>
 	    Source input
 
           </div>
@@ -1895,7 +2456,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>bob</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a>)</code>
+            <span class='code bold'>b</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a>)</code>
 	    Other source input
 
           </div>
@@ -1947,7 +2508,7 @@ Everything else are "Primitive"</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>Primitive(alice: mixed, bob: mixed): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
+    <div class='pre p1 fill-light mt0'>Primitive(a: mixed, b: mixed): &lt;a href=&quot;https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean&quot;&gt;boolean&lt;/a&gt;</div>
   
   
   
@@ -1965,7 +2526,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>alice</span> <code class='quiet'>(mixed)</code>
+            <span class='code bold'>a</span> <code class='quiet'>(mixed)</code>
 	    Source input
 
           </div>
@@ -1974,7 +2535,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>bob</span> <code class='quiet'>(mixed)</code>
+            <span class='code bold'>b</span> <code class='quiet'>(mixed)</code>
 	    Other source input
 
           </div>
@@ -2022,11 +2583,12 @@ Everything else are "Primitive"</p>
   </div>
   
 
-  <p>Determine if two variables are structurally equal.</p>
+  <p>Determine if two variables are structurally equal (callable curried or
+uncurried)</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>deepEqual</div>
+    <div class='pre p1 fill-light mt0'>(a: any, b: any): boolean</div>
   
   
   
@@ -2044,7 +2606,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>alice</span> <code class='quiet'>(mixed)</code>
+            <span class='code bold'>a</span> <code class='quiet'>(<a href="#any">any</a>)</code>
 	    Source input
 
           </div>
@@ -2053,7 +2615,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>bob</span> <code class='quiet'>(mixed)</code>
+            <span class='code bold'>b</span> <code class='quiet'>(<a href="#any">any</a>)</code>
 	    Other source input
 
           </div>
@@ -2069,7 +2631,7 @@ Everything else are "Primitive"</p>
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
+        True if inputs are deeply equal, false otherwise
 
       
     
@@ -2077,6 +2639,23 @@ Everything else are "Primitive"</p>
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>deepEqual(
+  { <span class="hljs-attr">b</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">a</span>: <span class="hljs-number">2</span> },
+  { <span class="hljs-attr">a</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">3</span> }
+)
+<span class="hljs-comment">// =&gt; true</span>
+
+deepEqual(
+  { <span class="hljs-attr">a</span> :[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>] }
+)(
+  { <span class="hljs-attr">a</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">1</span>] }
+)
+<span class="hljs-comment">// =&gt; false</span></pre>
+    
   
 
   
@@ -2101,11 +2680,11 @@ Everything else are "Primitive"</p>
   </div>
   
 
-  <p>Remove repeating values</p>
+  <p>Remove duplicate values. Will use <code>deepEqual</code> for comparison.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>( source: Array ): Array</div>
+    <div class='pre p1 fill-light mt0'>(source: Array): Array</div>
   
   
   
@@ -2124,7 +2703,7 @@ Everything else are "Primitive"</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    The source
+	    Input array
 
           </div>
           
@@ -2139,7 +2718,7 @@ Everything else are "Primitive"</p>
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
-        
+        Duplicate free array
 
       
     
@@ -2151,7 +2730,7 @@ Everything else are "Primitive"</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>distinct( [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>] )
+      <pre class='p1 overflow-auto round fill-light'>distinct([<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
 <span class="hljs-comment">// =&gt; [1, 2]</span></pre>
     
   
@@ -2178,11 +2757,12 @@ Everything else are "Primitive"</p>
   </div>
   
 
-  <p>Calculate elapsed time between to dates. In days, hours, minutes and seconds</p>
+  <p>Calculate elapsed time between to dates. In days, hours, minutes and seconds
+(callable curried or uncurried).</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>(startDate: Object) =&gt; (endDate: Object): Object</div>
+    <div class='pre p1 fill-light mt0'>(startDate: Object, endDate: Object): Object</div>
   
   
   
@@ -2200,7 +2780,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>startDate</span> <code class='quiet'>(Data)</code>
+            <span class='code bold'>startDate</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>)</code>
 	    Start date
 
           </div>
@@ -2209,7 +2789,7 @@ Everything else are "Primitive"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>endDate</span> <code class='quiet'>(Data)</code>
+            <span class='code bold'>endDate</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>)</code>
 	    End date
 
           </div>
@@ -2268,11 +2848,11 @@ Everything else are "Primitive"</p>
   </div>
   
 
-  <p>Test if string ends with substring</p>
+  <p>Test if string ends with substring (callable curried or uncurried).</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>(search: string) =&gt; (source: string): boolean</div>
+    <div class='pre p1 fill-light mt0'>(search: string, source: string): boolean</div>
   
   
   
@@ -2300,7 +2880,7 @@ Everything else are "Primitive"</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    Source string
+	    Input string
 
           </div>
           
@@ -2315,7 +2895,11 @@ Everything else are "Primitive"</p>
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
+        True if 
+<code>source</code>
+ ends with 
+<code>search</code>
+, false otherwise
 
       
     
@@ -2512,11 +3096,11 @@ The key-value pairs to create the object from
   </div>
   
 
-  <p>Make safe for RegExp'ing</p>
+  <p>Make safe for RegExp'ing.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>( source: string ): string</div>
+    <div class='pre p1 fill-light mt0'>(source: string): string</div>
   
   
   
@@ -2535,7 +3119,7 @@ The key-value pairs to create the object from
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    Source string
+	    Input string
 
           </div>
           
@@ -2562,10 +3146,85 @@ The key-value pairs to create the object from
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>{ example }
-
-escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
+      <pre class='p1 overflow-auto round fill-light'>escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
 <span class="hljs-comment">// =&gt; "lorem \\. ipsum \\[dolor\\]"</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='escapehtml'>
+      escapeHTML
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Escape HTML special chars for safe rendering.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(source: string): string</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    Input string
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>escapeHTML(<span class="hljs-string">"&lt;script&gt;alert('HERE'S BOBBY')&lt;/script&gt;"</span>)
+<span class="hljs-comment">// =&gt; "&amp;lt;script&amp;gt;alert(&amp;#39;HERE&amp;#39;S BOBBY&amp;#39;)&amp;lt;&amp;#47;script&amp;gt;"</span></pre>
     
   
 
@@ -2591,11 +3250,11 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
   </div>
   
 
-  <p>Remove elements that dont match based on custom function</p>
+  <p>Filter items in array that satisfies test function</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>( fn: Function ) =&gt; ( source: Array): Array</div>
+    <div class='pre p1 fill-light mt0'>(fn: Function) =&gt; (source: Array): Array</div>
   
   
   
@@ -2614,7 +3273,16 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    The function
+	    Filter test function
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    Input array
 
           </div>
           
@@ -2637,6 +3305,106 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>filter(is)([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-literal">null</span>, <span class="hljs-number">3</span>, <span class="hljs-literal">undefined</span>])
+<span class="hljs-comment">// =&gt; [1, 2, 3]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='filterby'>
+      filterBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Filter items in array that match subset</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(subset: Object) =&gt; (source: Object[]): Object[]</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>subset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Set of properties that should match
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
+	    Input array
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>filterBy({
+  <span class="hljs-attr">id</span>: is,
+})([
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-literal">null</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test"</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">foo</span>: <span class="hljs-string">"bar"</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"test"</span> },
+])
+<span class="hljs-comment">// =&gt; [{ id: 1 }, { id: 3, foo: "bar" }]</span></pre>
+    
   
 
   
@@ -2661,11 +3429,11 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
   </div>
   
 
-  <p>Find the position of first element that matches the filter criteria</p>
+  <p>Find the position of first element that matches the subset criteria</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>(filter: Object) =&gt; (source: Object[]): number</div>
+    <div class='pre p1 fill-light mt0'>(subset: Object) =&gt; (source: Object[]): number</div>
   
   
   
@@ -2683,7 +3451,7 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>filter</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>subset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    Object containing one or more fields
 
           </div>
@@ -2723,9 +3491,10 @@ escapeRegExp( <span class="hljs-string">"lorem. ipsum [dolor]"</span> )
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> comments = [{<span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">body</span>: <span class="hljs-string">""</span>}, {<span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">body</span>: <span class="hljs-string">"dolor"</span>}]
 
 findIndexBy({<span class="hljs-attr">id</span>: <span class="hljs-number">2</span>})(comments)
-<span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// =&gt; 1</span>
+
 findIndexBy({<span class="hljs-attr">id</span>: <span class="hljs-number">3</span>})(comments)
-<span class="hljs-comment">// -1</span></pre>
+<span class="hljs-comment">// =&gt; -1</span></pre>
     
   
 
@@ -2751,11 +3520,11 @@ findIndexBy({<span class="hljs-attr">id</span>: <span class="hljs-number">3</spa
   </div>
   
 
-  <p>Find the first element that satisfies the matchFn</p>
+  <p>Find the first element that satisfies test function.</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>find</div>
+    <div class='pre p1 fill-light mt0'>(fn: Function) =&gt; (source: Array): mixed</div>
   
   
   
@@ -2773,7 +3542,7 @@ findIndexBy({<span class="hljs-attr">id</span>: <span class="hljs-number">3</spa
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>matchFn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+            <span class='code bold'>fn</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
 	    Function applied to each element
 
           </div>
@@ -2783,7 +3552,7 @@ findIndexBy({<span class="hljs-attr">id</span>: <span class="hljs-number">3</spa
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Source array
+	    Input array
 
           </div>
           
@@ -2798,7 +3567,8 @@ findIndexBy({<span class="hljs-attr">id</span>: <span class="hljs-number">3</spa
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code>(mixed | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)</code>:
-        First element
+        First item that satisfied 
+<code>fn</code>
 
       
     
@@ -2810,7 +3580,100 @@ findIndexBy({<span class="hljs-attr">id</span>: <span class="hljs-number">3</spa
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>find(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>)([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]) = <span class="hljs-number">2</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>find(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>)([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])
+<span class="hljs-comment">// =&gt; 2</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='findby'>
+      findBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Find the first element that satisfies test function.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(subset: Object) =&gt; (source: Object[]): mixed</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>subset</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Set of properties that should match
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>)</code>
+	    Input array
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(mixed | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)</code>:
+        First item that satisfied 
+<code>fn</code>
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>findBy({
+  <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>
+})([
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">foo</span>: <span class="hljs-string">"bar"</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">foo</span>: <span class="hljs-string">"ipsum"</span> }
+])
+<span class="hljs-comment">// =&gt; { id: 2, foo: "ipsum" }</span></pre>
     
   
 
@@ -5005,6 +5868,135 @@ max(fn)(source)
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='mergetwowith'>
+      mergeTwoWith
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Merge two objects, provided a function to decide what to do with
+overlapping keys.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(Object, Function) =&gt; Object =&gt; Object =&gt; Object</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fns</span> <code class='quiet'>(any
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>defaultFn</span> <code class='quiet'>(any
+            = <code>defaultMergeFn</code>)</code>
+	    The merging function to use by default (if a specific function is not
+provided for a key in the fn object.) By default, the second value
+overwrites the first value unless the second value is undefined.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    An Object of curried functions taking two values, where the function
+at a key describes how to merge duplicate values at the key.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>a</span> <code class='quiet'>(any)</code>
+	    The first object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>b</span> <code class='quiet'>(any)</code>
+	    The second object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        An object with properties merged from a and b
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>mergeTwoWith({ <span class="hljs-attr">isLoading</span>: <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; a || b })({
+  <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">a</span>: <span class="hljs-literal">undefined</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>
+})({
+  <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">a</span>: <span class="hljs-string">"test"</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-literal">undefined</span>
+}) = {
+  <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">a</span>: <span class="hljs-string">"test"</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>
+}</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='mergetwo'>
       mergeTwo
     </h3>
@@ -5078,6 +6070,136 @@ priority.</p>
       <pre class='p1 overflow-auto round fill-light'>mergeTwo({ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test"</span> })(
   { <span class="hljs-attr">id</span>: <span class="hljs-literal">undefined</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test2"</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">"Error"</span> }
 ) = { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"test2"</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">"Error"</span> }</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mergewith'>
+      mergeWith
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Merge n objects, provided functions which describe what to do
+in the case of overlapping keys.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>(Object, Function) =&gt; Object[] =&gt; Object</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fns</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>defaultFn</span> <code class='quiet'>(any)</code>
+	    The merging function to use by default
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    An Object of curried functions taking two values, where the function
+at a key describes how to merge duplicate values at the key.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>a</span> <code class='quiet'>(any)</code>
+	    The first object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>b</span> <code class='quiet'>(any)</code>
+	    The second object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        An object with properties merged from all source objects
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>mergeWith({ <span class="hljs-attr">isLoading</span>: <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> b =&gt; a || b })({
+  <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">a</span>: <span class="hljs-literal">undefined</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>
+}, {
+  <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">a</span>: <span class="hljs-string">"test"</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-literal">undefined</span>
+}, {
+  <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">a</span>: <span class="hljs-string">"test2"</span>,
+  <span class="hljs-attr">c</span>: <span class="hljs-literal">false</span>
+}) = {
+  <span class="hljs-attr">isLoading</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">a</span>: <span class="hljs-string">"test2"</span>,
+  <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-attr">c</span>: <span class="hljs-literal">false</span>
+}</pre>
     
   
 
@@ -5777,7 +6899,7 @@ left to right) to reduce it to a single value.</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>defaultAcc</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    The default acc
+	    Default value for the accumulator
 
           </div>
           
@@ -5833,11 +6955,11 @@ left to right) to reduce it to a single value.</p>
   </div>
   
 
-  <p>{ lambda_description }</p>
+  <p>Remove value from array (strict equality check)</p>
 
 
   
-    <div class='pre p1 fill-light mt0'>remove</div>
+    <div class='pre p1 fill-light mt0'>(value: any) =&gt; (source: Array): Array</div>
   
   
   
@@ -5864,8 +6986,8 @@ left to right) to reduce it to a single value.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>array</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Array from where to remove
+            <span class='code bold'>source</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    Input array
 
           </div>
           
@@ -5888,6 +7010,16 @@ left to right) to reduce it to a single value.</p>
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>remove(<span class="hljs-number">2</span>)([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-comment">// =&gt; [1, 3]</span>
+
+remove(<span class="hljs-literal">null</span>)([<span class="hljs-number">1</span>, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-literal">null</span>])
+<span class="hljs-comment">// =&gt; [1, 2, 3]</span></pre>
+    
   
 
   
@@ -6135,6 +7267,86 @@ source is Array</p>
 
   
 
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='rename'>
+      rename
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Rename object properties.</p>
+
+
+  
+    <div class='pre p1 fill-light mt0'>rename</div>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>keys</span> <code class='quiet'>(any)</code>
+	    A mapping from old names to new ones
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>source</span> <code class='quiet'>(any)</code>
+	    (implicit)
+The object to rename keys of
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>rename({
+  <span class="hljs-attr">test</span>: <span class="hljs-string">"test2"</span>
+})({ <span class="hljs-attr">test</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">unrelated</span>: <span class="hljs-literal">false</span> }) = { <span class="hljs-attr">test2</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">unrelated</span>: <span class="hljs-literal">false</span> }</pre>
+    
   
 
   
