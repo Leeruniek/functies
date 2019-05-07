@@ -1,17 +1,6 @@
 const test = require("tape")
 const protoChain = require("./proto-chain")
 
-/**
- * Return an array of constructor function names based on the prototype chain
- *
- * @param {Object}    source  Source input
- * @param {string[]}  acc     Accumulator array
- *
- * @returns {string[]}
- *
- * @tag Core
- * @signature (source: Object, acc: string[]): string[]
- */
 test("core::protoChain", t => {
   t.deepEqual(protoChain({}), ["Object"], "Proto chain of object")
 

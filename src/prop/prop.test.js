@@ -1,21 +1,6 @@
 import test from "tape"
 import { prop } from ".."
 
-/**
- * Get value from obj property
- *
- * @param  {string}  key     Property name
- * @param  {object}  source  Source object
- *
- * @return {mixed}
- *
- * @tag Object
- * @signature ( key: string ) => ( source: Object ): mixed
- *
- * @example
- * prop( "lorem" )( { lorem: "ipsum" } ) // => "ipsum"
- * prop( "not-exist" )( { lorem: "ipsum" } ) // => undefined
- */
 test("object::prop", t => {
   t.equal(
     prop("lorem")({

@@ -1,14 +1,6 @@
 import test from "tape"
 import { map } from ".."
 
-/**
- * Iterate over an input list, calling `fn` for each element, return a new
- * array
- *
- * @example
- * map( x => x * x )( [ 1, 2, 3 ] )
- * // => [ 1, 4, 9 ]
- */
 test("array::map", t => {
   const square = value => value * value
 

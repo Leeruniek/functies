@@ -1,13 +1,6 @@
 import test from "tape"
 import { flatten, flattenBranches } from ".."
 
-/**
- * Recursively concat all arrays intro a single array
- *
- * @example
- * flatten( [ 1, [ 2 ], [ 3, [ 4 ] ] ] )
- * // => [ 1, 2, 3, 4 ]
- */
 test("array::flatten", t => {
   t.deepEqual(flatten([]), [], "[] should equal []")
 

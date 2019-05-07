@@ -1,22 +1,6 @@
 import test from "tape"
 import { top } from ".."
 
-/**
- * Extract top elements from array
- *
- * @name top
- * @tag Array
- * @signature (count: number) => (source: Array): Array
- *
- * @param  {number}  count   Number of elements to extract
- * @param  {Array}   source  Source array
- *
- * @returns {Array}
- *
- * @example
- * top(2)([ 1, 2, 3 ])
- * // => [1, 2]
- */
 test("array::top", t => {
   t.deepEqual(
     top(2)([1, 2, 3]),

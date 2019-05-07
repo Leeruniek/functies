@@ -1,21 +1,6 @@
 import test from "tape"
 import { sort, sortBy } from ".."
 
-/**
- * Sort array using custom function
- *
- * @param  {Function}  fn      Sort function
- * @param  {Array}     source  Array
- *
- * @return {Array}
- *
- * @tag Array
- * @signature ( fn: Function ) => ( source: Array ): Array
- *
- * @example
- * sort((a,b) => a.id-b.id)([{id:2}, {id: 1}])
- * // => [{id:1}, {id: 2}]
- */
 test("array::sort", t => {
   const source = [{ id: 2 }, { id: 1 }]
 
@@ -34,34 +19,6 @@ test("array::sort", t => {
   t.end()
 })
 
-/**
- * Sort an array of objects by a custom field
- *
- * @tag Array
- * @signature ( field: string, direction: string ) => ( input: Array ): Array
- *
- * @param  {string}  field      Sort field name
- * @param  {string}  direction  Sort direction
- * @param  {Array}   source     Input array
- *
- * @return {Array}
- *
- * @example
- * sortBy( "position" )( [
- *   { id: 1, position: 3 },
- *   { id: 2, position: 2 },
- *   { id: 3 },
- *   { id: 4, position: 5 },
- *   { id: 5, position: null },
- * ] )
- * // [
- * //  { id: 2, position: 2 },
- * //  { id: 1, position: 3 },
- * //  { id: 4, position: 5 },
- * //  { id: 5, position: null },
- * //  { id: 3 },
- * //]
- */
 test("array::sortBy", t => {
   const mutateInput = [{ id: 5, position: null }]
 

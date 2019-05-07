@@ -1,21 +1,6 @@
 import test from "tape"
 import { join } from ".."
 
-/**
- * Join all elements of an array into a string
- *
- * @tag Array
- * @signature (separator: string)(source: Array): string
- *
- * @param   {string}  separator  Separator between each adjacent elements
- * @param   {string}  source     Source string
- *
- * @return  {string}
- *
- * @example
- * join( "," )( [ "lorem", "ipsum" ] )
- * // => "lorem,ipsum"
- */
 test("array::join", t => {
   const source = ["lorem", "ipsum"]
 

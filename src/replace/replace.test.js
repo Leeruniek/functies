@@ -1,20 +1,6 @@
 import test from "tape"
 import { replace } from ".."
 
-/**
- * Replace substring if source is string, replace element (shallow equal) if
- * source is Array
- *
- * @param {string|mixed}  oldElm  To be cloned
- * @param {string|mixed}  newElm  Copy of this object.
- * @param {string|Array}  source  Source array
- *
- * @return {string|Array}
- *
- * @tag String,Array
- * @signature (oldElm: string|mixed, newElm: string|mixed) => (source: Array): Array
- *
- */
 test("array||string::replace", t => {
   t.equals(
     replace("test", "ipsum")("lorem test"),

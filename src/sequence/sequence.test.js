@@ -1,25 +1,7 @@
 import test from "tape"
 import { sequence } from ".."
 
-/**
- * Create an array of numbers
- *
- * @tag Number
- * @signature (step: number) => (start: number, end: number): number[]
- *
- * @param  {number}  step   The step
- * @param  {number}  start  Left side interval
- * @param  {number}  end    Right side interval
- *
- * @return {number[]}
- *
- * @example
- *
- * sequence(1)(1, 5)   // [1, 2, 3, 4, 5]
- * sequence(3)(1, 5)   // [1, 4]
- * sequence(-1)(2, -3) // [ 2, 1, 0, -1, -2, -3 ]
- */
-test("number::sequence(step: number) => (start: number, end: number): number[]", t => {
+test("number::sequence", t => {
   t.throws(
     () => sequence(0)(1, 10),
     /Invalid "step" value, must be non zero/,
